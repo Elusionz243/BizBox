@@ -1,0 +1,40 @@
+.searchbar-container {
+  position: relative;
+}
+
+.searchbar {
+  background: var(--light-blue);
+  border: none;
+  border-bottom: 2px solid #fff;
+  border-radius: 0;
+  color: #fff;
+  font-size: 1.125rem;
+  box-shadow: inset;
+}
+
+.searchbar:focus,
+.searchbar:focus-visible,
+.searchbar:focus-within {
+  outline: none;
+}
+
+.searchbar::placeholder {
+  color: #fff;
+  font-size: 1rem;
+}
+
+.search-results {
+  position: absolute;
+  display: none;
+  grid-template-rows: 1fr;
+  background-color: #fff;
+  top: 2rem;
+  z-index: 2;
+  overflow-y: scroll;
+  max-height: 80vh;
+  color: #000;
+}
+
+.active {
+  display: grid;
+}

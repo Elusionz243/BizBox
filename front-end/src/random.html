@@ -1,0 +1,1936 @@
+<div class="ui-grid-canvas _tc_table_highlighted">
+  <!-- ngRepeat: (rowRenderIndex, row) in rowContainer.renderedRows track by $index -->
+  <div
+    ng-repeat="(rowRenderIndex, row) in rowContainer.renderedRows track by $index"
+    class="ui-grid-row ng-scope"
+    ng-style="Viewport.rowStyle(rowRenderIndex)"
+    ng-class="{'ui-grid-row-selected': row.isSelected, 'ui-grid-row-focused': row.isFocused,'ui-grid-tree-header-row': row.treeLevel > -1}"
+    style=""
+  >
+    <div
+      role="row"
+      ui-grid-row="row"
+      row-render-index="rowRenderIndex"
+      class="ng-isolate-scope"
+    >
+      <!-- ngRepeat: (colRenderIndex, col) in colContainer.renderedColumns track by col.uid -->
+      <div
+        ng-repeat="(colRenderIndex, col) in colContainer.renderedColumns track by col.uid"
+        ui-grid-one-bind-id-grid="rowRenderIndex + '-' + col.uid + '-cell'"
+        class="ui-grid-cell ng-scope ui-grid-coluiGrid-0004"
+        ng-class="{ 'ui-grid-row-header-cell': col.isRowHeader }"
+        role="gridcell"
+        ui-grid-cell=""
+        id="1699493608000-0-uiGrid-0004-cell"
+      >
+        <div
+          class="ui-grid-cell-contents item ng-scope"
+          title='16" Color Tube w/ Matrix Perc'
+        >
+          <span class="image">
+            <!-- ngIf: !row.entity.thumbnail_url --><i
+              class="fa fa-camera ng-scope"
+              ng-if="!row.entity.thumbnail_url"
+              style=""
+            ></i
+            ><!-- end ngIf: !row.entity.thumbnail_url -->
+            <!-- ngIf: row.entity.thumbnail_url --></span
+          ><a
+            ui-sref=".edit-product({itemId: row.entity.item_id, duplicateItem: false, variantId: row.entity.variant_id})"
+            class="ng-binding"
+            href="#/app/inventory/items-and-variants/edit-product/2029250262455362443"
+            >16" Color Tube w/ Matrix Perc</a
+          >
+          <div class="subtle ng-binding" title="Glass">Glass</div>
+          <div
+            class="subtle ng-binding"
+            title=""
+            ng-show="grid.appScope.accountDataService.hasFeature('VENDORS')"
+          ></div>
+        </div>
+      </div>
+      <!-- end ngRepeat: (colRenderIndex, col) in colContainer.renderedColumns track by col.uid -->
+      <div
+        ng-repeat="(colRenderIndex, col) in colContainer.renderedColumns track by col.uid"
+        ui-grid-one-bind-id-grid="rowRenderIndex + '-' + col.uid + '-cell'"
+        class="ui-grid-cell ng-scope ui-grid-coluiGrid-0005"
+        ng-class="{ 'ui-grid-row-header-cell': col.isRowHeader }"
+        role="gridcell"
+        ui-grid-cell=""
+        id="1699493608000-0-uiGrid-0005-cell"
+      >
+        <div
+          class="ui-grid-cell-contents variant ng-binding ng-scope"
+          title="Blue D"
+        >
+          <!-- ngIf: row.entity.kit_id || row.entity.kit -->Blue D
+          <div
+            class="subtle"
+            ng-show="row.entity.barcode"
+            title="1000002815"
+            style=""
+          >
+            Barcode <em class="ng-binding">1000002815</em>
+          </div>
+          <div class="subtle ng-hide" ng-show="row.entity.sku" title="">
+            SKU <em class="ng-binding"></em>
+          </div>
+        </div>
+      </div>
+      <!-- end ngRepeat: (colRenderIndex, col) in colContainer.renderedColumns track by col.uid -->
+      <div
+        ng-repeat="(colRenderIndex, col) in colContainer.renderedColumns track by col.uid"
+        ui-grid-one-bind-id-grid="rowRenderIndex + '-' + col.uid + '-cell'"
+        class="ui-grid-cell ng-scope ui-grid-coluiGrid-0006"
+        ng-class="{ 'ui-grid-row-header-cell': col.isRowHeader }"
+        role="gridcell"
+        ui-grid-cell=""
+        id="1699493608000-0-uiGrid-0006-cell"
+      >
+        <div class="ui-grid-cell-contents location ng-binding ng-scope">
+          Hazel Sky Smoke &amp; Vape #3 (HWY 151)
+        </div>
+      </div>
+      <!-- end ngRepeat: (colRenderIndex, col) in colContainer.renderedColumns track by col.uid -->
+      <div
+        ng-repeat="(colRenderIndex, col) in colContainer.renderedColumns track by col.uid"
+        ui-grid-one-bind-id-grid="rowRenderIndex + '-' + col.uid + '-cell'"
+        class="ui-grid-cell ng-scope ui-grid-coluiGrid-0007"
+        ng-class="{ 'ui-grid-row-header-cell': col.isRowHeader }"
+        role="gridcell"
+        ui-grid-cell=""
+        id="1699493608000-0-uiGrid-0007-cell"
+      >
+        <div class="ui-grid-cell-contents text-right quantity ng-scope">
+          <!-- ngIf: row.entity.location_link_id !== null --><a
+            ng-if="row.entity.location_link_id !== null"
+            ui-sref=".history({variant_id: row.entity.variant_id, location_link_id: row.entity.location_link_id})"
+            class="ng-binding ng-scope"
+            href="#/app/inventory/items-and-variants/history/2029250307082757089/2029250308433322982"
+            >1</a
+          ><!-- end ngIf: row.entity.location_link_id !== null -->
+          <div
+            class="subtle ng-hide"
+            ng-show="(grid.appScope.accountDataService.isTrialing() || grid.appScope.accountDataService.hasFeature('DAYS_REMAINING')) &amp;&amp; row.entity.days_remaining_estimate"
+            style=""
+          >
+            <span title="Estimated time remaining" class="ng-binding"
+              >Est:
+            </span>
+          </div>
+        </div>
+      </div>
+      <!-- end ngRepeat: (colRenderIndex, col) in colContainer.renderedColumns track by col.uid -->
+      <div
+        ng-repeat="(colRenderIndex, col) in colContainer.renderedColumns track by col.uid"
+        ui-grid-one-bind-id-grid="rowRenderIndex + '-' + col.uid + '-cell'"
+        class="ui-grid-cell ng-scope ui-grid-coluiGrid-0008"
+        ng-class="{ 'ui-grid-row-header-cell': col.isRowHeader }"
+        role="gridcell"
+        ui-grid-cell=""
+        id="1699493608000-0-uiGrid-0008-cell"
+      >
+        <div class="ui-grid-cell-contents text-right price ng-binding ng-scope">
+          $99.99
+          <div
+            class="subtle ng-binding ng-hide"
+            ng-show="row.entity.margin !== null &amp;&amp; grid.appScope.has_permission('VIEW_COST_AND_PROFIT')"
+            title="Potential profit margin"
+          >
+            Margin: 71.01%
+          </div>
+        </div>
+      </div>
+      <!-- end ngRepeat: (colRenderIndex, col) in colContainer.renderedColumns track by col.uid -->
+      <div
+        ng-repeat="(colRenderIndex, col) in colContainer.renderedColumns track by col.uid"
+        ui-grid-one-bind-id-grid="rowRenderIndex + '-' + col.uid + '-cell'"
+        class="ui-grid-cell ng-scope ui-grid-coluiGrid-0009"
+        ng-class="{ 'ui-grid-row-header-cell': col.isRowHeader }"
+        role="gridcell"
+        ui-grid-cell=""
+        id="1699493608000-0-uiGrid-0009-cell"
+      >
+        <!-- ngIf: grid.appScope.has_permission('VIEW_COST_AND_PROFIT') --><!-- ngIf: !grid.appScope.has_permission('VIEW_COST_AND_PROFIT') -->
+        <div
+          class="ui-grid-cell-contents ng-scope"
+          ng-if="!grid.appScope.has_permission('VIEW_COST_AND_PROFIT')"
+        >
+          <i class="fa fa-lock"></i>
+        </div>
+        <!-- end ngIf: !grid.appScope.has_permission('VIEW_COST_AND_PROFIT') -->
+      </div>
+      <!-- end ngRepeat: (colRenderIndex, col) in colContainer.renderedColumns track by col.uid -->
+    </div>
+  </div>
+  <!-- end ngRepeat: (rowRenderIndex, row) in rowContainer.renderedRows track by $index -->
+  <div
+    ng-repeat="(rowRenderIndex, row) in rowContainer.renderedRows track by $index"
+    class="ui-grid-row ng-scope"
+    ng-style="Viewport.rowStyle(rowRenderIndex)"
+    ng-class="{'ui-grid-row-selected': row.isSelected, 'ui-grid-row-focused': row.isFocused,'ui-grid-tree-header-row': row.treeLevel > -1}"
+    style=""
+  >
+    <div
+      role="row"
+      ui-grid-row="row"
+      row-render-index="rowRenderIndex"
+      class="ng-isolate-scope"
+    >
+      <!-- ngRepeat: (colRenderIndex, col) in colContainer.renderedColumns track by col.uid -->
+      <div
+        ng-repeat="(colRenderIndex, col) in colContainer.renderedColumns track by col.uid"
+        ui-grid-one-bind-id-grid="rowRenderIndex + '-' + col.uid + '-cell'"
+        class="ui-grid-cell ng-scope ui-grid-coluiGrid-0004"
+        ng-class="{ 'ui-grid-row-header-cell': col.isRowHeader }"
+        role="gridcell"
+        ui-grid-cell=""
+        id="1699493608000-1-uiGrid-0004-cell"
+      >
+        <div
+          class="ui-grid-cell-contents item ng-scope"
+          title='16" Color Tube w/ Matrix Perc'
+        >
+          <span class="image">
+            <!-- ngIf: !row.entity.thumbnail_url --><i
+              class="fa fa-camera ng-scope"
+              ng-if="!row.entity.thumbnail_url"
+              style=""
+            ></i
+            ><!-- end ngIf: !row.entity.thumbnail_url -->
+            <!-- ngIf: row.entity.thumbnail_url --></span
+          ><a
+            ui-sref=".edit-product({itemId: row.entity.item_id, duplicateItem: false, variantId: row.entity.variant_id})"
+            class="ng-binding"
+            href="#/app/inventory/items-and-variants/edit-product/2029250262455362443"
+            >16" Color Tube w/ Matrix Perc</a
+          >
+          <div class="subtle ng-binding" title="Glass">Glass</div>
+          <div
+            class="subtle ng-binding"
+            title=""
+            ng-show="grid.appScope.accountDataService.hasFeature('VENDORS')"
+          ></div>
+        </div>
+      </div>
+      <!-- end ngRepeat: (colRenderIndex, col) in colContainer.renderedColumns track by col.uid -->
+      <div
+        ng-repeat="(colRenderIndex, col) in colContainer.renderedColumns track by col.uid"
+        ui-grid-one-bind-id-grid="rowRenderIndex + '-' + col.uid + '-cell'"
+        class="ui-grid-cell ng-scope ui-grid-coluiGrid-0005"
+        ng-class="{ 'ui-grid-row-header-cell': col.isRowHeader }"
+        role="gridcell"
+        ui-grid-cell=""
+        id="1699493608000-1-uiGrid-0005-cell"
+      >
+        <div
+          class="ui-grid-cell-contents variant ng-binding ng-scope"
+          title="Green"
+        >
+          <!-- ngIf: row.entity.kit_id || row.entity.kit -->Green
+          <div
+            class="subtle"
+            ng-show="row.entity.barcode"
+            title="1000002817"
+            style=""
+          >
+            Barcode <em class="ng-binding">1000002817</em>
+          </div>
+          <div class="subtle ng-hide" ng-show="row.entity.sku" title="">
+            SKU <em class="ng-binding"></em>
+          </div>
+        </div>
+      </div>
+      <!-- end ngRepeat: (colRenderIndex, col) in colContainer.renderedColumns track by col.uid -->
+      <div
+        ng-repeat="(colRenderIndex, col) in colContainer.renderedColumns track by col.uid"
+        ui-grid-one-bind-id-grid="rowRenderIndex + '-' + col.uid + '-cell'"
+        class="ui-grid-cell ng-scope ui-grid-coluiGrid-0006"
+        ng-class="{ 'ui-grid-row-header-cell': col.isRowHeader }"
+        role="gridcell"
+        ui-grid-cell=""
+        id="1699493608000-1-uiGrid-0006-cell"
+      >
+        <div class="ui-grid-cell-contents location ng-binding ng-scope">
+          Hazel Sky Smoke &amp; Vape #3 (HWY 151)
+        </div>
+      </div>
+      <!-- end ngRepeat: (colRenderIndex, col) in colContainer.renderedColumns track by col.uid -->
+      <div
+        ng-repeat="(colRenderIndex, col) in colContainer.renderedColumns track by col.uid"
+        ui-grid-one-bind-id-grid="rowRenderIndex + '-' + col.uid + '-cell'"
+        class="ui-grid-cell ng-scope ui-grid-coluiGrid-0007"
+        ng-class="{ 'ui-grid-row-header-cell': col.isRowHeader }"
+        role="gridcell"
+        ui-grid-cell=""
+        id="1699493608000-1-uiGrid-0007-cell"
+      >
+        <div class="ui-grid-cell-contents text-right quantity ng-scope">
+          <!-- ngIf: row.entity.location_link_id !== null --><a
+            ng-if="row.entity.location_link_id !== null"
+            ui-sref=".history({variant_id: row.entity.variant_id, location_link_id: row.entity.location_link_id})"
+            class="ng-binding ng-scope"
+            href="#/app/inventory/items-and-variants/history/2029250312384357366/2029250313625871356"
+            >1</a
+          ><!-- end ngIf: row.entity.location_link_id !== null -->
+          <div
+            class="subtle ng-hide"
+            ng-show="(grid.appScope.accountDataService.isTrialing() || grid.appScope.accountDataService.hasFeature('DAYS_REMAINING')) &amp;&amp; row.entity.days_remaining_estimate"
+            style=""
+          >
+            <span title="Estimated time remaining" class="ng-binding"
+              >Est:
+            </span>
+          </div>
+        </div>
+      </div>
+      <!-- end ngRepeat: (colRenderIndex, col) in colContainer.renderedColumns track by col.uid -->
+      <div
+        ng-repeat="(colRenderIndex, col) in colContainer.renderedColumns track by col.uid"
+        ui-grid-one-bind-id-grid="rowRenderIndex + '-' + col.uid + '-cell'"
+        class="ui-grid-cell ng-scope ui-grid-coluiGrid-0008"
+        ng-class="{ 'ui-grid-row-header-cell': col.isRowHeader }"
+        role="gridcell"
+        ui-grid-cell=""
+        id="1699493608000-1-uiGrid-0008-cell"
+      >
+        <div class="ui-grid-cell-contents text-right price ng-binding ng-scope">
+          $99.99
+          <div
+            class="subtle ng-binding ng-hide"
+            ng-show="row.entity.margin !== null &amp;&amp; grid.appScope.has_permission('VIEW_COST_AND_PROFIT')"
+            title="Potential profit margin"
+          >
+            Margin: 71.01%
+          </div>
+        </div>
+      </div>
+      <!-- end ngRepeat: (colRenderIndex, col) in colContainer.renderedColumns track by col.uid -->
+      <div
+        ng-repeat="(colRenderIndex, col) in colContainer.renderedColumns track by col.uid"
+        ui-grid-one-bind-id-grid="rowRenderIndex + '-' + col.uid + '-cell'"
+        class="ui-grid-cell ng-scope ui-grid-coluiGrid-0009"
+        ng-class="{ 'ui-grid-row-header-cell': col.isRowHeader }"
+        role="gridcell"
+        ui-grid-cell=""
+        id="1699493608000-1-uiGrid-0009-cell"
+      >
+        <!-- ngIf: grid.appScope.has_permission('VIEW_COST_AND_PROFIT') --><!-- ngIf: !grid.appScope.has_permission('VIEW_COST_AND_PROFIT') -->
+        <div
+          class="ui-grid-cell-contents ng-scope"
+          ng-if="!grid.appScope.has_permission('VIEW_COST_AND_PROFIT')"
+        >
+          <i class="fa fa-lock"></i>
+        </div>
+        <!-- end ngIf: !grid.appScope.has_permission('VIEW_COST_AND_PROFIT') -->
+      </div>
+      <!-- end ngRepeat: (colRenderIndex, col) in colContainer.renderedColumns track by col.uid -->
+    </div>
+  </div>
+  <!-- end ngRepeat: (rowRenderIndex, row) in rowContainer.renderedRows track by $index -->
+  <div
+    ng-repeat="(rowRenderIndex, row) in rowContainer.renderedRows track by $index"
+    class="ui-grid-row ng-scope"
+    ng-style="Viewport.rowStyle(rowRenderIndex)"
+    ng-class="{'ui-grid-row-selected': row.isSelected, 'ui-grid-row-focused': row.isFocused,'ui-grid-tree-header-row': row.treeLevel > -1}"
+    style=""
+  >
+    <div
+      role="row"
+      ui-grid-row="row"
+      row-render-index="rowRenderIndex"
+      class="ng-isolate-scope"
+    >
+      <!-- ngRepeat: (colRenderIndex, col) in colContainer.renderedColumns track by col.uid -->
+      <div
+        ng-repeat="(colRenderIndex, col) in colContainer.renderedColumns track by col.uid"
+        ui-grid-one-bind-id-grid="rowRenderIndex + '-' + col.uid + '-cell'"
+        class="ui-grid-cell ng-scope ui-grid-coluiGrid-0004"
+        ng-class="{ 'ui-grid-row-header-cell': col.isRowHeader }"
+        role="gridcell"
+        ui-grid-cell=""
+        id="1699493608000-2-uiGrid-0004-cell"
+      >
+        <div
+          class="ui-grid-cell-contents item ng-scope"
+          title='16" Dual Ice Catch and Perc'
+        >
+          <span class="image">
+            <!-- ngIf: !row.entity.thumbnail_url --><i
+              class="fa fa-camera ng-scope"
+              ng-if="!row.entity.thumbnail_url"
+              style=""
+            ></i
+            ><!-- end ngIf: !row.entity.thumbnail_url -->
+            <!-- ngIf: row.entity.thumbnail_url --></span
+          ><a
+            ui-sref=".edit-product({itemId: row.entity.item_id, duplicateItem: false, variantId: row.entity.variant_id})"
+            class="ng-binding"
+            href="#/app/inventory/items-and-variants/edit-product/1979265898816807197"
+            >16" Dual Ice Catch and Perc</a
+          >
+          <div class="subtle ng-binding" title="Glass">Glass</div>
+          <div
+            class="subtle ng-binding"
+            title=""
+            ng-show="grid.appScope.accountDataService.hasFeature('VENDORS')"
+          ></div>
+        </div>
+      </div>
+      <!-- end ngRepeat: (colRenderIndex, col) in colContainer.renderedColumns track by col.uid -->
+      <div
+        ng-repeat="(colRenderIndex, col) in colContainer.renderedColumns track by col.uid"
+        ui-grid-one-bind-id-grid="rowRenderIndex + '-' + col.uid + '-cell'"
+        class="ui-grid-cell ng-scope ui-grid-coluiGrid-0005"
+        ng-class="{ 'ui-grid-row-header-cell': col.isRowHeader }"
+        role="gridcell"
+        ui-grid-cell=""
+        id="1699493608000-2-uiGrid-0005-cell"
+      >
+        <div
+          class="ui-grid-cell-contents variant ng-binding ng-scope"
+          title="Skin Pink"
+        >
+          <!-- ngIf: row.entity.kit_id || row.entity.kit -->Skin Pink
+          <div
+            class="subtle ng-hide"
+            ng-show="row.entity.barcode"
+            title=""
+            style=""
+          >
+            Barcode <em class="ng-binding"></em>
+          </div>
+          <div class="subtle ng-hide" ng-show="row.entity.sku" title="">
+            SKU <em class="ng-binding"></em>
+          </div>
+        </div>
+      </div>
+      <!-- end ngRepeat: (colRenderIndex, col) in colContainer.renderedColumns track by col.uid -->
+      <div
+        ng-repeat="(colRenderIndex, col) in colContainer.renderedColumns track by col.uid"
+        ui-grid-one-bind-id-grid="rowRenderIndex + '-' + col.uid + '-cell'"
+        class="ui-grid-cell ng-scope ui-grid-coluiGrid-0006"
+        ng-class="{ 'ui-grid-row-header-cell': col.isRowHeader }"
+        role="gridcell"
+        ui-grid-cell=""
+        id="1699493608000-2-uiGrid-0006-cell"
+      >
+        <div class="ui-grid-cell-contents location ng-binding ng-scope">
+          Hazel Sky Smoke &amp; Vape #3 (HWY 151)
+        </div>
+      </div>
+      <!-- end ngRepeat: (colRenderIndex, col) in colContainer.renderedColumns track by col.uid -->
+      <div
+        ng-repeat="(colRenderIndex, col) in colContainer.renderedColumns track by col.uid"
+        ui-grid-one-bind-id-grid="rowRenderIndex + '-' + col.uid + '-cell'"
+        class="ui-grid-cell ng-scope ui-grid-coluiGrid-0007"
+        ng-class="{ 'ui-grid-row-header-cell': col.isRowHeader }"
+        role="gridcell"
+        ui-grid-cell=""
+        id="1699493608000-2-uiGrid-0007-cell"
+      >
+        <div class="ui-grid-cell-contents text-right quantity ng-scope">
+          <!-- ngIf: row.entity.location_link_id !== null --><a
+            ng-if="row.entity.location_link_id !== null"
+            ui-sref=".history({variant_id: row.entity.variant_id, location_link_id: row.entity.location_link_id})"
+            class="ng-binding ng-scope"
+            href="#/app/inventory/items-and-variants/history/1979265899454341410/1979265899563393316"
+            >1</a
+          ><!-- end ngIf: row.entity.location_link_id !== null -->
+          <div
+            class="subtle ng-hide"
+            ng-show="(grid.appScope.accountDataService.isTrialing() || grid.appScope.accountDataService.hasFeature('DAYS_REMAINING')) &amp;&amp; row.entity.days_remaining_estimate"
+            style=""
+          >
+            <span title="Estimated time remaining" class="ng-binding"
+              >Est:
+            </span>
+          </div>
+        </div>
+      </div>
+      <!-- end ngRepeat: (colRenderIndex, col) in colContainer.renderedColumns track by col.uid -->
+      <div
+        ng-repeat="(colRenderIndex, col) in colContainer.renderedColumns track by col.uid"
+        ui-grid-one-bind-id-grid="rowRenderIndex + '-' + col.uid + '-cell'"
+        class="ui-grid-cell ng-scope ui-grid-coluiGrid-0008"
+        ng-class="{ 'ui-grid-row-header-cell': col.isRowHeader }"
+        role="gridcell"
+        ui-grid-cell=""
+        id="1699493608000-2-uiGrid-0008-cell"
+      >
+        <div class="ui-grid-cell-contents text-right price ng-binding ng-scope">
+          $93.59
+          <div
+            class="subtle ng-binding ng-hide"
+            ng-show="row.entity.margin !== null &amp;&amp; grid.appScope.has_permission('VIEW_COST_AND_PROFIT')"
+            title="Potential profit margin"
+          >
+            Margin: 57.27%
+          </div>
+        </div>
+      </div>
+      <!-- end ngRepeat: (colRenderIndex, col) in colContainer.renderedColumns track by col.uid -->
+      <div
+        ng-repeat="(colRenderIndex, col) in colContainer.renderedColumns track by col.uid"
+        ui-grid-one-bind-id-grid="rowRenderIndex + '-' + col.uid + '-cell'"
+        class="ui-grid-cell ng-scope ui-grid-coluiGrid-0009"
+        ng-class="{ 'ui-grid-row-header-cell': col.isRowHeader }"
+        role="gridcell"
+        ui-grid-cell=""
+        id="1699493608000-2-uiGrid-0009-cell"
+      >
+        <!-- ngIf: grid.appScope.has_permission('VIEW_COST_AND_PROFIT') --><!-- ngIf: !grid.appScope.has_permission('VIEW_COST_AND_PROFIT') -->
+        <div
+          class="ui-grid-cell-contents ng-scope"
+          ng-if="!grid.appScope.has_permission('VIEW_COST_AND_PROFIT')"
+        >
+          <i class="fa fa-lock"></i>
+        </div>
+        <!-- end ngIf: !grid.appScope.has_permission('VIEW_COST_AND_PROFIT') -->
+      </div>
+      <!-- end ngRepeat: (colRenderIndex, col) in colContainer.renderedColumns track by col.uid -->
+    </div>
+  </div>
+  <!-- end ngRepeat: (rowRenderIndex, row) in rowContainer.renderedRows track by $index -->
+  <div
+    ng-repeat="(rowRenderIndex, row) in rowContainer.renderedRows track by $index"
+    class="ui-grid-row ng-scope"
+    ng-style="Viewport.rowStyle(rowRenderIndex)"
+    ng-class="{'ui-grid-row-selected': row.isSelected, 'ui-grid-row-focused': row.isFocused,'ui-grid-tree-header-row': row.treeLevel > -1}"
+    style=""
+  >
+    <div
+      role="row"
+      ui-grid-row="row"
+      row-render-index="rowRenderIndex"
+      class="ng-isolate-scope"
+    >
+      <!-- ngRepeat: (colRenderIndex, col) in colContainer.renderedColumns track by col.uid -->
+      <div
+        ng-repeat="(colRenderIndex, col) in colContainer.renderedColumns track by col.uid"
+        ui-grid-one-bind-id-grid="rowRenderIndex + '-' + col.uid + '-cell'"
+        class="ui-grid-cell ng-scope ui-grid-coluiGrid-0004"
+        ng-class="{ 'ui-grid-row-header-cell': col.isRowHeader }"
+        role="gridcell"
+        ui-grid-cell=""
+        id="1699493608000-3-uiGrid-0004-cell"
+      >
+        <div
+          class="ui-grid-cell-contents item ng-scope"
+          title='16" Triple Honeycomb (Straight)'
+        >
+          <span class="image">
+            <!-- ngIf: !row.entity.thumbnail_url --><i
+              class="fa fa-camera ng-scope"
+              ng-if="!row.entity.thumbnail_url"
+              style=""
+            ></i
+            ><!-- end ngIf: !row.entity.thumbnail_url -->
+            <!-- ngIf: row.entity.thumbnail_url --></span
+          ><a
+            ui-sref=".edit-product({itemId: row.entity.item_id, duplicateItem: false, variantId: row.entity.variant_id})"
+            class="ng-binding"
+            href="#/app/inventory/items-and-variants/edit-product/1979266195396043113"
+            >16" Triple Honeycomb (Straight)</a
+          >
+          <div class="subtle ng-binding" title="Glass">Glass</div>
+          <div
+            class="subtle ng-binding"
+            title=""
+            ng-show="grid.appScope.accountDataService.hasFeature('VENDORS')"
+          ></div>
+        </div>
+      </div>
+      <!-- end ngRepeat: (colRenderIndex, col) in colContainer.renderedColumns track by col.uid -->
+      <div
+        ng-repeat="(colRenderIndex, col) in colContainer.renderedColumns track by col.uid"
+        ui-grid-one-bind-id-grid="rowRenderIndex + '-' + col.uid + '-cell'"
+        class="ui-grid-cell ng-scope ui-grid-coluiGrid-0005"
+        ng-class="{ 'ui-grid-row-header-cell': col.isRowHeader }"
+        role="gridcell"
+        ui-grid-cell=""
+        id="1699493608000-3-uiGrid-0005-cell"
+      >
+        <div
+          class="ui-grid-cell-contents variant ng-binding ng-scope"
+          title="Assorted Colors"
+        >
+          <!-- ngIf: row.entity.kit_id || row.entity.kit -->Assorted Colors
+          <div class="subtle" ng-show="row.entity.barcode" title="WP-STINTRIHC">
+            Barcode <em class="ng-binding">WP-STINTRIHC</em>
+          </div>
+          <div class="subtle ng-hide" ng-show="row.entity.sku" title="">
+            SKU <em class="ng-binding"></em>
+          </div>
+        </div>
+      </div>
+      <!-- end ngRepeat: (colRenderIndex, col) in colContainer.renderedColumns track by col.uid -->
+      <div
+        ng-repeat="(colRenderIndex, col) in colContainer.renderedColumns track by col.uid"
+        ui-grid-one-bind-id-grid="rowRenderIndex + '-' + col.uid + '-cell'"
+        class="ui-grid-cell ng-scope ui-grid-coluiGrid-0006"
+        ng-class="{ 'ui-grid-row-header-cell': col.isRowHeader }"
+        role="gridcell"
+        ui-grid-cell=""
+        id="1699493608000-3-uiGrid-0006-cell"
+      >
+        <div class="ui-grid-cell-contents location ng-binding ng-scope">
+          Hazel Sky Smoke &amp; Vape #3 (HWY 151)
+        </div>
+      </div>
+      <!-- end ngRepeat: (colRenderIndex, col) in colContainer.renderedColumns track by col.uid -->
+      <div
+        ng-repeat="(colRenderIndex, col) in colContainer.renderedColumns track by col.uid"
+        ui-grid-one-bind-id-grid="rowRenderIndex + '-' + col.uid + '-cell'"
+        class="ui-grid-cell ng-scope ui-grid-coluiGrid-0007"
+        ng-class="{ 'ui-grid-row-header-cell': col.isRowHeader }"
+        role="gridcell"
+        ui-grid-cell=""
+        id="1699493608000-3-uiGrid-0007-cell"
+      >
+        <div class="ui-grid-cell-contents text-right quantity ng-scope">
+          <!-- ngIf: row.entity.location_link_id !== null --><a
+            ng-if="row.entity.location_link_id !== null"
+            ui-sref=".history({variant_id: row.entity.variant_id, location_link_id: row.entity.location_link_id})"
+            class="ng-binding ng-scope"
+            href="#/app/inventory/items-and-variants/history/1979266195924525421/1979266196033577327"
+            >1</a
+          ><!-- end ngIf: row.entity.location_link_id !== null -->
+          <div
+            class="subtle ng-hide"
+            ng-show="(grid.appScope.accountDataService.isTrialing() || grid.appScope.accountDataService.hasFeature('DAYS_REMAINING')) &amp;&amp; row.entity.days_remaining_estimate"
+            style=""
+          >
+            <span title="Estimated time remaining" class="ng-binding"
+              >Est:
+            </span>
+          </div>
+        </div>
+      </div>
+      <!-- end ngRepeat: (colRenderIndex, col) in colContainer.renderedColumns track by col.uid -->
+      <div
+        ng-repeat="(colRenderIndex, col) in colContainer.renderedColumns track by col.uid"
+        ui-grid-one-bind-id-grid="rowRenderIndex + '-' + col.uid + '-cell'"
+        class="ui-grid-cell ng-scope ui-grid-coluiGrid-0008"
+        ng-class="{ 'ui-grid-row-header-cell': col.isRowHeader }"
+        role="gridcell"
+        ui-grid-cell=""
+        id="1699493608000-3-uiGrid-0008-cell"
+      >
+        <div class="ui-grid-cell-contents text-right price ng-binding ng-scope">
+          $88.39
+          <div
+            class="subtle ng-binding ng-hide"
+            ng-show="row.entity.margin !== null &amp;&amp; grid.appScope.has_permission('VIEW_COST_AND_PROFIT')"
+            title="Potential profit margin"
+          >
+            Margin: 64.94%
+          </div>
+        </div>
+      </div>
+      <!-- end ngRepeat: (colRenderIndex, col) in colContainer.renderedColumns track by col.uid -->
+      <div
+        ng-repeat="(colRenderIndex, col) in colContainer.renderedColumns track by col.uid"
+        ui-grid-one-bind-id-grid="rowRenderIndex + '-' + col.uid + '-cell'"
+        class="ui-grid-cell ng-scope ui-grid-coluiGrid-0009"
+        ng-class="{ 'ui-grid-row-header-cell': col.isRowHeader }"
+        role="gridcell"
+        ui-grid-cell=""
+        id="1699493608000-3-uiGrid-0009-cell"
+      >
+        <!-- ngIf: grid.appScope.has_permission('VIEW_COST_AND_PROFIT') --><!-- ngIf: !grid.appScope.has_permission('VIEW_COST_AND_PROFIT') -->
+        <div
+          class="ui-grid-cell-contents ng-scope"
+          ng-if="!grid.appScope.has_permission('VIEW_COST_AND_PROFIT')"
+        >
+          <i class="fa fa-lock"></i>
+        </div>
+        <!-- end ngIf: !grid.appScope.has_permission('VIEW_COST_AND_PROFIT') -->
+      </div>
+      <!-- end ngRepeat: (colRenderIndex, col) in colContainer.renderedColumns track by col.uid -->
+    </div>
+  </div>
+  <!-- end ngRepeat: (rowRenderIndex, row) in rowContainer.renderedRows track by $index -->
+  <div
+    ng-repeat="(rowRenderIndex, row) in rowContainer.renderedRows track by $index"
+    class="ui-grid-row ng-scope"
+    ng-style="Viewport.rowStyle(rowRenderIndex)"
+    ng-class="{'ui-grid-row-selected': row.isSelected, 'ui-grid-row-focused': row.isFocused,'ui-grid-tree-header-row': row.treeLevel > -1}"
+    style=""
+  >
+    <div
+      role="row"
+      ui-grid-row="row"
+      row-render-index="rowRenderIndex"
+      class="ng-isolate-scope"
+    >
+      <!-- ngRepeat: (colRenderIndex, col) in colContainer.renderedColumns track by col.uid -->
+      <div
+        ng-repeat="(colRenderIndex, col) in colContainer.renderedColumns track by col.uid"
+        ui-grid-one-bind-id-grid="rowRenderIndex + '-' + col.uid + '-cell'"
+        class="ui-grid-cell ng-scope ui-grid-coluiGrid-0004"
+        ng-class="{ 'ui-grid-row-header-cell': col.isRowHeader }"
+        role="gridcell"
+        ui-grid-cell=""
+        id="1699493608000-4-uiGrid-0004-cell"
+      >
+        <div
+          class="ui-grid-cell-contents item ng-scope"
+          title="1836 - Capsules - 120 Pack (Assorted Strains)"
+        >
+          <span class="image">
+            <!-- ngIf: !row.entity.thumbnail_url --><i
+              class="fa fa-camera ng-scope"
+              ng-if="!row.entity.thumbnail_url"
+              style=""
+            ></i
+            ><!-- end ngIf: !row.entity.thumbnail_url -->
+            <!-- ngIf: row.entity.thumbnail_url --></span
+          ><a
+            ui-sref=".edit-product({itemId: row.entity.item_id, duplicateItem: false, variantId: row.entity.variant_id})"
+            class="ng-binding"
+            href="#/app/inventory/items-and-variants/edit-product/1978582442575208984"
+            >1836 - Capsules - 120 Pack (Assorted Strains)</a
+          >
+          <div class="subtle ng-binding" title="Kratom">Kratom</div>
+          <div
+            class="subtle ng-binding"
+            title=""
+            ng-show="grid.appScope.accountDataService.hasFeature('VENDORS')"
+          ></div>
+        </div>
+      </div>
+      <!-- end ngRepeat: (colRenderIndex, col) in colContainer.renderedColumns track by col.uid -->
+      <div
+        ng-repeat="(colRenderIndex, col) in colContainer.renderedColumns track by col.uid"
+        ui-grid-one-bind-id-grid="rowRenderIndex + '-' + col.uid + '-cell'"
+        class="ui-grid-cell ng-scope ui-grid-coluiGrid-0005"
+        ng-class="{ 'ui-grid-row-header-cell': col.isRowHeader }"
+        role="gridcell"
+        ui-grid-cell=""
+        id="1699493608000-4-uiGrid-0005-cell"
+      >
+        <div
+          class="ui-grid-cell-contents variant ng-binding ng-scope"
+          title="Irene's Goodnight"
+        >
+          <!-- ngIf: row.entity.kit_id || row.entity.kit -->Irene's Goodnight
+          <div class="subtle" ng-show="row.entity.barcode" title="638457836806">
+            Barcode <em class="ng-binding">638457836806</em>
+          </div>
+          <div class="subtle ng-hide" ng-show="row.entity.sku" title="">
+            SKU <em class="ng-binding"></em>
+          </div>
+        </div>
+      </div>
+      <!-- end ngRepeat: (colRenderIndex, col) in colContainer.renderedColumns track by col.uid -->
+      <div
+        ng-repeat="(colRenderIndex, col) in colContainer.renderedColumns track by col.uid"
+        ui-grid-one-bind-id-grid="rowRenderIndex + '-' + col.uid + '-cell'"
+        class="ui-grid-cell ng-scope ui-grid-coluiGrid-0006"
+        ng-class="{ 'ui-grid-row-header-cell': col.isRowHeader }"
+        role="gridcell"
+        ui-grid-cell=""
+        id="1699493608000-4-uiGrid-0006-cell"
+      >
+        <div class="ui-grid-cell-contents location ng-binding ng-scope">
+          Hazel Sky Smoke &amp; Vape #3 (HWY 151)
+        </div>
+      </div>
+      <!-- end ngRepeat: (colRenderIndex, col) in colContainer.renderedColumns track by col.uid -->
+      <div
+        ng-repeat="(colRenderIndex, col) in colContainer.renderedColumns track by col.uid"
+        ui-grid-one-bind-id-grid="rowRenderIndex + '-' + col.uid + '-cell'"
+        class="ui-grid-cell ng-scope ui-grid-coluiGrid-0007"
+        ng-class="{ 'ui-grid-row-header-cell': col.isRowHeader }"
+        role="gridcell"
+        ui-grid-cell=""
+        id="1699493608000-4-uiGrid-0007-cell"
+      >
+        <div class="ui-grid-cell-contents text-right quantity ng-scope">
+          <!-- ngIf: row.entity.location_link_id !== null --><a
+            ng-if="row.entity.location_link_id !== null"
+            ui-sref=".history({variant_id: row.entity.variant_id, location_link_id: row.entity.location_link_id})"
+            class="ng-binding ng-scope"
+            href="#/app/inventory/items-and-variants/history/1978582443187577373/1979284674073403681"
+            >1</a
+          ><!-- end ngIf: row.entity.location_link_id !== null -->
+          <div
+            class="subtle"
+            ng-show="(grid.appScope.accountDataService.isTrialing() || grid.appScope.accountDataService.hasFeature('DAYS_REMAINING')) &amp;&amp; row.entity.days_remaining_estimate"
+            style=""
+          >
+            <span title="Estimated time remaining" class="ng-binding"
+              >Est: 1w5d</span
+            >
+          </div>
+        </div>
+      </div>
+      <!-- end ngRepeat: (colRenderIndex, col) in colContainer.renderedColumns track by col.uid -->
+      <div
+        ng-repeat="(colRenderIndex, col) in colContainer.renderedColumns track by col.uid"
+        ui-grid-one-bind-id-grid="rowRenderIndex + '-' + col.uid + '-cell'"
+        class="ui-grid-cell ng-scope ui-grid-coluiGrid-0008"
+        ng-class="{ 'ui-grid-row-header-cell': col.isRowHeader }"
+        role="gridcell"
+        ui-grid-cell=""
+        id="1699493608000-4-uiGrid-0008-cell"
+      >
+        <div class="ui-grid-cell-contents text-right price ng-binding ng-scope">
+          $49.91
+          <div
+            class="subtle ng-binding ng-hide"
+            ng-show="row.entity.margin !== null &amp;&amp; grid.appScope.has_permission('VIEW_COST_AND_PROFIT')"
+            title="Potential profit margin"
+          >
+            Margin: 57.26%
+          </div>
+        </div>
+      </div>
+      <!-- end ngRepeat: (colRenderIndex, col) in colContainer.renderedColumns track by col.uid -->
+      <div
+        ng-repeat="(colRenderIndex, col) in colContainer.renderedColumns track by col.uid"
+        ui-grid-one-bind-id-grid="rowRenderIndex + '-' + col.uid + '-cell'"
+        class="ui-grid-cell ng-scope ui-grid-coluiGrid-0009"
+        ng-class="{ 'ui-grid-row-header-cell': col.isRowHeader }"
+        role="gridcell"
+        ui-grid-cell=""
+        id="1699493608000-4-uiGrid-0009-cell"
+      >
+        <!-- ngIf: grid.appScope.has_permission('VIEW_COST_AND_PROFIT') --><!-- ngIf: !grid.appScope.has_permission('VIEW_COST_AND_PROFIT') -->
+        <div
+          class="ui-grid-cell-contents ng-scope"
+          ng-if="!grid.appScope.has_permission('VIEW_COST_AND_PROFIT')"
+        >
+          <i class="fa fa-lock"></i>
+        </div>
+        <!-- end ngIf: !grid.appScope.has_permission('VIEW_COST_AND_PROFIT') -->
+      </div>
+      <!-- end ngRepeat: (colRenderIndex, col) in colContainer.renderedColumns track by col.uid -->
+    </div>
+  </div>
+  <!-- end ngRepeat: (rowRenderIndex, row) in rowContainer.renderedRows track by $index -->
+  <div
+    ng-repeat="(rowRenderIndex, row) in rowContainer.renderedRows track by $index"
+    class="ui-grid-row ng-scope"
+    ng-style="Viewport.rowStyle(rowRenderIndex)"
+    ng-class="{'ui-grid-row-selected': row.isSelected, 'ui-grid-row-focused': row.isFocused,'ui-grid-tree-header-row': row.treeLevel > -1}"
+    style=""
+  >
+    <div
+      role="row"
+      ui-grid-row="row"
+      row-render-index="rowRenderIndex"
+      class="ng-isolate-scope"
+    >
+      <!-- ngRepeat: (colRenderIndex, col) in colContainer.renderedColumns track by col.uid -->
+      <div
+        ng-repeat="(colRenderIndex, col) in colContainer.renderedColumns track by col.uid"
+        ui-grid-one-bind-id-grid="rowRenderIndex + '-' + col.uid + '-cell'"
+        class="ui-grid-cell ng-scope ui-grid-coluiGrid-0004"
+        ng-class="{ 'ui-grid-row-header-cell': col.isRowHeader }"
+        role="gridcell"
+        ui-grid-cell=""
+        id="1699493608000-5-uiGrid-0004-cell"
+      >
+        <div
+          class="ui-grid-cell-contents item ng-scope"
+          title="1836 - Capsules - 120 Pack (Assorted Strains)"
+        >
+          <span class="image">
+            <!-- ngIf: !row.entity.thumbnail_url --><i
+              class="fa fa-camera ng-scope"
+              ng-if="!row.entity.thumbnail_url"
+              style=""
+            ></i
+            ><!-- end ngIf: !row.entity.thumbnail_url -->
+            <!-- ngIf: row.entity.thumbnail_url --></span
+          ><a
+            ui-sref=".edit-product({itemId: row.entity.item_id, duplicateItem: false, variantId: row.entity.variant_id})"
+            class="ng-binding"
+            href="#/app/inventory/items-and-variants/edit-product/1978582442575208984"
+            >1836 - Capsules - 120 Pack (Assorted Strains)</a
+          >
+          <div class="subtle ng-binding" title="Kratom">Kratom</div>
+          <div
+            class="subtle ng-binding"
+            title=""
+            ng-show="grid.appScope.accountDataService.hasFeature('VENDORS')"
+          ></div>
+        </div>
+      </div>
+      <!-- end ngRepeat: (colRenderIndex, col) in colContainer.renderedColumns track by col.uid -->
+      <div
+        ng-repeat="(colRenderIndex, col) in colContainer.renderedColumns track by col.uid"
+        ui-grid-one-bind-id-grid="rowRenderIndex + '-' + col.uid + '-cell'"
+        class="ui-grid-cell ng-scope ui-grid-coluiGrid-0005"
+        ng-class="{ 'ui-grid-row-header-cell': col.isRowHeader }"
+        role="gridcell"
+        ui-grid-cell=""
+        id="1699493608000-5-uiGrid-0005-cell"
+      >
+        <div
+          class="ui-grid-cell-contents variant ng-binding ng-scope"
+          title="Full Potential"
+        >
+          <!-- ngIf: row.entity.kit_id || row.entity.kit -->Full Potential
+          <div
+            class="subtle"
+            ng-show="row.entity.barcode"
+            title="638457836769"
+            style=""
+          >
+            Barcode <em class="ng-binding">638457836769</em>
+          </div>
+          <div class="subtle ng-hide" ng-show="row.entity.sku" title="">
+            SKU <em class="ng-binding"></em>
+          </div>
+        </div>
+      </div>
+      <!-- end ngRepeat: (colRenderIndex, col) in colContainer.renderedColumns track by col.uid -->
+      <div
+        ng-repeat="(colRenderIndex, col) in colContainer.renderedColumns track by col.uid"
+        ui-grid-one-bind-id-grid="rowRenderIndex + '-' + col.uid + '-cell'"
+        class="ui-grid-cell ng-scope ui-grid-coluiGrid-0006"
+        ng-class="{ 'ui-grid-row-header-cell': col.isRowHeader }"
+        role="gridcell"
+        ui-grid-cell=""
+        id="1699493608000-5-uiGrid-0006-cell"
+      >
+        <div class="ui-grid-cell-contents location ng-binding ng-scope">
+          Hazel Sky Smoke &amp; Vape #3 (HWY 151)
+        </div>
+      </div>
+      <!-- end ngRepeat: (colRenderIndex, col) in colContainer.renderedColumns track by col.uid -->
+      <div
+        ng-repeat="(colRenderIndex, col) in colContainer.renderedColumns track by col.uid"
+        ui-grid-one-bind-id-grid="rowRenderIndex + '-' + col.uid + '-cell'"
+        class="ui-grid-cell ng-scope ui-grid-coluiGrid-0007"
+        ng-class="{ 'ui-grid-row-header-cell': col.isRowHeader }"
+        role="gridcell"
+        ui-grid-cell=""
+        id="1699493608000-5-uiGrid-0007-cell"
+      >
+        <div class="ui-grid-cell-contents text-right quantity ng-scope">
+          <!-- ngIf: row.entity.location_link_id !== null --><a
+            ng-if="row.entity.location_link_id !== null"
+            ui-sref=".history({variant_id: row.entity.variant_id, location_link_id: row.entity.location_link_id})"
+            class="ng-binding ng-scope"
+            href="#/app/inventory/items-and-variants/history/2071845035900739828/2071845037377134842"
+            >1</a
+          ><!-- end ngIf: row.entity.location_link_id !== null -->
+          <div
+            class="subtle ng-hide"
+            ng-show="(grid.appScope.accountDataService.isTrialing() || grid.appScope.accountDataService.hasFeature('DAYS_REMAINING')) &amp;&amp; row.entity.days_remaining_estimate"
+            style=""
+          >
+            <span title="Estimated time remaining" class="ng-binding"
+              >Est:
+            </span>
+          </div>
+        </div>
+      </div>
+      <!-- end ngRepeat: (colRenderIndex, col) in colContainer.renderedColumns track by col.uid -->
+      <div
+        ng-repeat="(colRenderIndex, col) in colContainer.renderedColumns track by col.uid"
+        ui-grid-one-bind-id-grid="rowRenderIndex + '-' + col.uid + '-cell'"
+        class="ui-grid-cell ng-scope ui-grid-coluiGrid-0008"
+        ng-class="{ 'ui-grid-row-header-cell': col.isRowHeader }"
+        role="gridcell"
+        ui-grid-cell=""
+        id="1699493608000-5-uiGrid-0008-cell"
+      >
+        <div class="ui-grid-cell-contents text-right price ng-binding ng-scope">
+          $49.91
+          <div
+            class="subtle ng-binding ng-hide"
+            ng-show="row.entity.margin !== null &amp;&amp; grid.appScope.has_permission('VIEW_COST_AND_PROFIT')"
+            title="Potential profit margin"
+          >
+            Margin: 57.26%
+          </div>
+        </div>
+      </div>
+      <!-- end ngRepeat: (colRenderIndex, col) in colContainer.renderedColumns track by col.uid -->
+      <div
+        ng-repeat="(colRenderIndex, col) in colContainer.renderedColumns track by col.uid"
+        ui-grid-one-bind-id-grid="rowRenderIndex + '-' + col.uid + '-cell'"
+        class="ui-grid-cell ng-scope ui-grid-coluiGrid-0009"
+        ng-class="{ 'ui-grid-row-header-cell': col.isRowHeader }"
+        role="gridcell"
+        ui-grid-cell=""
+        id="1699493608000-5-uiGrid-0009-cell"
+      >
+        <!-- ngIf: grid.appScope.has_permission('VIEW_COST_AND_PROFIT') --><!-- ngIf: !grid.appScope.has_permission('VIEW_COST_AND_PROFIT') -->
+        <div
+          class="ui-grid-cell-contents ng-scope"
+          ng-if="!grid.appScope.has_permission('VIEW_COST_AND_PROFIT')"
+        >
+          <i class="fa fa-lock"></i>
+        </div>
+        <!-- end ngIf: !grid.appScope.has_permission('VIEW_COST_AND_PROFIT') -->
+      </div>
+      <!-- end ngRepeat: (colRenderIndex, col) in colContainer.renderedColumns track by col.uid -->
+    </div>
+  </div>
+  <!-- end ngRepeat: (rowRenderIndex, row) in rowContainer.renderedRows track by $index -->
+  <div
+    ng-repeat="(rowRenderIndex, row) in rowContainer.renderedRows track by $index"
+    class="ui-grid-row ng-scope"
+    ng-style="Viewport.rowStyle(rowRenderIndex)"
+    ng-class="{'ui-grid-row-selected': row.isSelected, 'ui-grid-row-focused': row.isFocused,'ui-grid-tree-header-row': row.treeLevel > -1}"
+    style=""
+  >
+    <div
+      role="row"
+      ui-grid-row="row"
+      row-render-index="rowRenderIndex"
+      class="ng-isolate-scope"
+    >
+      <!-- ngRepeat: (colRenderIndex, col) in colContainer.renderedColumns track by col.uid -->
+      <div
+        ng-repeat="(colRenderIndex, col) in colContainer.renderedColumns track by col.uid"
+        ui-grid-one-bind-id-grid="rowRenderIndex + '-' + col.uid + '-cell'"
+        class="ui-grid-cell ng-scope ui-grid-coluiGrid-0004"
+        ng-class="{ 'ui-grid-row-header-cell': col.isRowHeader }"
+        role="gridcell"
+        ui-grid-cell=""
+        id="1699493608000-6-uiGrid-0004-cell"
+      >
+        <div
+          class="ui-grid-cell-contents item ng-scope"
+          title="1836 - Capsules - 120 Pack (Assorted Strains)"
+        >
+          <span class="image">
+            <!-- ngIf: !row.entity.thumbnail_url --><i
+              class="fa fa-camera ng-scope"
+              ng-if="!row.entity.thumbnail_url"
+              style=""
+            ></i
+            ><!-- end ngIf: !row.entity.thumbnail_url -->
+            <!-- ngIf: row.entity.thumbnail_url --></span
+          ><a
+            ui-sref=".edit-product({itemId: row.entity.item_id, duplicateItem: false, variantId: row.entity.variant_id})"
+            class="ng-binding"
+            href="#/app/inventory/items-and-variants/edit-product/1978582442575208984"
+            >1836 - Capsules - 120 Pack (Assorted Strains)</a
+          >
+          <div class="subtle ng-binding" title="Kratom">Kratom</div>
+          <div
+            class="subtle ng-binding"
+            title=""
+            ng-show="grid.appScope.accountDataService.hasFeature('VENDORS')"
+          ></div>
+        </div>
+      </div>
+      <!-- end ngRepeat: (colRenderIndex, col) in colContainer.renderedColumns track by col.uid -->
+      <div
+        ng-repeat="(colRenderIndex, col) in colContainer.renderedColumns track by col.uid"
+        ui-grid-one-bind-id-grid="rowRenderIndex + '-' + col.uid + '-cell'"
+        class="ui-grid-cell ng-scope ui-grid-coluiGrid-0005"
+        ng-class="{ 'ui-grid-row-header-cell': col.isRowHeader }"
+        role="gridcell"
+        ui-grid-cell=""
+        id="1699493608000-6-uiGrid-0005-cell"
+      >
+        <div
+          class="ui-grid-cell-contents variant ng-binding ng-scope"
+          title="Aristotles Logic"
+        >
+          <!-- ngIf: row.entity.kit_id || row.entity.kit -->Aristotles Logic
+          <div class="subtle" ng-show="row.entity.barcode" title="638457836899">
+            Barcode <em class="ng-binding">638457836899</em>
+          </div>
+          <div class="subtle ng-hide" ng-show="row.entity.sku" title="">
+            SKU <em class="ng-binding"></em>
+          </div>
+        </div>
+      </div>
+      <!-- end ngRepeat: (colRenderIndex, col) in colContainer.renderedColumns track by col.uid -->
+      <div
+        ng-repeat="(colRenderIndex, col) in colContainer.renderedColumns track by col.uid"
+        ui-grid-one-bind-id-grid="rowRenderIndex + '-' + col.uid + '-cell'"
+        class="ui-grid-cell ng-scope ui-grid-coluiGrid-0006"
+        ng-class="{ 'ui-grid-row-header-cell': col.isRowHeader }"
+        role="gridcell"
+        ui-grid-cell=""
+        id="1699493608000-6-uiGrid-0006-cell"
+      >
+        <div class="ui-grid-cell-contents location ng-binding ng-scope">
+          Hazel Sky Smoke &amp; Vape #3 (HWY 151)
+        </div>
+      </div>
+      <!-- end ngRepeat: (colRenderIndex, col) in colContainer.renderedColumns track by col.uid -->
+      <div
+        ng-repeat="(colRenderIndex, col) in colContainer.renderedColumns track by col.uid"
+        ui-grid-one-bind-id-grid="rowRenderIndex + '-' + col.uid + '-cell'"
+        class="ui-grid-cell ng-scope ui-grid-coluiGrid-0007"
+        ng-class="{ 'ui-grid-row-header-cell': col.isRowHeader }"
+        role="gridcell"
+        ui-grid-cell=""
+        id="1699493608000-6-uiGrid-0007-cell"
+      >
+        <div class="ui-grid-cell-contents text-right quantity ng-scope">
+          <!-- ngIf: row.entity.location_link_id !== null --><a
+            ng-if="row.entity.location_link_id !== null"
+            ui-sref=".history({variant_id: row.entity.variant_id, location_link_id: row.entity.location_link_id})"
+            class="ng-binding ng-scope"
+            href="#/app/inventory/items-and-variants/history/2071845042552905995/2071845043886694673"
+            >1</a
+          ><!-- end ngIf: row.entity.location_link_id !== null -->
+          <div
+            class="subtle"
+            ng-show="(grid.appScope.accountDataService.isTrialing() || grid.appScope.accountDataService.hasFeature('DAYS_REMAINING')) &amp;&amp; row.entity.days_remaining_estimate"
+            style=""
+          >
+            <span title="Estimated time remaining" class="ng-binding"
+              >Est: 4d</span
+            >
+          </div>
+        </div>
+      </div>
+      <!-- end ngRepeat: (colRenderIndex, col) in colContainer.renderedColumns track by col.uid -->
+      <div
+        ng-repeat="(colRenderIndex, col) in colContainer.renderedColumns track by col.uid"
+        ui-grid-one-bind-id-grid="rowRenderIndex + '-' + col.uid + '-cell'"
+        class="ui-grid-cell ng-scope ui-grid-coluiGrid-0008"
+        ng-class="{ 'ui-grid-row-header-cell': col.isRowHeader }"
+        role="gridcell"
+        ui-grid-cell=""
+        id="1699493608000-6-uiGrid-0008-cell"
+      >
+        <div class="ui-grid-cell-contents text-right price ng-binding ng-scope">
+          $49.91
+          <div
+            class="subtle ng-binding ng-hide"
+            ng-show="row.entity.margin !== null &amp;&amp; grid.appScope.has_permission('VIEW_COST_AND_PROFIT')"
+            title="Potential profit margin"
+          >
+            Margin: 57.26%
+          </div>
+        </div>
+      </div>
+      <!-- end ngRepeat: (colRenderIndex, col) in colContainer.renderedColumns track by col.uid -->
+      <div
+        ng-repeat="(colRenderIndex, col) in colContainer.renderedColumns track by col.uid"
+        ui-grid-one-bind-id-grid="rowRenderIndex + '-' + col.uid + '-cell'"
+        class="ui-grid-cell ng-scope ui-grid-coluiGrid-0009"
+        ng-class="{ 'ui-grid-row-header-cell': col.isRowHeader }"
+        role="gridcell"
+        ui-grid-cell=""
+        id="1699493608000-6-uiGrid-0009-cell"
+      >
+        <!-- ngIf: grid.appScope.has_permission('VIEW_COST_AND_PROFIT') --><!-- ngIf: !grid.appScope.has_permission('VIEW_COST_AND_PROFIT') -->
+        <div
+          class="ui-grid-cell-contents ng-scope"
+          ng-if="!grid.appScope.has_permission('VIEW_COST_AND_PROFIT')"
+        >
+          <i class="fa fa-lock"></i>
+        </div>
+        <!-- end ngIf: !grid.appScope.has_permission('VIEW_COST_AND_PROFIT') -->
+      </div>
+      <!-- end ngRepeat: (colRenderIndex, col) in colContainer.renderedColumns track by col.uid -->
+    </div>
+  </div>
+  <!-- end ngRepeat: (rowRenderIndex, row) in rowContainer.renderedRows track by $index -->
+  <div
+    ng-repeat="(rowRenderIndex, row) in rowContainer.renderedRows track by $index"
+    class="ui-grid-row ng-scope"
+    ng-style="Viewport.rowStyle(rowRenderIndex)"
+    ng-class="{'ui-grid-row-selected': row.isSelected, 'ui-grid-row-focused': row.isFocused,'ui-grid-tree-header-row': row.treeLevel > -1}"
+    style=""
+  >
+    <div
+      role="row"
+      ui-grid-row="row"
+      row-render-index="rowRenderIndex"
+      class="ng-isolate-scope"
+    >
+      <!-- ngRepeat: (colRenderIndex, col) in colContainer.renderedColumns track by col.uid -->
+      <div
+        ng-repeat="(colRenderIndex, col) in colContainer.renderedColumns track by col.uid"
+        ui-grid-one-bind-id-grid="rowRenderIndex + '-' + col.uid + '-cell'"
+        class="ui-grid-cell ng-scope ui-grid-coluiGrid-0004"
+        ng-class="{ 'ui-grid-row-header-cell': col.isRowHeader }"
+        role="gridcell"
+        ui-grid-cell=""
+        id="1699493608000-7-uiGrid-0004-cell"
+      >
+        <div
+          class="ui-grid-cell-contents item ng-scope"
+          title="1836 - Capsules - 150 Pack (Assorted Strains)"
+        >
+          <span class="image">
+            <!-- ngIf: !row.entity.thumbnail_url -->
+            <!-- ngIf: row.entity.thumbnail_url --><img
+              style="max-height: 32px"
+              ng-src="https://storage.googleapis.com/shopventory-images/242180/2023/11/06/f077d7af-1051-419f-80de-c54e2941bdd6.PNG"
+              ng-if="row.entity.thumbnail_url"
+              class="ng-scope"
+              src="https://storage.googleapis.com/shopventory-images/242180/2023/11/06/f077d7af-1051-419f-80de-c54e2941bdd6.PNG"
+            /><!-- end ngIf: row.entity.thumbnail_url --></span
+          ><a
+            ui-sref=".edit-product({itemId: row.entity.item_id, duplicateItem: false, variantId: row.entity.variant_id})"
+            class="ng-binding"
+            href="#/app/inventory/items-and-variants/edit-product/1979145690458432418"
+            >1836 - Capsules - 150 Pack (Assorted Strains)</a
+          >
+          <div class="subtle ng-binding" title="Kratom">Kratom</div>
+          <div
+            class="subtle ng-binding"
+            title=""
+            ng-show="grid.appScope.accountDataService.hasFeature('VENDORS')"
+          ></div>
+        </div>
+      </div>
+      <!-- end ngRepeat: (colRenderIndex, col) in colContainer.renderedColumns track by col.uid -->
+      <div
+        ng-repeat="(colRenderIndex, col) in colContainer.renderedColumns track by col.uid"
+        ui-grid-one-bind-id-grid="rowRenderIndex + '-' + col.uid + '-cell'"
+        class="ui-grid-cell ng-scope ui-grid-coluiGrid-0005"
+        ng-class="{ 'ui-grid-row-header-cell': col.isRowHeader }"
+        role="gridcell"
+        ui-grid-cell=""
+        id="1699493608000-7-uiGrid-0005-cell"
+      >
+        <div
+          class="ui-grid-cell-contents variant ng-binding ng-scope"
+          title="Atomic Maeng Da (1)"
+        >
+          <!-- ngIf: row.entity.kit_id || row.entity.kit -->Atomic Maeng Da (1)
+          <div class="subtle" ng-show="row.entity.barcode" title="327337024708">
+            Barcode <em class="ng-binding">327337024708</em>
+          </div>
+          <div class="subtle ng-hide" ng-show="row.entity.sku" title="">
+            SKU <em class="ng-binding"></em>
+          </div>
+        </div>
+      </div>
+      <!-- end ngRepeat: (colRenderIndex, col) in colContainer.renderedColumns track by col.uid -->
+      <div
+        ng-repeat="(colRenderIndex, col) in colContainer.renderedColumns track by col.uid"
+        ui-grid-one-bind-id-grid="rowRenderIndex + '-' + col.uid + '-cell'"
+        class="ui-grid-cell ng-scope ui-grid-coluiGrid-0006"
+        ng-class="{ 'ui-grid-row-header-cell': col.isRowHeader }"
+        role="gridcell"
+        ui-grid-cell=""
+        id="1699493608000-7-uiGrid-0006-cell"
+      >
+        <div class="ui-grid-cell-contents location ng-binding ng-scope">
+          Hazel Sky Smoke &amp; Vape #3 (HWY 151)
+        </div>
+      </div>
+      <!-- end ngRepeat: (colRenderIndex, col) in colContainer.renderedColumns track by col.uid -->
+      <div
+        ng-repeat="(colRenderIndex, col) in colContainer.renderedColumns track by col.uid"
+        ui-grid-one-bind-id-grid="rowRenderIndex + '-' + col.uid + '-cell'"
+        class="ui-grid-cell ng-scope ui-grid-coluiGrid-0007"
+        ng-class="{ 'ui-grid-row-header-cell': col.isRowHeader }"
+        role="gridcell"
+        ui-grid-cell=""
+        id="1699493608000-7-uiGrid-0007-cell"
+      >
+        <div class="ui-grid-cell-contents text-right quantity ng-scope">
+          <!-- ngIf: row.entity.location_link_id !== null --><a
+            ng-if="row.entity.location_link_id !== null"
+            ui-sref=".history({variant_id: row.entity.variant_id, location_link_id: row.entity.location_link_id})"
+            class="ng-binding ng-scope"
+            href="#/app/inventory/items-and-variants/history/2068313813396300181/2068313814939804059"
+            >4</a
+          ><!-- end ngIf: row.entity.location_link_id !== null -->
+          <div
+            class="subtle ng-hide"
+            ng-show="(grid.appScope.accountDataService.isTrialing() || grid.appScope.accountDataService.hasFeature('DAYS_REMAINING')) &amp;&amp; row.entity.days_remaining_estimate"
+            style=""
+          >
+            <span title="Estimated time remaining" class="ng-binding"
+              >Est:
+            </span>
+          </div>
+        </div>
+      </div>
+      <!-- end ngRepeat: (colRenderIndex, col) in colContainer.renderedColumns track by col.uid -->
+      <div
+        ng-repeat="(colRenderIndex, col) in colContainer.renderedColumns track by col.uid"
+        ui-grid-one-bind-id-grid="rowRenderIndex + '-' + col.uid + '-cell'"
+        class="ui-grid-cell ng-scope ui-grid-coluiGrid-0008"
+        ng-class="{ 'ui-grid-row-header-cell': col.isRowHeader }"
+        role="gridcell"
+        ui-grid-cell=""
+        id="1699493608000-7-uiGrid-0008-cell"
+      >
+        <div class="ui-grid-cell-contents text-right price ng-binding ng-scope">
+          $67.59
+          <div
+            class="subtle ng-binding ng-hide"
+            ng-show="row.entity.margin !== null &amp;&amp; grid.appScope.has_permission('VIEW_COST_AND_PROFIT')"
+            title="Potential profit margin"
+          >
+            Margin: 66.71%
+          </div>
+        </div>
+      </div>
+      <!-- end ngRepeat: (colRenderIndex, col) in colContainer.renderedColumns track by col.uid -->
+      <div
+        ng-repeat="(colRenderIndex, col) in colContainer.renderedColumns track by col.uid"
+        ui-grid-one-bind-id-grid="rowRenderIndex + '-' + col.uid + '-cell'"
+        class="ui-grid-cell ng-scope ui-grid-coluiGrid-0009"
+        ng-class="{ 'ui-grid-row-header-cell': col.isRowHeader }"
+        role="gridcell"
+        ui-grid-cell=""
+        id="1699493608000-7-uiGrid-0009-cell"
+      >
+        <!-- ngIf: grid.appScope.has_permission('VIEW_COST_AND_PROFIT') --><!-- ngIf: !grid.appScope.has_permission('VIEW_COST_AND_PROFIT') -->
+        <div
+          class="ui-grid-cell-contents ng-scope"
+          ng-if="!grid.appScope.has_permission('VIEW_COST_AND_PROFIT')"
+        >
+          <i class="fa fa-lock"></i>
+        </div>
+        <!-- end ngIf: !grid.appScope.has_permission('VIEW_COST_AND_PROFIT') -->
+      </div>
+      <!-- end ngRepeat: (colRenderIndex, col) in colContainer.renderedColumns track by col.uid -->
+    </div>
+  </div>
+  <!-- end ngRepeat: (rowRenderIndex, row) in rowContainer.renderedRows track by $index -->
+  <div
+    ng-repeat="(rowRenderIndex, row) in rowContainer.renderedRows track by $index"
+    class="ui-grid-row ng-scope"
+    ng-style="Viewport.rowStyle(rowRenderIndex)"
+    ng-class="{'ui-grid-row-selected': row.isSelected, 'ui-grid-row-focused': row.isFocused,'ui-grid-tree-header-row': row.treeLevel > -1}"
+    style=""
+  >
+    <div
+      role="row"
+      ui-grid-row="row"
+      row-render-index="rowRenderIndex"
+      class="ng-isolate-scope"
+    >
+      <!-- ngRepeat: (colRenderIndex, col) in colContainer.renderedColumns track by col.uid -->
+      <div
+        ng-repeat="(colRenderIndex, col) in colContainer.renderedColumns track by col.uid"
+        ui-grid-one-bind-id-grid="rowRenderIndex + '-' + col.uid + '-cell'"
+        class="ui-grid-cell ng-scope ui-grid-coluiGrid-0004"
+        ng-class="{ 'ui-grid-row-header-cell': col.isRowHeader }"
+        role="gridcell"
+        ui-grid-cell=""
+        id="1699493608000-8-uiGrid-0004-cell"
+      >
+        <div
+          class="ui-grid-cell-contents item ng-scope"
+          title="1836 - Capsules - 150 Pack (Assorted Strains)"
+        >
+          <span class="image">
+            <!-- ngIf: !row.entity.thumbnail_url -->
+            <!-- ngIf: row.entity.thumbnail_url --><img
+              style="max-height: 32px"
+              ng-src="https://storage.googleapis.com/shopventory-images/242180/2023/11/06/88f6cc31-df88-4a89-add8-d6b94a183fe1.PNG"
+              ng-if="row.entity.thumbnail_url"
+              class="ng-scope"
+              src="https://storage.googleapis.com/shopventory-images/242180/2023/11/06/88f6cc31-df88-4a89-add8-d6b94a183fe1.PNG"
+            /><!-- end ngIf: row.entity.thumbnail_url --></span
+          ><a
+            ui-sref=".edit-product({itemId: row.entity.item_id, duplicateItem: false, variantId: row.entity.variant_id})"
+            class="ng-binding"
+            href="#/app/inventory/items-and-variants/edit-product/1979145690458432418"
+            >1836 - Capsules - 150 Pack (Assorted Strains)</a
+          >
+          <div class="subtle ng-binding" title="Kratom">Kratom</div>
+          <div
+            class="subtle ng-binding"
+            title=""
+            ng-show="grid.appScope.accountDataService.hasFeature('VENDORS')"
+          ></div>
+        </div>
+      </div>
+      <!-- end ngRepeat: (colRenderIndex, col) in colContainer.renderedColumns track by col.uid -->
+      <div
+        ng-repeat="(colRenderIndex, col) in colContainer.renderedColumns track by col.uid"
+        ui-grid-one-bind-id-grid="rowRenderIndex + '-' + col.uid + '-cell'"
+        class="ui-grid-cell ng-scope ui-grid-coluiGrid-0005"
+        ng-class="{ 'ui-grid-row-header-cell': col.isRowHeader }"
+        role="gridcell"
+        ui-grid-cell=""
+        id="1699493608000-8-uiGrid-0005-cell"
+      >
+        <div
+          class="ui-grid-cell-contents variant ng-binding ng-scope"
+          title="Atomic Maeng Da (2)"
+        >
+          <!-- ngIf: row.entity.kit_id || row.entity.kit -->Atomic Maeng Da (2)
+          <div class="subtle" ng-show="row.entity.barcode" title="032733702470">
+            Barcode <em class="ng-binding">032733702470</em>
+          </div>
+          <div class="subtle ng-hide" ng-show="row.entity.sku" title="">
+            SKU <em class="ng-binding"></em>
+          </div>
+        </div>
+      </div>
+      <!-- end ngRepeat: (colRenderIndex, col) in colContainer.renderedColumns track by col.uid -->
+      <div
+        ng-repeat="(colRenderIndex, col) in colContainer.renderedColumns track by col.uid"
+        ui-grid-one-bind-id-grid="rowRenderIndex + '-' + col.uid + '-cell'"
+        class="ui-grid-cell ng-scope ui-grid-coluiGrid-0006"
+        ng-class="{ 'ui-grid-row-header-cell': col.isRowHeader }"
+        role="gridcell"
+        ui-grid-cell=""
+        id="1699493608000-8-uiGrid-0006-cell"
+      >
+        <div class="ui-grid-cell-contents location ng-binding ng-scope">
+          Hazel Sky Smoke &amp; Vape #3 (HWY 151)
+        </div>
+      </div>
+      <!-- end ngRepeat: (colRenderIndex, col) in colContainer.renderedColumns track by col.uid -->
+      <div
+        ng-repeat="(colRenderIndex, col) in colContainer.renderedColumns track by col.uid"
+        ui-grid-one-bind-id-grid="rowRenderIndex + '-' + col.uid + '-cell'"
+        class="ui-grid-cell ng-scope ui-grid-coluiGrid-0007"
+        ng-class="{ 'ui-grid-row-header-cell': col.isRowHeader }"
+        role="gridcell"
+        ui-grid-cell=""
+        id="1699493608000-8-uiGrid-0007-cell"
+      >
+        <div class="ui-grid-cell-contents text-right quantity ng-scope">
+          <!-- ngIf: row.entity.location_link_id !== null --><a
+            ng-if="row.entity.location_link_id !== null"
+            ui-sref=".history({variant_id: row.entity.variant_id, location_link_id: row.entity.location_link_id})"
+            class="ng-binding ng-scope"
+            href="#/app/inventory/items-and-variants/history/2068321454109565058/2068321455434965128"
+            >4</a
+          ><!-- end ngIf: row.entity.location_link_id !== null -->
+          <div
+            class="subtle ng-hide"
+            ng-show="(grid.appScope.accountDataService.isTrialing() || grid.appScope.accountDataService.hasFeature('DAYS_REMAINING')) &amp;&amp; row.entity.days_remaining_estimate"
+            style=""
+          >
+            <span title="Estimated time remaining" class="ng-binding"
+              >Est:
+            </span>
+          </div>
+        </div>
+      </div>
+      <!-- end ngRepeat: (colRenderIndex, col) in colContainer.renderedColumns track by col.uid -->
+      <div
+        ng-repeat="(colRenderIndex, col) in colContainer.renderedColumns track by col.uid"
+        ui-grid-one-bind-id-grid="rowRenderIndex + '-' + col.uid + '-cell'"
+        class="ui-grid-cell ng-scope ui-grid-coluiGrid-0008"
+        ng-class="{ 'ui-grid-row-header-cell': col.isRowHeader }"
+        role="gridcell"
+        ui-grid-cell=""
+        id="1699493608000-8-uiGrid-0008-cell"
+      >
+        <div class="ui-grid-cell-contents text-right price ng-binding ng-scope">
+          $67.59
+          <div
+            class="subtle ng-binding ng-hide"
+            ng-show="row.entity.margin !== null &amp;&amp; grid.appScope.has_permission('VIEW_COST_AND_PROFIT')"
+            title="Potential profit margin"
+          >
+            Margin: 66.71%
+          </div>
+        </div>
+      </div>
+      <!-- end ngRepeat: (colRenderIndex, col) in colContainer.renderedColumns track by col.uid -->
+      <div
+        ng-repeat="(colRenderIndex, col) in colContainer.renderedColumns track by col.uid"
+        ui-grid-one-bind-id-grid="rowRenderIndex + '-' + col.uid + '-cell'"
+        class="ui-grid-cell ng-scope ui-grid-coluiGrid-0009"
+        ng-class="{ 'ui-grid-row-header-cell': col.isRowHeader }"
+        role="gridcell"
+        ui-grid-cell=""
+        id="1699493608000-8-uiGrid-0009-cell"
+      >
+        <!-- ngIf: grid.appScope.has_permission('VIEW_COST_AND_PROFIT') --><!-- ngIf: !grid.appScope.has_permission('VIEW_COST_AND_PROFIT') -->
+        <div
+          class="ui-grid-cell-contents ng-scope"
+          ng-if="!grid.appScope.has_permission('VIEW_COST_AND_PROFIT')"
+        >
+          <i class="fa fa-lock"></i>
+        </div>
+        <!-- end ngIf: !grid.appScope.has_permission('VIEW_COST_AND_PROFIT') -->
+      </div>
+      <!-- end ngRepeat: (colRenderIndex, col) in colContainer.renderedColumns track by col.uid -->
+    </div>
+  </div>
+  <!-- end ngRepeat: (rowRenderIndex, row) in rowContainer.renderedRows track by $index -->
+  <div
+    ng-repeat="(rowRenderIndex, row) in rowContainer.renderedRows track by $index"
+    class="ui-grid-row ng-scope"
+    ng-style="Viewport.rowStyle(rowRenderIndex)"
+    ng-class="{'ui-grid-row-selected': row.isSelected, 'ui-grid-row-focused': row.isFocused,'ui-grid-tree-header-row': row.treeLevel > -1}"
+    style=""
+  >
+    <div
+      role="row"
+      ui-grid-row="row"
+      row-render-index="rowRenderIndex"
+      class="ng-isolate-scope"
+    >
+      <!-- ngRepeat: (colRenderIndex, col) in colContainer.renderedColumns track by col.uid -->
+      <div
+        ng-repeat="(colRenderIndex, col) in colContainer.renderedColumns track by col.uid"
+        ui-grid-one-bind-id-grid="rowRenderIndex + '-' + col.uid + '-cell'"
+        class="ui-grid-cell ng-scope ui-grid-coluiGrid-0004"
+        ng-class="{ 'ui-grid-row-header-cell': col.isRowHeader }"
+        role="gridcell"
+        ui-grid-cell=""
+        id="1699493608000-9-uiGrid-0004-cell"
+      >
+        <div
+          class="ui-grid-cell-contents item ng-scope"
+          title="1836 - Capsules - 150 Pack (Assorted Strains)"
+        >
+          <span class="image">
+            <!-- ngIf: !row.entity.thumbnail_url -->
+            <!-- ngIf: row.entity.thumbnail_url --><img
+              style="max-height: 32px"
+              ng-src="https://storage.googleapis.com/shopventory-images/242180/2023/11/06/4974792a-292b-47fc-991e-7867799b967d.PNG"
+              ng-if="row.entity.thumbnail_url"
+              class="ng-scope"
+              src="https://storage.googleapis.com/shopventory-images/242180/2023/11/06/4974792a-292b-47fc-991e-7867799b967d.PNG"
+            /><!-- end ngIf: row.entity.thumbnail_url --></span
+          ><a
+            ui-sref=".edit-product({itemId: row.entity.item_id, duplicateItem: false, variantId: row.entity.variant_id})"
+            class="ng-binding"
+            href="#/app/inventory/items-and-variants/edit-product/1979145690458432418"
+            >1836 - Capsules - 150 Pack (Assorted Strains)</a
+          >
+          <div class="subtle ng-binding" title="Kratom">Kratom</div>
+          <div
+            class="subtle ng-binding"
+            title=""
+            ng-show="grid.appScope.accountDataService.hasFeature('VENDORS')"
+          ></div>
+        </div>
+      </div>
+      <!-- end ngRepeat: (colRenderIndex, col) in colContainer.renderedColumns track by col.uid -->
+      <div
+        ng-repeat="(colRenderIndex, col) in colContainer.renderedColumns track by col.uid"
+        ui-grid-one-bind-id-grid="rowRenderIndex + '-' + col.uid + '-cell'"
+        class="ui-grid-cell ng-scope ui-grid-coluiGrid-0005"
+        ng-class="{ 'ui-grid-row-header-cell': col.isRowHeader }"
+        role="gridcell"
+        ui-grid-cell=""
+        id="1699493608000-9-uiGrid-0005-cell"
+      >
+        <div
+          class="ui-grid-cell-contents variant ng-binding ng-scope"
+          title="Red Bali - (1)"
+        >
+          <!-- ngIf: row.entity.kit_id || row.entity.kit -->Red Bali - (1)
+          <div class="subtle" ng-show="row.entity.barcode" title="327337025552">
+            Barcode <em class="ng-binding">327337025552</em>
+          </div>
+          <div class="subtle ng-hide" ng-show="row.entity.sku" title="">
+            SKU <em class="ng-binding"></em>
+          </div>
+        </div>
+      </div>
+      <!-- end ngRepeat: (colRenderIndex, col) in colContainer.renderedColumns track by col.uid -->
+      <div
+        ng-repeat="(colRenderIndex, col) in colContainer.renderedColumns track by col.uid"
+        ui-grid-one-bind-id-grid="rowRenderIndex + '-' + col.uid + '-cell'"
+        class="ui-grid-cell ng-scope ui-grid-coluiGrid-0006"
+        ng-class="{ 'ui-grid-row-header-cell': col.isRowHeader }"
+        role="gridcell"
+        ui-grid-cell=""
+        id="1699493608000-9-uiGrid-0006-cell"
+      >
+        <div class="ui-grid-cell-contents location ng-binding ng-scope">
+          Hazel Sky Smoke &amp; Vape #3 (HWY 151)
+        </div>
+      </div>
+      <!-- end ngRepeat: (colRenderIndex, col) in colContainer.renderedColumns track by col.uid -->
+      <div
+        ng-repeat="(colRenderIndex, col) in colContainer.renderedColumns track by col.uid"
+        ui-grid-one-bind-id-grid="rowRenderIndex + '-' + col.uid + '-cell'"
+        class="ui-grid-cell ng-scope ui-grid-coluiGrid-0007"
+        ng-class="{ 'ui-grid-row-header-cell': col.isRowHeader }"
+        role="gridcell"
+        ui-grid-cell=""
+        id="1699493608000-9-uiGrid-0007-cell"
+      >
+        <div class="ui-grid-cell-contents text-right quantity ng-scope">
+          <!-- ngIf: row.entity.location_link_id !== null --><a
+            ng-if="row.entity.location_link_id !== null"
+            ui-sref=".history({variant_id: row.entity.variant_id, location_link_id: row.entity.location_link_id})"
+            class="ng-binding ng-scope"
+            href="#/app/inventory/items-and-variants/history/1979145691104355239/1979286157238018440"
+            >3</a
+          ><!-- end ngIf: row.entity.location_link_id !== null -->
+          <div
+            class="subtle ng-hide"
+            ng-show="(grid.appScope.accountDataService.isTrialing() || grid.appScope.accountDataService.hasFeature('DAYS_REMAINING')) &amp;&amp; row.entity.days_remaining_estimate"
+            style=""
+          >
+            <span title="Estimated time remaining" class="ng-binding"
+              >Est:
+            </span>
+          </div>
+        </div>
+      </div>
+      <!-- end ngRepeat: (colRenderIndex, col) in colContainer.renderedColumns track by col.uid -->
+      <div
+        ng-repeat="(colRenderIndex, col) in colContainer.renderedColumns track by col.uid"
+        ui-grid-one-bind-id-grid="rowRenderIndex + '-' + col.uid + '-cell'"
+        class="ui-grid-cell ng-scope ui-grid-coluiGrid-0008"
+        ng-class="{ 'ui-grid-row-header-cell': col.isRowHeader }"
+        role="gridcell"
+        ui-grid-cell=""
+        id="1699493608000-9-uiGrid-0008-cell"
+      >
+        <div class="ui-grid-cell-contents text-right price ng-binding ng-scope">
+          $67.59
+          <div
+            class="subtle ng-binding ng-hide"
+            ng-show="row.entity.margin !== null &amp;&amp; grid.appScope.has_permission('VIEW_COST_AND_PROFIT')"
+            title="Potential profit margin"
+          >
+            Margin: 66.71%
+          </div>
+        </div>
+      </div>
+      <!-- end ngRepeat: (colRenderIndex, col) in colContainer.renderedColumns track by col.uid -->
+      <div
+        ng-repeat="(colRenderIndex, col) in colContainer.renderedColumns track by col.uid"
+        ui-grid-one-bind-id-grid="rowRenderIndex + '-' + col.uid + '-cell'"
+        class="ui-grid-cell ng-scope ui-grid-coluiGrid-0009"
+        ng-class="{ 'ui-grid-row-header-cell': col.isRowHeader }"
+        role="gridcell"
+        ui-grid-cell=""
+        id="1699493608000-9-uiGrid-0009-cell"
+      >
+        <!-- ngIf: grid.appScope.has_permission('VIEW_COST_AND_PROFIT') --><!-- ngIf: !grid.appScope.has_permission('VIEW_COST_AND_PROFIT') -->
+        <div
+          class="ui-grid-cell-contents ng-scope"
+          ng-if="!grid.appScope.has_permission('VIEW_COST_AND_PROFIT')"
+        >
+          <i class="fa fa-lock"></i>
+        </div>
+        <!-- end ngIf: !grid.appScope.has_permission('VIEW_COST_AND_PROFIT') -->
+      </div>
+      <!-- end ngRepeat: (colRenderIndex, col) in colContainer.renderedColumns track by col.uid -->
+    </div>
+  </div>
+  <!-- end ngRepeat: (rowRenderIndex, row) in rowContainer.renderedRows track by $index -->
+  <div
+    ng-repeat="(rowRenderIndex, row) in rowContainer.renderedRows track by $index"
+    class="ui-grid-row ng-scope"
+    ng-style="Viewport.rowStyle(rowRenderIndex)"
+    ng-class="{'ui-grid-row-selected': row.isSelected, 'ui-grid-row-focused': row.isFocused,'ui-grid-tree-header-row': row.treeLevel > -1}"
+    style=""
+  >
+    <div
+      role="row"
+      ui-grid-row="row"
+      row-render-index="rowRenderIndex"
+      class="ng-isolate-scope"
+    >
+      <!-- ngRepeat: (colRenderIndex, col) in colContainer.renderedColumns track by col.uid -->
+      <div
+        ng-repeat="(colRenderIndex, col) in colContainer.renderedColumns track by col.uid"
+        ui-grid-one-bind-id-grid="rowRenderIndex + '-' + col.uid + '-cell'"
+        class="ui-grid-cell ng-scope ui-grid-coluiGrid-0004"
+        ng-class="{ 'ui-grid-row-header-cell': col.isRowHeader }"
+        role="gridcell"
+        ui-grid-cell=""
+        id="1699493608000-10-uiGrid-0004-cell"
+      >
+        <div
+          class="ui-grid-cell-contents item ng-scope"
+          title="1836 - Capsules - 150 Pack (Assorted Strains)"
+        >
+          <span class="image">
+            <!-- ngIf: !row.entity.thumbnail_url -->
+            <!-- ngIf: row.entity.thumbnail_url --><img
+              style="max-height: 32px"
+              ng-src="https://storage.googleapis.com/shopventory-images/242180/2023/11/06/171392c7-3d17-4589-b98c-8fb47ddf93e7.PNG"
+              ng-if="row.entity.thumbnail_url"
+              class="ng-scope"
+              src="https://storage.googleapis.com/shopventory-images/242180/2023/11/06/171392c7-3d17-4589-b98c-8fb47ddf93e7.PNG"
+            /><!-- end ngIf: row.entity.thumbnail_url --></span
+          ><a
+            ui-sref=".edit-product({itemId: row.entity.item_id, duplicateItem: false, variantId: row.entity.variant_id})"
+            class="ng-binding"
+            href="#/app/inventory/items-and-variants/edit-product/1979145690458432418"
+            >1836 - Capsules - 150 Pack (Assorted Strains)</a
+          >
+          <div class="subtle ng-binding" title="Kratom">Kratom</div>
+          <div
+            class="subtle ng-binding"
+            title=""
+            ng-show="grid.appScope.accountDataService.hasFeature('VENDORS')"
+          ></div>
+        </div>
+      </div>
+      <!-- end ngRepeat: (colRenderIndex, col) in colContainer.renderedColumns track by col.uid -->
+      <div
+        ng-repeat="(colRenderIndex, col) in colContainer.renderedColumns track by col.uid"
+        ui-grid-one-bind-id-grid="rowRenderIndex + '-' + col.uid + '-cell'"
+        class="ui-grid-cell ng-scope ui-grid-coluiGrid-0005"
+        ng-class="{ 'ui-grid-row-header-cell': col.isRowHeader }"
+        role="gridcell"
+        ui-grid-cell=""
+        id="1699493608000-10-uiGrid-0005-cell"
+      >
+        <div
+          class="ui-grid-cell-contents variant ng-binding ng-scope"
+          title="Red Bali (2)"
+        >
+          <!-- ngIf: row.entity.kit_id || row.entity.kit -->Red Bali (2)
+          <div class="subtle" ng-show="row.entity.barcode" title="032733702555">
+            Barcode <em class="ng-binding">032733702555</em>
+          </div>
+          <div class="subtle ng-hide" ng-show="row.entity.sku" title="">
+            SKU <em class="ng-binding"></em>
+          </div>
+        </div>
+      </div>
+      <!-- end ngRepeat: (colRenderIndex, col) in colContainer.renderedColumns track by col.uid -->
+      <div
+        ng-repeat="(colRenderIndex, col) in colContainer.renderedColumns track by col.uid"
+        ui-grid-one-bind-id-grid="rowRenderIndex + '-' + col.uid + '-cell'"
+        class="ui-grid-cell ng-scope ui-grid-coluiGrid-0006"
+        ng-class="{ 'ui-grid-row-header-cell': col.isRowHeader }"
+        role="gridcell"
+        ui-grid-cell=""
+        id="1699493608000-10-uiGrid-0006-cell"
+      >
+        <div class="ui-grid-cell-contents location ng-binding ng-scope">
+          Hazel Sky Smoke &amp; Vape #3 (HWY 151)
+        </div>
+      </div>
+      <!-- end ngRepeat: (colRenderIndex, col) in colContainer.renderedColumns track by col.uid -->
+      <div
+        ng-repeat="(colRenderIndex, col) in colContainer.renderedColumns track by col.uid"
+        ui-grid-one-bind-id-grid="rowRenderIndex + '-' + col.uid + '-cell'"
+        class="ui-grid-cell ng-scope ui-grid-coluiGrid-0007"
+        ng-class="{ 'ui-grid-row-header-cell': col.isRowHeader }"
+        role="gridcell"
+        ui-grid-cell=""
+        id="1699493608000-10-uiGrid-0007-cell"
+      >
+        <div class="ui-grid-cell-contents text-right quantity ng-scope">
+          <!-- ngIf: row.entity.location_link_id !== null --><a
+            ng-if="row.entity.location_link_id !== null"
+            ui-sref=".history({variant_id: row.entity.variant_id, location_link_id: row.entity.location_link_id})"
+            class="ng-binding ng-scope"
+            href="#/app/inventory/items-and-variants/history/2031231329190093740/2031231330523882417"
+          ></a
+          ><!-- end ngIf: row.entity.location_link_id !== null -->
+          <div
+            class="subtle ng-hide"
+            ng-show="(grid.appScope.accountDataService.isTrialing() || grid.appScope.accountDataService.hasFeature('DAYS_REMAINING')) &amp;&amp; row.entity.days_remaining_estimate"
+            style=""
+          >
+            <span title="Estimated time remaining" class="ng-binding"
+              >Est:
+            </span>
+          </div>
+        </div>
+      </div>
+      <!-- end ngRepeat: (colRenderIndex, col) in colContainer.renderedColumns track by col.uid -->
+      <div
+        ng-repeat="(colRenderIndex, col) in colContainer.renderedColumns track by col.uid"
+        ui-grid-one-bind-id-grid="rowRenderIndex + '-' + col.uid + '-cell'"
+        class="ui-grid-cell ng-scope ui-grid-coluiGrid-0008"
+        ng-class="{ 'ui-grid-row-header-cell': col.isRowHeader }"
+        role="gridcell"
+        ui-grid-cell=""
+        id="1699493608000-10-uiGrid-0008-cell"
+      >
+        <div class="ui-grid-cell-contents text-right price ng-binding ng-scope">
+          $67.59
+          <div
+            class="subtle ng-binding ng-hide"
+            ng-show="row.entity.margin !== null &amp;&amp; grid.appScope.has_permission('VIEW_COST_AND_PROFIT')"
+            title="Potential profit margin"
+          >
+            Margin: 66.71%
+          </div>
+        </div>
+      </div>
+      <!-- end ngRepeat: (colRenderIndex, col) in colContainer.renderedColumns track by col.uid -->
+      <div
+        ng-repeat="(colRenderIndex, col) in colContainer.renderedColumns track by col.uid"
+        ui-grid-one-bind-id-grid="rowRenderIndex + '-' + col.uid + '-cell'"
+        class="ui-grid-cell ng-scope ui-grid-coluiGrid-0009"
+        ng-class="{ 'ui-grid-row-header-cell': col.isRowHeader }"
+        role="gridcell"
+        ui-grid-cell=""
+        id="1699493608000-10-uiGrid-0009-cell"
+      >
+        <!-- ngIf: grid.appScope.has_permission('VIEW_COST_AND_PROFIT') --><!-- ngIf: !grid.appScope.has_permission('VIEW_COST_AND_PROFIT') -->
+        <div
+          class="ui-grid-cell-contents ng-scope"
+          ng-if="!grid.appScope.has_permission('VIEW_COST_AND_PROFIT')"
+        >
+          <i class="fa fa-lock"></i>
+        </div>
+        <!-- end ngIf: !grid.appScope.has_permission('VIEW_COST_AND_PROFIT') -->
+      </div>
+      <!-- end ngRepeat: (colRenderIndex, col) in colContainer.renderedColumns track by col.uid -->
+    </div>
+  </div>
+  <!-- end ngRepeat: (rowRenderIndex, row) in rowContainer.renderedRows track by $index -->
+  <div
+    ng-repeat="(rowRenderIndex, row) in rowContainer.renderedRows track by $index"
+    class="ui-grid-row ng-scope"
+    ng-style="Viewport.rowStyle(rowRenderIndex)"
+    ng-class="{'ui-grid-row-selected': row.isSelected, 'ui-grid-row-focused': row.isFocused,'ui-grid-tree-header-row': row.treeLevel > -1}"
+    style=""
+  >
+    <div
+      role="row"
+      ui-grid-row="row"
+      row-render-index="rowRenderIndex"
+      class="ng-isolate-scope"
+    >
+      <!-- ngRepeat: (colRenderIndex, col) in colContainer.renderedColumns track by col.uid -->
+      <div
+        ng-repeat="(colRenderIndex, col) in colContainer.renderedColumns track by col.uid"
+        ui-grid-one-bind-id-grid="rowRenderIndex + '-' + col.uid + '-cell'"
+        class="ui-grid-cell ng-scope ui-grid-coluiGrid-0004"
+        ng-class="{ 'ui-grid-row-header-cell': col.isRowHeader }"
+        role="gridcell"
+        ui-grid-cell=""
+        id="1699493608000-11-uiGrid-0004-cell"
+      >
+        <div
+          class="ui-grid-cell-contents item ng-scope"
+          title="1836 - Capsules - 150 Pack (Assorted Strains)"
+        >
+          <span class="image">
+            <!-- ngIf: !row.entity.thumbnail_url -->
+            <!-- ngIf: row.entity.thumbnail_url --><img
+              style="max-height: 32px"
+              ng-src="https://storage.googleapis.com/shopventory-images/242180/2023/11/06/a6ca28b7-9ac6-4527-b1be-4ac380589383.PNG"
+              ng-if="row.entity.thumbnail_url"
+              class="ng-scope"
+              src="https://storage.googleapis.com/shopventory-images/242180/2023/11/06/a6ca28b7-9ac6-4527-b1be-4ac380589383.PNG"
+            /><!-- end ngIf: row.entity.thumbnail_url --></span
+          ><a
+            ui-sref=".edit-product({itemId: row.entity.item_id, duplicateItem: false, variantId: row.entity.variant_id})"
+            class="ng-binding"
+            href="#/app/inventory/items-and-variants/edit-product/1979145690458432418"
+            >1836 - Capsules - 150 Pack (Assorted Strains)</a
+          >
+          <div class="subtle ng-binding" title="Kratom">Kratom</div>
+          <div
+            class="subtle ng-binding"
+            title=""
+            ng-show="grid.appScope.accountDataService.hasFeature('VENDORS')"
+          ></div>
+        </div>
+      </div>
+      <!-- end ngRepeat: (colRenderIndex, col) in colContainer.renderedColumns track by col.uid -->
+      <div
+        ng-repeat="(colRenderIndex, col) in colContainer.renderedColumns track by col.uid"
+        ui-grid-one-bind-id-grid="rowRenderIndex + '-' + col.uid + '-cell'"
+        class="ui-grid-cell ng-scope ui-grid-coluiGrid-0005"
+        ng-class="{ 'ui-grid-row-header-cell': col.isRowHeader }"
+        role="gridcell"
+        ui-grid-cell=""
+        id="1699493608000-11-uiGrid-0005-cell"
+      >
+        <div
+          class="ui-grid-cell-contents variant ng-binding ng-scope"
+          title="Great White (1)"
+        >
+          <!-- ngIf: row.entity.kit_id || row.entity.kit -->Great White (1)
+          <div class="subtle" ng-show="row.entity.barcode" title="327337024562">
+            Barcode <em class="ng-binding">327337024562</em>
+          </div>
+          <div class="subtle ng-hide" ng-show="row.entity.sku" title="">
+            SKU <em class="ng-binding"></em>
+          </div>
+        </div>
+      </div>
+      <!-- end ngRepeat: (colRenderIndex, col) in colContainer.renderedColumns track by col.uid -->
+      <div
+        ng-repeat="(colRenderIndex, col) in colContainer.renderedColumns track by col.uid"
+        ui-grid-one-bind-id-grid="rowRenderIndex + '-' + col.uid + '-cell'"
+        class="ui-grid-cell ng-scope ui-grid-coluiGrid-0006"
+        ng-class="{ 'ui-grid-row-header-cell': col.isRowHeader }"
+        role="gridcell"
+        ui-grid-cell=""
+        id="1699493608000-11-uiGrid-0006-cell"
+      >
+        <div class="ui-grid-cell-contents location ng-binding ng-scope">
+          Hazel Sky Smoke &amp; Vape #3 (HWY 151)
+        </div>
+      </div>
+      <!-- end ngRepeat: (colRenderIndex, col) in colContainer.renderedColumns track by col.uid -->
+      <div
+        ng-repeat="(colRenderIndex, col) in colContainer.renderedColumns track by col.uid"
+        ui-grid-one-bind-id-grid="rowRenderIndex + '-' + col.uid + '-cell'"
+        class="ui-grid-cell ng-scope ui-grid-coluiGrid-0007"
+        ng-class="{ 'ui-grid-row-header-cell': col.isRowHeader }"
+        role="gridcell"
+        ui-grid-cell=""
+        id="1699493608000-11-uiGrid-0007-cell"
+      >
+        <div class="ui-grid-cell-contents text-right quantity ng-scope">
+          <!-- ngIf: row.entity.location_link_id !== null --><a
+            ng-if="row.entity.location_link_id !== null"
+            ui-sref=".history({variant_id: row.entity.variant_id, location_link_id: row.entity.location_link_id})"
+            class="ng-binding ng-scope"
+            href="#/app/inventory/items-and-variants/history/2068313784254275896/2068313785931997502"
+            >4</a
+          ><!-- end ngIf: row.entity.location_link_id !== null -->
+          <div
+            class="subtle"
+            ng-show="(grid.appScope.accountDataService.isTrialing() || grid.appScope.accountDataService.hasFeature('DAYS_REMAINING')) &amp;&amp; row.entity.days_remaining_estimate"
+            style=""
+          >
+            <span title="Estimated time remaining" class="ng-binding"
+              >Est: 1w1d</span
+            >
+          </div>
+        </div>
+      </div>
+      <!-- end ngRepeat: (colRenderIndex, col) in colContainer.renderedColumns track by col.uid -->
+      <div
+        ng-repeat="(colRenderIndex, col) in colContainer.renderedColumns track by col.uid"
+        ui-grid-one-bind-id-grid="rowRenderIndex + '-' + col.uid + '-cell'"
+        class="ui-grid-cell ng-scope ui-grid-coluiGrid-0008"
+        ng-class="{ 'ui-grid-row-header-cell': col.isRowHeader }"
+        role="gridcell"
+        ui-grid-cell=""
+        id="1699493608000-11-uiGrid-0008-cell"
+      >
+        <div class="ui-grid-cell-contents text-right price ng-binding ng-scope">
+          $67.59
+          <div
+            class="subtle ng-binding ng-hide"
+            ng-show="row.entity.margin !== null &amp;&amp; grid.appScope.has_permission('VIEW_COST_AND_PROFIT')"
+            title="Potential profit margin"
+          >
+            Margin: 66.71%
+          </div>
+        </div>
+      </div>
+      <!-- end ngRepeat: (colRenderIndex, col) in colContainer.renderedColumns track by col.uid -->
+      <div
+        ng-repeat="(colRenderIndex, col) in colContainer.renderedColumns track by col.uid"
+        ui-grid-one-bind-id-grid="rowRenderIndex + '-' + col.uid + '-cell'"
+        class="ui-grid-cell ng-scope ui-grid-coluiGrid-0009"
+        ng-class="{ 'ui-grid-row-header-cell': col.isRowHeader }"
+        role="gridcell"
+        ui-grid-cell=""
+        id="1699493608000-11-uiGrid-0009-cell"
+      >
+        <!-- ngIf: grid.appScope.has_permission('VIEW_COST_AND_PROFIT') --><!-- ngIf: !grid.appScope.has_permission('VIEW_COST_AND_PROFIT') -->
+        <div
+          class="ui-grid-cell-contents ng-scope"
+          ng-if="!grid.appScope.has_permission('VIEW_COST_AND_PROFIT')"
+        >
+          <i class="fa fa-lock"></i>
+        </div>
+        <!-- end ngIf: !grid.appScope.has_permission('VIEW_COST_AND_PROFIT') -->
+      </div>
+      <!-- end ngRepeat: (colRenderIndex, col) in colContainer.renderedColumns track by col.uid -->
+    </div>
+  </div>
+  <!-- end ngRepeat: (rowRenderIndex, row) in rowContainer.renderedRows track by $index -->
+</div>

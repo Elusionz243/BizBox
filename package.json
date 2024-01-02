@@ -1,0 +1,12 @@
+{
+  "name": "skyco-system",
+  "version": "1.0.0",
+  "description": "BizBox is an all-in-one retail management suite built to effortlessly handle core store operations. This robust system allows businesses to seamlessly manage point-of-sale transactions, inventory, reporting, customer accounts and more from a unified platform.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

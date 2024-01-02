@@ -1,0 +1,24 @@
+.form-container {
+  width: 55vw;
+  position: absolute;
+  top: -1000px;
+}
+
+.form-header {
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.show {
+  top: 0 !important;
+}
+
+input {
+  width: 100%;
+}
+
+.form-body {
+  display: grid;
+  row-gap: 5px;
+}
