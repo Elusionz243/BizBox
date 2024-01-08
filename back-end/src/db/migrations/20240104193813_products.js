@@ -2,7 +2,7 @@
  * @param { import("knex").Knex } knex
  * @returns { Promise<void> }
  */
-exports.up = function (knex) {
+exports.up = (knex) =>
   knex.schema.createTable("products", (table) => {
     table.increments("product_id");
     table.string("brand");
@@ -13,16 +13,13 @@ exports.up = function (knex) {
     table.string("barcode");
     table.string("location");
     table.integer("quantity");
-    table.double("price");
-    table.double("cost");
+    table.decimal("price", 18, 2);
+    table.decimal("cost", 18, 2);
     table.timestamps(true, true);
   });
-};
 
 /**
  * @param { import("knex").Knex } knex
  * @returns { Promise<void> }
  */
-exports.down = function (knex) {
-  knex.schema.dropTableIfExists("products");
-};
+exports.down = (knex) => knex.schema.dropTableIfExists("products");

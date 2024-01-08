@@ -1,19 +1,13 @@
-// Update with your config settings.
-
-/**
- * @type { Object.<string, import("knex").Knex.Config> }
- */
-
-const { DB_DATABASE, DB_USER, DB_PASSWORD, DB_PORT } = process.env;
-
-console.log(process.env);
+require("dotenv").config();
+const { DB_DATABASE, DB_HOST, DB_PASSWORD, DB_PORT } = process.env;
 
 module.exports = {
   development: {
-    client: "pg",
+    client: "postgresql",
     connection: {
+      host: DB_HOST,
       database: DB_DATABASE,
-      user: DB_USER,
+      user: "postgres",
       password: DB_PASSWORD,
       port: DB_PORT,
     },
@@ -22,10 +16,11 @@ module.exports = {
       max: 10,
     },
     migrations: {
-      directory: "./src/db/migrations",
+      tableName: "knex_migrations",
+      directory: `./src/db/migrations`,
     },
     seeds: {
-      directory: "./src/db/seeds",
+      directory: `./src/db/seeds`,
     },
   },
 };

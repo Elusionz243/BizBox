@@ -2,10 +2,12 @@
  * @param { import("knex").Knex } knex
  * @returns { Promise<void> }
  */
+let products = require("./jsons/products");
 
-const products = require("./jsons/products.json");
-exports.seed = async function (knex) {
-  // Deletes ALL existing entries
+exports.seed = async (knex) => {
+  console.log(products);
   await knex("products").del();
-  await knex("products").insert([...products]);
+  for (let product of products) {
+    await knex("products").insert([product]);
+  }
 };
