@@ -6,9 +6,13 @@ import "./Inventory.css";
 import { Alphabetize } from "../utils/sortFunctions";
 import Searchbar from "../utils/searchbar/Searchbar";
 
-export default function Inventory({ listOfProducts, setListOfProducts }) {
+export default function Inventory({
+  loading,
+  listOfProducts,
+  setListOfProducts,
+}) {
   const initialProductForm = {
-    productName: "",
+    product_name: "",
     variant: "",
     barcode: "",
     category: "",
@@ -50,7 +54,7 @@ export default function Inventory({ listOfProducts, setListOfProducts }) {
 
     if (key === "Enter") return;
     if (
-      productForm.productName.length === 0 ||
+      productForm.product_name.length === 0 ||
       productForm.barcode.length === 0 ||
       productForm.location.length === 0
     ) {
@@ -110,7 +114,7 @@ export default function Inventory({ listOfProducts, setListOfProducts }) {
     let regex = new RegExp(`${split.join("")}`, "gi");
     let filtered = [];
     for (let i = 0; i < listOfProducts.length; i++) {
-      const { brand, productName, category, variant, barcode, vendor } =
+      const { brand, product_name, category, variant, barcode, vendor } =
         listOfProducts[i];
       if (barcode.toString().match(regex)) {
         filtered.push(listOfProducts[i]);
@@ -120,7 +124,7 @@ export default function Inventory({ listOfProducts, setListOfProducts }) {
         filtered.push(listOfProducts[i]);
         continue;
       }
-      if (`${productName} ${variant} ${category}`.match(regex)) {
+      if (`${product_name} ${variant} ${category}`.match(regex)) {
         filtered.push(listOfProducts[i]);
       }
     }
@@ -151,172 +155,176 @@ export default function Inventory({ listOfProducts, setListOfProducts }) {
           )}
         </div>
       </div>
-      <div className="inv-sub-container">
-        <table className="table-container">
-          {!editMode ? (
-            <tr className="table-header">
-              <th>Product Name</th>
-              <th>Variant</th>
-              <th>Barcode</th>
-              <th>Location</th>
-              <th>Quantity</th>
-              <th>Price</th>
-              <th>Cost</th>
-            </tr>
-          ) : (
-            <tr className="table-header">
-              <th>Product Name</th>
-              <th>Variant</th>
-              <th>Category</th>
-              <th>Barcode</th>
-              <th>Location</th>
-              <th>Quantity</th>
-              <th>Price</th>
-              <th>Cost</th>
-            </tr>
-          )}
-          {listOfProducts.length === 0 ? (
-            <>Couldn't find anything to load...</>
-          ) : !editMode ? (
-            (searchResults.length > 0
-              ? searchResults
-              : Alphabetize(listOfProducts)
-            ).map(
-              (
-                {
-                  brand,
-                  productName,
-                  vendor,
-                  variant,
-                  barcode,
-                  category,
-                  location,
-                  quantity,
-                  price,
-                  cost,
-                },
-                index
-              ) => (
-                <tr key={index} className="table-data">
-                  <td className="product-name">
-                    <div>{`${
-                      brand.length ? `${brand} -` : ""
-                    } ${productName}`}</div>
-                    <div className="product-category">{category}</div>
-                  </td>
-                  <td>{variant}</td>
-                  <td>{barcode}</td>
-                  <td>{location}</td>
-                  <td>{quantity}</td>
-                  <td>${Number(price).toFixed(2)}</td>
-                  <td>
-                    <input type="text" disabled value={`$${cost}`}></input>
-                  </td>
-                </tr>
+      {!loading ? (
+        <div className="inv-sub-container">
+          <table className="table-container">
+            {!editMode ? (
+              <tr className="table-header">
+                <th>Product Name</th>
+                <th>Variant</th>
+                <th>Barcode</th>
+                <th>Location</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th>Cost</th>
+              </tr>
+            ) : (
+              <tr className="table-header">
+                <th>Product Name</th>
+                <th>Variant</th>
+                <th>Category</th>
+                <th>Barcode</th>
+                <th>Location</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th>Cost</th>
+              </tr>
+            )}
+            {listOfProducts.length === 0 ? (
+              <>Couldn't find anything to load...</>
+            ) : !editMode ? (
+              (searchResults.length > 0
+                ? searchResults
+                : Alphabetize(listOfProducts)
+              ).map(
+                (
+                  {
+                    brand,
+                    product_name,
+                    vendor,
+                    variant,
+                    barcode,
+                    category,
+                    location,
+                    quantity,
+                    price,
+                    cost,
+                  },
+                  index
+                ) => (
+                  <tr key={index} className="table-data">
+                    <td className="product-name">
+                      <div>{`${
+                        brand.length ? `${brand} -` : ""
+                      } ${product_name}`}</div>
+                      <div className="product-category">{category}</div>
+                    </td>
+                    <td>{variant}</td>
+                    <td>{barcode}</td>
+                    <td>{location}</td>
+                    <td>{quantity}</td>
+                    <td>${Number(price).toFixed(2)}</td>
+                    <td>
+                      <input type="text" disabled value={`$${cost}`}></input>
+                    </td>
+                  </tr>
+                )
               )
-            )
-          ) : (
-            editList.map(
-              (
-                {
-                  productName,
-                  variant,
-                  category,
-                  barcode,
-                  location,
-                  quantity,
-                  price,
-                  cost,
-                },
-                index
-              ) => (
-                <tr key={index} className="table-data">
-                  <td>
-                    <input
-                      type="text"
-                      className="product-name"
-                      value={productName}
-                      onChange={(e) => handleChange(e, index)}
-                      name="productName"
-                    />
-                  </td>
-                  <td>
-                    <input
-                      type="text"
-                      className="variant-input"
-                      value={variant}
-                      onChange={(e) => handleChange(e, index)}
-                      name="variant"
-                    />
-                  </td>
-                  <td>
-                    <input
-                      type="text"
-                      className="category-input"
-                      value={category}
-                      onChange={(e) => handleChange(e, index)}
-                      name="category"
-                    />
-                  </td>
-                  <td>
-                    <input
-                      type="text"
-                      value={barcode}
-                      onChange={(e) => handleChange(e, index)}
-                      name="barcode"
-                      className=""
-                    />
-                  </td>
-                  <td>
-                    <input
-                      type="text"
-                      value={location}
-                      onChange={(e) => handleChange(e, index)}
-                      name="location"
-                      className=""
-                    />
-                  </td>
-                  <td>
-                    <input
-                      type="text"
-                      value={quantity}
-                      onChange={(e) => handleChange(e, index)}
-                      name="quantity"
-                      className=""
-                    />
-                  </td>
-                  <td>
-                    <input
-                      type="text"
-                      value={Number(price).toFixed(2)}
-                      onChange={(e) => handleChange(e, index)}
-                      name="price"
-                      className=""
-                    />
-                  </td>
-                  <td>
-                    <input
-                      type="text"
-                      value={Number(cost).toFixed(2)}
-                      onChange={(e) => handleChange(e, index)}
-                      name="cost"
-                      className=""
-                    />
-                  </td>
-                  <td>
-                    <button
-                      onClick={() => removeProduct(index)}
-                      className="btn btn-warning"
-                    >
-                      Delete
-                    </button>
-                  </td>
-                </tr>
+            ) : (
+              editList.map(
+                (
+                  {
+                    product_name,
+                    variant,
+                    category,
+                    barcode,
+                    location,
+                    quantity,
+                    price,
+                    cost,
+                  },
+                  index
+                ) => (
+                  <tr key={index} className="table-data">
+                    <td>
+                      <input
+                        type="text"
+                        className="product-name"
+                        value={product_name}
+                        onChange={(e) => handleChange(e, index)}
+                        name="product_name"
+                      />
+                    </td>
+                    <td>
+                      <input
+                        type="text"
+                        className="variant-input"
+                        value={variant}
+                        onChange={(e) => handleChange(e, index)}
+                        name="variant"
+                      />
+                    </td>
+                    <td>
+                      <input
+                        type="text"
+                        className="category-input"
+                        value={category}
+                        onChange={(e) => handleChange(e, index)}
+                        name="category"
+                      />
+                    </td>
+                    <td>
+                      <input
+                        type="text"
+                        value={barcode}
+                        onChange={(e) => handleChange(e, index)}
+                        name="barcode"
+                        className=""
+                      />
+                    </td>
+                    <td>
+                      <input
+                        type="text"
+                        value={location}
+                        onChange={(e) => handleChange(e, index)}
+                        name="location"
+                        className=""
+                      />
+                    </td>
+                    <td>
+                      <input
+                        type="text"
+                        value={quantity}
+                        onChange={(e) => handleChange(e, index)}
+                        name="quantity"
+                        className=""
+                      />
+                    </td>
+                    <td>
+                      <input
+                        type="text"
+                        value={Number(price).toFixed(2)}
+                        onChange={(e) => handleChange(e, index)}
+                        name="price"
+                        className=""
+                      />
+                    </td>
+                    <td>
+                      <input
+                        type="text"
+                        value={Number(cost).toFixed(2)}
+                        onChange={(e) => handleChange(e, index)}
+                        name="cost"
+                        className=""
+                      />
+                    </td>
+                    <td>
+                      <button
+                        onClick={() => removeProduct(index)}
+                        className="btn btn-warning"
+                      >
+                        Delete
+                      </button>
+                    </td>
+                  </tr>
+                )
               )
-            )
-          )}
-        </table>
-      </div>
+            )}
+          </table>
+        </div>
+      ) : (
+        <h2>Loading...</h2>
+      )}
       <FormGen
         formData={productForm}
         setFormData={setProductForm}

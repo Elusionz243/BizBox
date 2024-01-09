@@ -17,6 +17,7 @@ import Butane from "../../images/Butane.jpg";
 export default function Register({
   shoppingCart,
   listOfProducts = [],
+  categoryList = [],
   addProductToCart,
   shoppingCartTotal,
   setShoppingCartTotal,
@@ -26,13 +27,6 @@ export default function Register({
   const [searchText, setSearchText] = useState("");
   const [searchResults, setSearchResults] = useState([]);
 
-  let categories = new Set();
-
-  listOfProducts.map(({ category }) =>
-    !categories.has(category) ? categories.add(category) : null
-  );
-
-  const [categoryList, setCategoryList] = useState([...categories]);
   const [categoryImages, setCategoryImages] = useState({
     "Air Fresheners & Odor Eliminators": elfbar,
     "Apparel & Accessories": Apparel,
@@ -85,8 +79,8 @@ export default function Register({
   };
 
   const handleOpenCategory = (e, cat) => {
-    const categorizedList = listOfProducts.filter(({ productName, category }) =>
-      category === cat ? productName : null
+    const categorizedList = listOfProducts.filter(
+      ({ product_name, category }) => (category === cat ? product_name : null)
     );
     setShowCategories(!showCategories);
     setCategorizedProducts([...categorizedList]);
@@ -94,7 +88,7 @@ export default function Register({
 
   const handleCloseCategory = (e) => {
     setShowCategories(!showCategories);
-    setCategoryList([...categories]);
+    // setCategoryList([...]);
   };
 
   const handleSearch = (e) => {
@@ -115,10 +109,10 @@ export default function Register({
     const regex = new RegExp(split.join(""), "gi");
 
     let filtered = listOfProducts.filter((product) => {
-      const { productName, variant, category, barcode } = product;
+      const { product_name, variant, category, barcode } = product;
       return barcode.toString().match(regex)
         ? product
-        : `${productName} ${variant} ${category}`.match(regex)
+        : `${product_name} ${variant} ${category}`.match(regex)
         ? product
         : null;
     });
@@ -129,6 +123,8 @@ export default function Register({
   let interval;
   let tempBarcode = "";
   let scanning = false;
+
+  console.log(categoryList);
 
   // document.addEventListener("keydown", (e) => {
   //   if (e.key === "Enter") {

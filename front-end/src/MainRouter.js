@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import PortalHeader from "./components/header/PortalHeader";
@@ -9,15 +9,27 @@ import NavigationBar from "./components/utils/navigationBar/NavigatonBar";
 
 import "./MainRouter.css";
 
-import productList from "./utils/newProductList.json";
+// import productList from "./utils/newProductList.json";
 import OrderHistory from "./components/orders/OrderHistory";
 import PriceChecker from "./components/priceChecker/PriceChecker";
 
 export default function MainRouter() {
-  const [listOfProducts, setListOfProducts] = useState([...productList]);
+  const [listOfProducts, setListOfProducts] = useState([]);
   const [shoppingCart, setShoppingCart] = useState([]);
+  const [categoryList, setCategoryList] = useState([]);
   const [shoppingCartTotal, setShoppingCartTotal] = useState(0);
+  const [loading, setLoading] = useState(true);
 
+  useEffect(() => {
+    const fetchData = async () => {
+      const response = await fetch("http://localhost:3000/products");
+      const data = await response.json();
+      setListOfProducts([...data]);
+      setLoading(false);
+    };
+
+    fetchData();
+  }, []);
   const addProductToCart = (barcode) => {
     const existingProductIndex = shoppingCart.findIndex(
       (item) => item.barcode === barcode
@@ -98,6 +110,7 @@ export default function MainRouter() {
         <div className="main-container">
           <NavigationBar />
           <Inventory
+            loading={loading}
             listOfProducts={listOfProducts}
             setListOfProducts={setListOfProducts}
           />
@@ -112,6 +125,7 @@ export default function MainRouter() {
           <Register
             shoppingCart={shoppingCart}
             listOfProducts={listOfProducts}
+            categoryList={categoryList}
             addProductToCart={addProductToCart}
             shoppingCartTotal={shoppingCartTotal}
             setShoppingCartTotal={setShoppingCartTotal}
