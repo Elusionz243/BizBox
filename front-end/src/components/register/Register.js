@@ -120,38 +120,6 @@ export default function Register({
     setSearchResults([...filtered]);
   };
 
-  let interval;
-  let tempBarcode = "";
-  let scanning = false;
-
-  console.log(categoryList);
-
-  // document.addEventListener("keydown", (e) => {
-  //   if (e.key === "Enter") {
-  //     setTimeout(() => {
-  //       if (tempBarcode) {
-  //         addProductToCart(tempBarcode);
-  //         tempBarcode = ""; // Reset the barcode after successful scan
-  //       }
-  //     }, 500);
-  //     clearInterval(interval);
-  //     return;
-  //   }
-
-  //   if (e.key !== "Shift") {
-  //     tempBarcode += e.key;
-  //   }
-
-  //   if (!scanning) {
-  //     scanning = true;
-  //     interval = setInterval(() => {
-  //       tempBarcode = ""; // Reset the barcode if no key is pressed within the interval
-  //       clearInterval(interval);
-  //       scanning = false;
-  //     }, 200);
-  //   }
-  // });
-
   return (
     <div className="register-container">
       <div className="register-toolbar-container">
