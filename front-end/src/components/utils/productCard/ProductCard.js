@@ -6,7 +6,7 @@ export default function ProductCard({ product, manageCart }) {
   let {
     id,
     brand,
-    productName,
+    product_name,
     vendor,
     variant,
     price,
@@ -25,7 +25,7 @@ export default function ProductCard({ product, manageCart }) {
     >
       <div className="product-card-title">{`${
         brand.length ? `${brand} - ` : ""
-      }${productName}${variant.length ? ` - ${variant}` : ""}`}</div>
+      }${product_name}${variant.length ? ` - ${variant}` : ""}`}</div>
       <div>
         <div className="product-card-price">
           ${cartQuantity ? (price * cartQuantity).toFixed(2) : price.toFixed(2)}

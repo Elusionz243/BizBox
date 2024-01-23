@@ -17,10 +17,11 @@ import Butane from "../../images/Butane.jpg";
 export default function Register({
   shoppingCart,
   listOfProducts = [],
-  categoryList = [],
+  categoryList,
   addProductToCart,
   shoppingCartTotal,
   setShoppingCartTotal,
+  loading,
 }) {
   const [categorizedProducts, setCategorizedProducts] = useState([]);
   const [showCategories, setShowCategories] = useState(true);
@@ -146,7 +147,7 @@ export default function Register({
           shoppingCartTotal={shoppingCartTotal}
           cartRef={cartRef}
         />
-        {categoryList.length && showCategories ? (
+        {!loading && showCategories ? (
           <div className="register-categories">
             {Alphabetize(categoryList).map((category, index) => (
               <div
@@ -164,7 +165,7 @@ export default function Register({
               </div>
             ))}
           </div>
-        ) : !categoryList.length ? (
+        ) : loading ? (
           <>Loading...</>
         ) : null}
         {categorizedProducts.length && !showCategories ? (

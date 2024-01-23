@@ -9,7 +9,6 @@ import NavigationBar from "./components/utils/navigationBar/NavigatonBar";
 
 import "./MainRouter.css";
 
-// import productList from "./utils/newProductList.json";
 import OrderHistory from "./components/orders/OrderHistory";
 import PriceChecker from "./components/priceChecker/PriceChecker";
 
@@ -22,7 +21,7 @@ export default function MainRouter() {
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await fetch("http://localhost:3000/products");
+      const response = await fetch("http://localhost:8080/products");
       const data = await response.json();
       setListOfProducts([...data]);
       setLoading(false);
@@ -30,6 +29,14 @@ export default function MainRouter() {
 
     fetchData();
   }, []);
+
+  useEffect(() => {
+    const categories = [
+      ...new Set(listOfProducts.map((product) => product.category)),
+    ];
+    setCategoryList(categories);
+  }, [listOfProducts]);
+
   const addProductToCart = (barcode) => {
     const existingProductIndex = shoppingCart.findIndex(
       (item) => item.barcode === barcode
@@ -129,6 +136,7 @@ export default function MainRouter() {
             addProductToCart={addProductToCart}
             shoppingCartTotal={shoppingCartTotal}
             setShoppingCartTotal={setShoppingCartTotal}
+            loading={loading}
           />
         </div>
       ),
