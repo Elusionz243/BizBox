@@ -1,5 +1,5 @@
 .product-card {
-  border: 2px solid var(--translusant-hazel);
+  border: 2px solid var(--blue-bg);
   border-radius: 5px;
   display: flex;
   justify-content: space-between;

@@ -1,15 +1,20 @@
 .portal-header-container {
-  background-color: #12a89d;
+  background-color: var(--blue-bg);
   border-bottom: 1px solid #000;
-  /* padding: 5px; */
   width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .logo-container {
   width: fit-content;
   cursor: pointer;
+  text-decoration: none;
 }
 
-#HazelSkyLogo {
-  width: 200px;
+#Logo {
+  color: #fff;
+  font-weight: bolder;
+  letter-spacing: 5px;
 }

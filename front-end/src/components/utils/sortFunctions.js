@@ -4,9 +4,9 @@
  * Otherwise, sort by default string comparison.
  * Accepts a reverse boolean to reverse the sort order.
  */
-function Alphabetize(list, reverse) {
-  if (!list[0].product_name)
-    return list.sort((a, b) => (a > b ? 1 : a < b ? -1 : 0));
+function Alphabetize(list, isList = false) {
+  if (isList) return list.sort((a, b) => (a > b ? 1 : a < b ? -1 : 0));
+
   return list.sort((a, b) => {
     let productA = `${a.brand.length ? `${a.brand} -` : ""} ${
       a.product_name

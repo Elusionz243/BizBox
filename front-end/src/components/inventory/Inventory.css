@@ -6,7 +6,7 @@
 }
 
 .inv-header {
-  background-color: var(--light-blue);
+  background-color: var(--blue-bg);
   display: grid;
   grid-template-columns: 33% 33% 1fr;
   align-items: center;
@@ -39,7 +39,7 @@
 }
 
 .table-header {
-  background-color: #fff;
+  background-color: var(--kacky-30);
   position: sticky;
   top: 0;
   z-index: 1;

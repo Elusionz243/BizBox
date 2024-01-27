@@ -1,7 +1,10 @@
 .dashboard-main-container {
   display: flex;
   flex-direction: column;
+  background-color: var(--kacky-30-see-through);
+  height: 100vh;
 }
+
 .dashboard-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -10,7 +13,7 @@
 
 .dashboard-app {
   border-radius: 8px;
-  border: 1px solid var(--hazel);
+  border: 1px solid var(--blue-bg);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   background-color: #fff;
   padding: 16px;

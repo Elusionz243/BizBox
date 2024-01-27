@@ -149,7 +149,7 @@ export default function Register({
         />
         {!loading && showCategories ? (
           <div className="register-categories">
-            {Alphabetize(categoryList).map((category, index) => (
+            {Alphabetize(categoryList, true).map((category, index) => (
               <div
                 key={index}
                 className="category"

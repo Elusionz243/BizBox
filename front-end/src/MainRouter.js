@@ -105,7 +105,7 @@ export default function MainRouter() {
     {
       path: "/",
       element: (
-        <div>
+        <div className="dashboard-main-container">
           <PortalHeader />
           <Dashboard />
         </div>

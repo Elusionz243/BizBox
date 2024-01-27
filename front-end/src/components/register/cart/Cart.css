@@ -9,7 +9,7 @@
 .cart-title {
   font-weight: bold;
   border-bottom: 1px solid rgba(0, 0, 0, 0.5);
-  background-color: var(--hazel);
+  background-color: var(--kacky-30);
   padding-left: 5px;
 }
 
@@ -20,7 +20,7 @@
 }
 
 .cart-totals-container {
-  background-color: rgba(83, 79, 22, 0.1);
+  background-color: var(--kacky-30);
   border-top: 1px solid rgba(0, 0, 0, 0.5);
   display: flex;
   justify-content: space-between;

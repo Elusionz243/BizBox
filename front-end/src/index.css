@@ -1,13 +1,7 @@
 * {
-  --blue-bg: #2b458b;
-  --blue-secondary: #528af2;
-  --blue-accent: #85b9db;
-  --light-on-dark-text: #f8f3f0;
-  --light-blue: #12a89d;
-  --translusant-light-blue: rgba(11, 173, 227, 0.1);
-  --hazel: rgb(202, 180, 122);
-  --translusant-hazel: rgba(202, 180, 122, 0.3);
-  --translusant-hazel-5: rgba(202, 180, 122, 0.7);
+  --blue-bg: #3e548d;
+  --kacky-30: rgba(222, 220, 200);
+  --kacky-30-see-through: rgba(222, 220, 200, 0.3);
 }
 
 body {

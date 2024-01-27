@@ -1,6 +1,6 @@
 .navigation-bar-container {
   width: 75px;
-  background-color: var(--light-blue);
+  background-color: var(--blue-bg);
   display: flex;
   align-items: center;
   justify-content: space-between;
