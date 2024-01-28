@@ -2,7 +2,7 @@ import React from "react";
 
 import ProductCard from "../../utils/productCard/ProductCard";
 
-import "./Cart.css";
+import "./Cart.scss";
 
 export default function Cart({
   shoppingCart,

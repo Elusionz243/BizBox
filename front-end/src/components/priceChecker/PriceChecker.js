@@ -3,6 +3,8 @@ import React, { useState } from "react";
 import PortalHeader from "../header/PortalHeader";
 import Searchbar from "../utils/searchbar/Searchbar";
 
+import "./PriceChecker.scss";
+
 export default function PriceChecker({ listOfProducts }) {
   const [itemPrice, setItemPrice] = useState(0);
   const [itemName, setItemName] = useState("");

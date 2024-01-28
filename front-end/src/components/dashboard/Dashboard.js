@@ -1,7 +1,6 @@
 import React from "react";
 
-import "./Dashboard.css";
-import PortalHeader from "../header/PortalHeader";
+import "./Dashboard.scss";
 
 import clipboardIcon from "../../images/icons/clipboard-list-solid.png";
 import registerIcon from "../../images/icons/cash_register_icon.png";
@@ -11,17 +10,29 @@ export default function Dashboard() {
   return (
     <div className="dashboard-container">
       <a className="dashboard-app" href="/app/inventory">
-        <img className="dashboard-app-icon" src={clipboardIcon} />
+        <img
+          className="dashboard-app-icon"
+          alt="Inventory App"
+          src={clipboardIcon}
+        />
         <h3 className="dashboard-app-title">Inventory</h3>
       </a>
 
       <a className="dashboard-app" href="/app/register">
-        <img className="dashboard-app-icon" src={registerIcon} />
+        <img
+          className="dashboard-app-icon"
+          alt="Register App"
+          src={registerIcon}
+        />
         <h3 className="dashboard-app-title">Register</h3>
       </a>
 
       <a className="dashboard-app" href="/app/order-history">
-        <img className="dashboard-app-icon" src={clockIcon} />
+        <img
+          className="dashboard-app-icon"
+          alt="Order History App"
+          src={clockIcon}
+        />
         <h3 className="dashboard-app-title">Order History</h3>
       </a>
 

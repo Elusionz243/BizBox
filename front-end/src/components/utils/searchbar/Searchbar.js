@@ -1,6 +1,6 @@
 import { useState, useRef } from "react";
 
-import "./Searchbar.css";
+import "./Searchbar.scss";
 import ProductCard from "../productCard/ProductCard";
 
 export default function Searchbar({

@@ -4,7 +4,7 @@ import profilePlaceholder from "../../../images/icons/profile-placeholder.svg";
 import homeIcon from "../../../images/icons/Home.svg";
 import hamburgerMenu from "../../../images/icons/hamburger-menu.svg";
 
-import "./NavigationBar.css";
+import "./NavigationBar.scss";
 
 export default function NavigationBar({ appNavigations = [] }) {
   const handleNavigation = (e) => {};

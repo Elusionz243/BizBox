@@ -1,24 +1,24 @@
+$color_1: green;
+$background-color_1: #fff;
+
 .product-card {
   border: 2px solid var(--blue-bg);
   border-radius: 5px;
   display: flex;
   justify-content: space-between;
   padding: 2%;
-  background-color: #fff;
+  background-color: $background-color_1;
   margin-bottom: 5px;
 }
-
 .product-card-title {
   font-weight: 500;
   font-size: 1em;
 }
-
 .product-card-price {
-  color: green;
+  color: $color_1;
   text-align: right;
   margin-left: 5px;
 }
-
 .product-card-quantity {
   text-align: right;
 }

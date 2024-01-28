@@ -1,3 +1,6 @@
+$color_1: green;
+$color_2: red;
+
 .price-checker {
   display: flex;
   flex-direction: column;
@@ -6,7 +9,6 @@
   border: 1px solid #ccc;
   border-radius: 5px;
 }
-
 .price-input {
   padding: 10px;
   font-size: 16px;
@@ -14,17 +16,14 @@
   border-radius: 5px;
   margin-bottom: 10px;
 }
-
 .price-output {
   font-size: 20px;
   font-weight: bold;
   margin-top: 20px;
 }
-
 .below-price {
-  color: green;
+  color: $color_1;
 }
-
 .above-price {
-  color: red;
+  color: $color_2;
 }

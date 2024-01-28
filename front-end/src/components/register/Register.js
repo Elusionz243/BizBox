@@ -5,7 +5,6 @@ import ProductCard from "../utils/productCard/ProductCard";
 import NavigationBar from "../utils/navigationBar/NavigatonBar";
 import Cart from "./cart/Cart";
 
-import "./Register.css";
 import Searchbar from "../utils/searchbar/Searchbar";
 
 import elfbar from "../../images/Elfbar.png";
@@ -14,6 +13,7 @@ import artSupplies from "../../images/Art_Supplies.jpg";
 import Blunts from "../../images/Blunts.jpg";
 import Butane from "../../images/Butane.jpg";
 
+import "./Register.scss";
 export default function Register({
   shoppingCart,
   listOfProducts = [],

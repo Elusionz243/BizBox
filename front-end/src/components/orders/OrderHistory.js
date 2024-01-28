@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-import "./OrderHistory.css";
+import "./OrderHistory.scss";
 import PortalHeader from "../header/PortalHeader";
 
 function OrderHistory() {

@@ -3,14 +3,14 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import PortalHeader from "./components/header/PortalHeader";
 import Dashboard from "./components/dashboard/Dashboard";
+
 import Inventory from "./components/inventory/Inventory";
 import Register from "./components/register/Register";
 import NavigationBar from "./components/utils/navigationBar/NavigatonBar";
-
-import "./MainRouter.css";
-
 import OrderHistory from "./components/orders/OrderHistory";
 import PriceChecker from "./components/priceChecker/PriceChecker";
+
+import "./MainRouter.scss";
 
 export default function MainRouter() {
   const [listOfProducts, setListOfProducts] = useState([]);

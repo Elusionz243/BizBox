@@ -1,21 +1,22 @@
+$color_1: #fff;
+$background-color_1: var(--blue-bg);
+
 .navigation-bar-container {
   width: 75px;
-  background-color: var(--blue-bg);
+  background-color: $background-color_1;
   display: flex;
   align-items: center;
   justify-content: space-between;
   flex-direction: column;
 }
-
 .navigation-link-container {
   display: flex;
   align-items: center;
   flex-direction: column;
   width: 100%;
 }
-
 .navigation-link {
-  color: #fff;
+  color: $color_1;
   width: 50px;
   margin-top: 15px;
   aspect-ratio: 1/1;
@@ -23,14 +24,12 @@
   justify-content: center;
   align-items: center;
   transition: all 0.2s ease-in-out;
+  &:hover {
+    box-shadow: 2px 2px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05);
+  }
 }
-
-.navigation-link:hover {
-  box-shadow: 2px 2px rgba(0, 0, 0, 0.2);
-  transform: scale(1.05);
-}
-
 .profile-stats {
-  color: #fff;
+  color: $color_1;
   font-weight: bold;
 }

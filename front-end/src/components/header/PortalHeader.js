@@ -1,6 +1,6 @@
 import React from "react";
 
-import "./PortalHeader.css";
+import "./PortalHeader.scss";
 
 export default function PortalHeader({ title }) {
   return (

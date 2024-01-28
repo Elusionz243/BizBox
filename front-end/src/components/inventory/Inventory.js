@@ -2,7 +2,7 @@ import React, { useState, useRef } from "react";
 
 import FormGen from "../utils/FormGen";
 
-import "./Inventory.css";
+import "./Inventory.scss";
 import { Alphabetize } from "../utils/sortFunctions";
 import Searchbar from "../utils/searchbar/Searchbar";
 

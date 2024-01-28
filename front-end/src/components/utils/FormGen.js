@@ -1,6 +1,6 @@
 import React from "react";
 
-import "./FormGen.css";
+import "./FormGen.scss";
 
 export default function FormGen({
   formData,

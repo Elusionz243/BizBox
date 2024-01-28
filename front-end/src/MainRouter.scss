@@ -1,0 +1,40 @@
+$color_1: #fff;
+$background-color_1: rgba(100, 100, 100, 0.1);
+$background-color_2: rgba(11, 173, 227, 0.5);
+$background-color_3: rgba(0, 0, 0, 0.3);
+
+.main-container {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  overflow-y: hidden;
+}
+::-webkit-scrollbar {
+  display: none;
+}
+* {
+  &::-webkit-scrollbar {
+    width: 10px;
+    display: initial;
+  }
+  &::-webkit-scrollbar-track {
+    background-color: $background-color_1;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: $background-color_2;
+    border-radius: 5px;
+    &:hover {
+      background-color: $background-color_3;
+    }
+  }
+}
+.app-title {
+  color: $color_1;
+  font-weight: bolder;
+  font-size: 1.25rem;
+}
+@media screen and (max-width: 766px) {
+  .main-container {
+    grid-template-columns: 10vw 1fr;
+  }
+}

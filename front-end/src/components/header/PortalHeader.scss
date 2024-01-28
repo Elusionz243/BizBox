@@ -1,20 +1,21 @@
+$color_1: #fff;
+$background-color_1: var(--blue-bg);
+
 .portal-header-container {
-  background-color: var(--blue-bg);
+  background-color: $background-color_1;
   border-bottom: 1px solid #000;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-
 .logo-container {
   width: fit-content;
   cursor: pointer;
   text-decoration: none;
 }
-
 #Logo {
-  color: #fff;
+  color: $color_1;
   font-weight: bolder;
   letter-spacing: 5px;
 }
