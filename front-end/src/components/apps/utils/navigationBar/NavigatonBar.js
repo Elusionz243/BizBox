@@ -1,8 +1,8 @@
 import React from "react";
 
-import profilePlaceholder from "../../../images/icons/profile-placeholder.svg";
-import homeIcon from "../../../images/icons/Home.svg";
-import hamburgerMenu from "../../../images/icons/hamburger-menu.svg";
+import profilePlaceholder from "../../../../images/icons/profile-placeholder.svg";
+import homeIcon from "../../../../images/icons/Home.svg";
+import hamburgerMenu from "../../../../images/icons/hamburger-menu.svg";
 
 import "./NavigationBar.scss";
 
@@ -17,7 +17,7 @@ export default function NavigationBar({ appNavigations = [] }) {
         <a className="navigation-link" href="/">
           <img src={homeIcon} alt="Home Icon" />
         </a>
-        <a className="navigation-link" href="#">
+        <a className="navigation-link" href="/apps">
           <img src={hamburgerMenu} alt="Hamburger menu button" />
         </a>
         {appNavigations.map((navigation, index) => (

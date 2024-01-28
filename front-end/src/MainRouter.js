@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
-import PortalHeader from "./components/header/PortalHeader";
-import Dashboard from "./components/dashboard/Dashboard";
-
-import Inventory from "./components/inventory/Inventory";
-import Register from "./components/register/Register";
-import NavigationBar from "./components/utils/navigationBar/NavigatonBar";
-import OrderHistory from "./components/orders/OrderHistory";
-import PriceChecker from "./components/priceChecker/PriceChecker";
+import LandingPage from "./components/landingPage/LandingPage";
+import PortalHeader from "./components/apps/header/PortalHeader";
+import Dashboard from "./components/apps/dashboard/Dashboard";
+import Inventory from "./components/apps/inventory/Inventory";
+import Register from "./components/apps/register/Register";
+import OrderHistory from "./components/apps/orders/OrderHistory";
+import PriceChecker from "./components/apps/priceChecker/PriceChecker";
+import NavigationBar from "./components/apps/utils/navigationBar/NavigatonBar";
 
 import "./MainRouter.scss";
 
@@ -105,7 +105,15 @@ export default function MainRouter() {
     {
       path: "/",
       element: (
-        <div className="dashboard-main-container">
+        <div>
+          <LandingPage />
+        </div>
+      ),
+    },
+    {
+      path: "/apps",
+      element: (
+        <div>
           <PortalHeader />
           <Dashboard />
         </div>
@@ -159,7 +167,6 @@ export default function MainRouter() {
         </div>
       ),
     },
-    //TODO: Orders, Label Maker, Tap mango
   ]);
 
   return <RouterProvider router={router} />;

@@ -2,9 +2,9 @@ import React from "react";
 
 import "./Dashboard.scss";
 
-import clipboardIcon from "../../images/icons/clipboard-list-solid.png";
-import registerIcon from "../../images/icons/cash_register_icon.png";
-import clockIcon from "../../images/icons/clock-outline-filled.png";
+import clipboardIcon from "../../../images/icons/clipboard-list-solid.png";
+import registerIcon from "../../../images/icons/cash_register_icon.png";
+import clockIcon from "../../../images/icons/clock-outline-filled.png";
 
 export default function Dashboard() {
   return (
