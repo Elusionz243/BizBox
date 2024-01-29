@@ -1,7 +1,5 @@
-$color_1: #fff;
-$color_2: rgb(100, 100, 100);
-$background-color_1: var(--blue-bg);
-$background-color_2: var(--kacky-30);
+@use "../../../MainRouter.scss" as *;
+$grey: rgb(100, 100, 100);
 
 .inv-container {
   display: grid;
@@ -10,7 +8,7 @@ $background-color_2: var(--kacky-30);
   max-height: 100vh;
 }
 .inv-header {
-  background-color: $background-color_1;
+  background-color: $blue-60;
   display: grid;
   grid-template-columns: 33% 33% 1fr;
   align-items: center;
@@ -19,7 +17,7 @@ $background-color_2: var(--kacky-30);
 .inv-search {
   display: flex;
   gap: 5px;
-  color: $color_1;
+  color: $white;
   align-items: center;
   position: relative;
 }
@@ -38,7 +36,7 @@ $background-color_2: var(--kacky-30);
   overflow-y: scroll;
 }
 .table-header {
-  background-color: $background-color_2;
+  background-color: $kacky-30;
   position: sticky;
   top: 0;
   z-index: 1;
@@ -57,12 +55,12 @@ td {
 }
 .product-category {
   font-size: 0.9rem;
-  color: $color_2;
+  color: $grey;
 }
 .inv-btns {
   background: none;
   border: none;
-  color: $color_1;
+  color: $white;
   font-size: 1.0125rem;
   &:hover {
     border-bottom: 2px solid #fff;

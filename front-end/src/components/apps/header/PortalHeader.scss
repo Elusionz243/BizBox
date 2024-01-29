@@ -1,9 +1,8 @@
-$color_1: #fff;
-$background-color_1: var(--blue-bg);
+@use "../../../MainRouter.scss" as *;
 
 .portal-header-container {
-  background-color: $background-color_1;
-  border-bottom: 1px solid #000;
+  background-color: $blue-60;
+  border-bottom: 1px solid $black;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -15,7 +14,7 @@ $background-color_1: var(--blue-bg);
   text-decoration: none;
 }
 #Logo {
-  color: $color_1;
+  color: $white;
   font-weight: bolder;
   letter-spacing: 5px;
 }

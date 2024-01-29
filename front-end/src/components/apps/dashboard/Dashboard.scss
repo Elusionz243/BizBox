@@ -1,41 +1,42 @@
-$color_1: #000;
-$background-color_1: var(--kacky-30-see-through);
-$background-color_2: #fff;
+@use "../../../MainRouter.scss" as *;
 
 .dashboard-main-container {
   display: flex;
   flex-direction: column;
-  background-color: $background-color_1;
+  background-color: $kacky-30-transparent;
   height: 100vh;
 }
-.dashboard-container {
+.dashboard {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   justify-items: center;
-}
-.dashboard-app {
-  border-radius: 8px;
-  border: 1px solid var(--blue-bg);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  background-color: $background-color_2;
-  padding: 16px;
-  margin: 8px;
-  width: 200px;
-  text-align: center;
-  text-decoration: none;
-  transition: all 0.2s ease-in-out;
-  &:hover {
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    transform: scale(1.05);
+
+  &__app {
+    border-radius: 8px;
+    border: 1px solid $blue-60;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: $kacky-30-transparent;
+    padding: 16px;
+    margin: 8px;
+    width: 200px;
+    text-align: center;
+    text-decoration: none;
+    transition: all 0.2s ease-in-out;
+    &:hover {
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      transform: scale(1.05);
+    }
   }
-}
-.dashboard-app-icon {
-  width: 64px;
-  height: 64px;
-}
-.dashboard-app-title {
-  font-size: 1.2rem;
-  font-weight: 500;
-  margin-top: 8px;
-  color: $color_1;
+
+  &__app-icon {
+    width: 64px;
+    height: 64px;
+  }
+
+  &__app-title {
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-top: 8px;
+    color: $black;
+  }
 }

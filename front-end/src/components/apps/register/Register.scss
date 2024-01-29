@@ -1,12 +1,4 @@
-$color_1: #fff;
-$color_2: var(--ten);
-$color_3: var(--thirty);
-$background-color_1: var(--blue-bg);
-$background-color_2: var(--kacky-30-see-through);
-$background-color_3: #fff;
-$background-color_4: var(--kacky-30);
-$background-color_5: var(--thirty);
-$background-color_6: var(--ten);
+@use "../../../MainRouter.scss" as *;
 
 .register-container {
   max-height: 100vh;
@@ -18,7 +10,7 @@ $background-color_6: var(--ten);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: $background-color_1;
+  background-color: $blue-60;
   height: var(--toolbar-height);
   width: 100%;
 }
@@ -38,10 +30,10 @@ $background-color_6: var(--ten);
   gap: 1rem;
   padding: 1rem;
   overflow-y: scroll;
-  background-color: $background-color_2;
+  background-color: $kacky-30-transparent;
 }
 .category {
-  background-color: $background-color_3;
+  background-color: $white;
   border-radius: 5px;
   border: 2px solid var(--blue-bg);
   display: grid;
@@ -53,7 +45,7 @@ $background-color_6: var(--ten);
     border-radius: 10px;
   }
   &:active {
-    background-color: $background-color_4;
+    background-color: $kacky-30;
   }
 }
 .category-image {
@@ -64,35 +56,36 @@ $background-color_6: var(--ten);
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: $background-color_1;
-  color: $color_1;
+  background-color: $blue-60;
+  color: $white;
   padding-top: 5px;
   letter-spacing: 0.75px;
+  border-radius: 0.25rem;
   h6 {
     text-align: center;
     font-weight: 600;
   }
 }
 .cart-btn {
-  background-color: $background-color_5;
-  color: $color_2;
+  background-color: $kacky-30-transparent;
+  color: $grey;
   display: none;
   &:hover {
-    background-color: $background-color_6;
-    color: $color_3;
+    background-color: $kacky-30-transparent;
+    color: $white;
   }
   &:focus {
-    background-color: $background-color_5;
-    color: $color_2;
+    background-color: $kacky-30-transparent;
+    color: $white;
   }
   &:active {
-    background-color: $background-color_5;
-    color: $color_2;
+    background-color: $kacky-30-transparent;
+    color: $white;
   }
 }
 .categorized-products-container {
   display: grid;
-  background-color: $background-color_2;
+  background-color: $kacky-30-transparent;
 }
 .categorized-products {
   overflow-y: scroll;
@@ -104,15 +97,17 @@ $background-color_6: var(--ten);
   align-items: center;
 }
 .category-back-button {
-  background-color: $background-color_3;
-  text-align: left;
-  border: none;
+  background-color: transparent;
+  border-radius: 5px;
+  padding: 5px 10px;
+  border: 1px solid #ddd;
 }
+
 .register-search {
   display: flex;
   align-items: baseline;
   gap: 10px;
-  color: $color_1;
+  color: $white;
 }
 @media screen and (max-width: 855px) {
   .register-secondary-container {
@@ -126,7 +121,7 @@ $background-color_6: var(--ten);
     display: none;
   }
   .category-title {
-    background-color: $background-color_3;
+    background-color: $white;
   }
 }
 @media screen and (max-width: 766px) {

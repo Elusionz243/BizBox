@@ -11,24 +11,24 @@ export default function Cart({
   removeProductFromCart,
 }) {
   return (
-    <div className="register-cart-container" ref={cartRef}>
-      <div className="cart-titles">
-        <h5 className="cart-title">Current order</h5>
+    <div className="cart" ref={cartRef}>
+      <div>
+        <h5 className="cart__title">Current order</h5>
       </div>
-      <div className="cart-items-container">
+      <div className="cart__items">
         {shoppingCart.length ? (
           shoppingCart.map((product) => <ProductCard product={product} />)
         ) : (
           <div>Tap an item to start a new order</div>
         )}
       </div>
-      <div className="cart-totals-container">
-        <div className="cart-totals-titles">
+      <div className="cart__totals-container">
+        <div className="cart__totals-titles">
           <div>Subtotal:</div>
           <div>Tax:</div>
           <div>Total:</div>
         </div>
-        <div className="cart-totals">
+        <div className="cart__totals">
           <div>${shoppingCartTotal.toFixed(2)}</div>
           <div>${(shoppingCartTotal * 0.0825).toFixed(2)}</div>
           <div>${(shoppingCartTotal * 1.0825).toFixed(2)}</div>

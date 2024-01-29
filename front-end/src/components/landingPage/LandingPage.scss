@@ -1,6 +1,5 @@
-$blue-60: #3e548d;
-$kacky-30: rgba(222, 220, 200);
-$kacky-30-transparent: rgba(222, 220, 200, 0.3);
+@use "../../MainRouter.scss" as *;
+
 .landing-page {
   display: flex;
   flex-direction: column;

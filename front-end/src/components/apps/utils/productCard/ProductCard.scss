@@ -1,21 +1,23 @@
-$color_1: green;
-$background-color_1: #fff;
+@use "../../../../MainRouter.scss" as *;
 
 .product-card {
-  border: 2px solid var(--blue-bg);
-  border-radius: 5px;
+  border-bottom: 1px solid $blue-60;
   display: flex;
   justify-content: space-between;
   padding: 2%;
-  background-color: $background-color_1;
-  margin-bottom: 5px;
+  background-color: $white;
+
+  &:hover {
+    background-color: $kacky-30-transparent;
+    cursor: pointer;
+  }
 }
 .product-card-title {
   font-weight: 500;
   font-size: 1em;
 }
 .product-card-price {
-  color: $color_1;
+  color: $green;
   text-align: right;
   margin-left: 5px;
 }

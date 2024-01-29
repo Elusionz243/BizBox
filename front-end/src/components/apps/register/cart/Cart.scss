@@ -1,39 +1,43 @@
-$color_1: rgb(0, 128, 0);
-$background-color_1: #fff;
-$background-color_2: var(--kacky-30);
+@use "../../../../MainRouter.scss" as *;
 
-.register-cart-container {
+.cart {
   width: 100%;
-  background-color: $background-color_1;
+  background-color: $white;
   border-right: 1px solid var(--hazel);
   display: grid;
   grid-template-rows: 1.8rem 1fr 5rem;
+
+  &__title {
+    font-weight: bold;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+    background-color: $kacky-30;
+    padding-left: 5px;
+  }
+
+  &__items {
+    overflow-y: scroll;
+    padding: 5px;
+    max-height: 81vh;
+  }
+
+  &__totals-container {
+    background-color: $kacky-30;
+    border-top: 1px solid rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+  }
+
+  &__totals-titles {
+    font-weight: bold;
+  }
+
+  &__totals {
+    font-weight: bold;
+    color: $green;
+  }
 }
-.cart-title {
-  font-weight: bold;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.5);
-  background-color: $background-color_2;
-  padding-left: 5px;
-}
-.cart-items-container {
-  overflow-y: scroll;
-  padding: 5px;
-  max-height: 81vh;
-}
-.cart-totals-container {
-  background-color: $background-color_2;
-  border-top: 1px solid rgba(0, 0, 0, 0.5);
-  display: flex;
-  justify-content: space-between;
-  padding: 5px;
-}
-.cart-totals-titles {
-  font-weight: bold;
-}
-.cart-totals {
-  font-weight: bold;
-  color: $color_1;
-}
+
 @media screen and (max-width: 855px) {
   .cart-titles {
     height: auto;

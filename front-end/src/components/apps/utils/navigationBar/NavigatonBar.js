@@ -9,15 +9,15 @@ import "./NavigationBar.scss";
 export default function NavigationBar({ appNavigations = [] }) {
   const handleNavigation = (e) => {};
   return (
-    <div className="navigation-bar-container">
-      <div className="navigation-link-container">
-        <a className="navigation-link profile-thumbnail" href="#">
+    <div className="navigation-bar">
+      <div className="navigation-bar__links">
+        <a className="navigation-bar__link profile-thumbnail" href="#">
           <img src={profilePlaceholder} alt="Profile picture placeholder" />
         </a>
-        <a className="navigation-link" href="/">
+        <a className="navigation-bar__link" href="/">
           <img src={homeIcon} alt="Home Icon" />
         </a>
-        <a className="navigation-link" href="/apps">
+        <a className="navigation-bar__link" href="/apps">
           <img src={hamburgerMenu} alt="Hamburger menu button" />
         </a>
         {appNavigations.map((navigation, index) => (

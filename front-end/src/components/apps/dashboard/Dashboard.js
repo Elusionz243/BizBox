@@ -8,44 +8,44 @@ import clockIcon from "../../../images/icons/clock-outline-filled.png";
 
 export default function Dashboard() {
   return (
-    <div className="dashboard-container">
-      <a className="dashboard-app" href="/app/inventory">
+    <div className="dashboard">
+      <a className="dashboard__app" href="/app/inventory">
         <img
-          className="dashboard-app-icon"
+          className="dashboard__app-icon"
           alt="Inventory App"
           src={clipboardIcon}
         />
-        <h3 className="dashboard-app-title">Inventory</h3>
+        <h3 className="dashboard__app-title">Inventory</h3>
       </a>
 
-      <a className="dashboard-app" href="/app/register">
+      <a className="dashboard__app" href="/app/register">
         <img
-          className="dashboard-app-icon"
+          className="dashboard__app-icon"
           alt="Register App"
           src={registerIcon}
         />
-        <h3 className="dashboard-app-title">Register</h3>
+        <h3 className="dashboard__app-title">Register</h3>
       </a>
 
-      <a className="dashboard-app" href="/app/order-history">
+      <a className="dashboard__app" href="/app/order-history">
         <img
-          className="dashboard-app-icon"
+          className="dashboard__app-icon"
           alt="Order History App"
           src={clockIcon}
         />
-        <h3 className="dashboard-app-title">Order History</h3>
+        <h3 className="dashboard__app-title">Order History</h3>
       </a>
 
-      <a className="dashboard-app" href="/app/label-maker">
-        <h3 className="dashboard-app-title">Label Maker</h3>
+      <a className="dashboard__app" href="/app/label-maker">
+        <h3 className="dashboard__app-title">Label Maker</h3>
       </a>
 
-      <a className="dashboard-app" href="/app/price-checker">
-        <h3 className="dashboard-app-title">Price Checker</h3>
+      <a className="dashboard__app" href="/app/price-checker">
+        <h3 className="dashboard__app-title">Price Checker</h3>
       </a>
 
-      <a className="dashboard-app" href="/app/reports">
-        <h3 className="dashboard-app-title">Reports</h3>
+      <a className="dashboard__app" href="/app/reports">
+        <h3 className="dashboard__app-title">Reports</h3>
       </a>
     </div>
   );
