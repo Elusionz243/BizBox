@@ -30,26 +30,24 @@ export default function LandingPage() {
 
       <main>
         <section className="landing__intro">
-          <p className="landing__subtitle">
-            <strong className="landing__hero">BizBox</strong> is the ultimate
-            business management platform. Streamline your operations, manage
-            employees, and grow your customer base with our innovative software
-            solutions. Say goodbye to clunky legacy systems and hello to the
-            future of business management.
-          </p>
-        </section>
-        <section className="landing__scheduling">
-          <h2 className="landing__scheduling-title">Scheduling</h2>
-          <p className="landing__scheduling-description">
-            Create and manage schedules, assign shifts, and track attendance.
-          </p>
+          <div className="landing__intro-content">
+            <h2 className="landing__title">BizBox</h2>
+            <p className="landing__subtitle">
+              &emsp;&emsp; is the ultimate business management platform.
+              Streamline your operations, manage employees, and grow your
+              customer base with our innovative software solutions. Say goodbye
+              to clunky legacy systems and hello to the future of business
+              management.
+            </p>
+          </div>
         </section>
         <section className="landing__features">
           <div className="landing__features-grid">
             <FeatureCard
               icon={<Icon name="calendar" />}
               title="Scheduling"
-              description="Create and manage schedules, assign shifts, and track attendance."
+              description="Create flexible schedules, easily assign shifts, and accurately
+              track attendance with our user-friendly interface."
             />
             <FeatureCard
               icon={<Icon name="users" />}
