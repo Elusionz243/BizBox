@@ -29,12 +29,21 @@ export default function LandingPage() {
       </header>
 
       <main>
-        <p className="landing__subtitle">
-          BizBox is the ultimate business management platform. Streamline your
-          operations, manage employees, and grow your customer base with our
-          innovative software solutions. Say goodbye to clunky legacy systems
-          and hello to the future of business management.
-        </p>
+        <section className="landing__intro">
+          <p className="landing__subtitle">
+            <strong className="landing__hero">BizBox</strong> is the ultimate
+            business management platform. Streamline your operations, manage
+            employees, and grow your customer base with our innovative software
+            solutions. Say goodbye to clunky legacy systems and hello to the
+            future of business management.
+          </p>
+        </section>
+        <section className="landing__scheduling">
+          <h2 className="landing__scheduling-title">Scheduling</h2>
+          <p className="landing__scheduling-description">
+            Create and manage schedules, assign shifts, and track attendance.
+          </p>
+        </section>
         <section className="landing__features">
           <div className="landing__features-grid">
             <FeatureCard
