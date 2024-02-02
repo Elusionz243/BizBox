@@ -1,0 +1,60 @@
+@use "../../../MainRouter.scss" as *;
+
+.feature-section {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-top: $blue-border-lg;
+  border-bottom: $blue-border-lg;
+  background-color: $kacky-transparent;
+
+  &__image-card {
+    aspect-ratio: 16/10;
+    margin: 1rem;
+    box-shadow: $box-shadow;
+    border-radius: $b-radius;
+    max-height: 75%;
+  }
+
+  &__image {
+    width: 100%;
+    height: 100%;
+    border-radius: $b-radius;
+    object-fit: cover;
+  }
+
+  &__content-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__content-card {
+    background-color: $white;
+    padding: 2rem;
+    width: 70%;
+    box-shadow: $box-shadow;
+    border: $blue-border-lg;
+    border-radius: $b-radius;
+    letter-spacing: 0.1rem;
+  }
+
+  &:nth-child(even) {
+    background-color: $white;
+    flex-direction: row-reverse;
+  }
+
+  &:nth-child(even) &__content-card {
+    background-color: rgba($blue, 0.75);
+    color: $white;
+  }
+
+  &__title {
+    font-size: 2.25rem;
+    text-decoration: underline;
+  }
+
+  &__description {
+    font-size: 1.25rem;
+  }
+}

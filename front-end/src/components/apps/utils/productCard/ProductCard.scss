@@ -1,14 +1,14 @@
 @use "../../../../MainRouter.scss" as *;
 
 .product-card {
-  border-bottom: 1px solid $blue-60;
+  border-bottom: 1px solid $blue;
   display: flex;
   justify-content: space-between;
   padding: 2%;
   background-color: $white;
 
   &:hover {
-    background-color: $kacky-30-transparent;
+    background-color: $kacky-transparent;
     cursor: pointer;
   }
 }

@@ -1,15 +1,26 @@
-$white: #fff;
-$black: #000;
+// Colors (Reg + Transparent)
+$white: rgb(255, 255, 255);
+$white-transparent: rgba(255, 255, 255, 0.3);
+$black: rgb(0, 0, 0);
+$black-transparent: rgba(0, 0, 0, 0.3);
 $green: rgb(0, 128, 0);
+$green-transparent: rgba($green, 0.3);
 $grey: rgb(100, 100, 100);
-$background-color_1: rgba(100, 100, 100, 0.1);
-$background-color_2: rgba(11, 173, 227, 0.5);
-$background-color_3: rgba(0, 0, 0, 0.3);
-$blue-60: #3e548d;
-$kacky-30: rgba(222, 220, 200);
-$kacky-30-transparent: rgba(222, 220, 200, 0.3);
+$grey-transparent: rgba(100, 100, 100, 0.1);
+$teal: rgb(11, 176, 227);
+$teal-transparent: rgba($teal, 0.5);
+$blue: rgb(62, 84, 141);
+$blue-transparent: rgba($blue, 0.3);
+$kacky: rgba(222, 220, 200);
+$kacky-transparent: rgba($kacky, 0.3);
 
+// Borders
 $b-radius: 0.25rem;
+$blue-border: 1px solid $blue;
+$blue-border-lg: 2px solid $blue;
+
+// Box Shadows
+$box-shadow: -8px 8px 4px 0 $black-transparent;
 
 .main-container {
   height: 100vh;
@@ -26,13 +37,13 @@ $b-radius: 0.25rem;
     display: initial;
   }
   &::-webkit-scrollbar-track {
-    background-color: $background-color_1;
+    background-color: $grey-transparent;
   }
   &::-webkit-scrollbar-thumb {
-    background-color: $background-color_2;
+    background-color: $teal-transparent;
     border-radius: 5px;
     &:hover {
-      background-color: $blue-60;
+      background-color: $blue;
     }
   }
 }

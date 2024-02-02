@@ -7,27 +7,30 @@
   height: 100vh;
 
   &__header {
-    background-color: $blue-60;
+    background-color: $blue;
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 1rem;
+    position: sticky;
+    top: 0;
   }
   & section {
     padding: 2rem;
     width: 100%;
     height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
   }
 
   &__intro {
     background-image: url("../../images/landing-bg.jpg");
     background-size: cover;
     background-position: center;
+    // height: 100vh !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
   }
 
   &__intro-content {
@@ -46,12 +49,6 @@
     letter-spacing: 0.2rem;
   }
 
-  // &__scheduling {
-  //   background-image: url("../../images/scheduling-bg.jpg");
-  //   background-size: cover;
-  //   background-position: center;
-  // }
-
   &__nav {
     list-style: none;
     font-size: 1.25rem;
@@ -66,48 +63,45 @@
     transition: all 0.15s;
 
     &:hover {
-      color: $kacky-30;
+      color: $kacky;
     }
   }
 
   &__title {
-    // text-align: center;
     font-size: 2.25rem;
-    // letter-spacing: 0.1rem;
     color: #fff;
   }
 
   &__subtitle {
     font-size: 1.5rem;
-    // text-align: center;
   }
 
   &__button {
     padding: 0.75rem 2rem;
     font-size: 1rem;
-    border: 2px solid $blue-60;
+    border: 2px solid $blue;
     background-color: transparent;
-    color: $blue-60;
+    color: $blue;
     border-radius: $b-radius;
     cursor: pointer;
     transition: all 0.15s;
 
     &:hover {
-      background-color: $blue-60;
+      background-color: $blue;
       color: white;
     }
   }
 
   &__features {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-    margin: 0 auto;
-    max-width: 1100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // border: 1px solid red;
   }
 
   &__features-grid {
     display: grid;
+    justify-items: center;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 2rem;
     margin-top: 2rem;

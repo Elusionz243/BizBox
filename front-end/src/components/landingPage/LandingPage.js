@@ -1,9 +1,11 @@
 import React from "react";
 
-import FeatureCard from "../utils/featureCard/FeatureCard";
-import Icon from "../utils/icon/Icon";
+import SchedulingImg from "../../images/scheduling-bg.jpg";
+import TeamManagementImg from "../../images/users.jpg";
+import AnalyticsImg from "../../images/analytics.jpg";
 
 import "./LandingPage.scss";
+import FeatureSection from "../utils/featureSection/FeatureSection";
 export default function LandingPage() {
   return (
     <div className="landing">
@@ -41,30 +43,33 @@ export default function LandingPage() {
             </p>
           </div>
         </section>
-        <section className="landing__features">
-          <div className="landing__features-grid">
-            <FeatureCard
-              icon={<Icon name="calendar" />}
-              title="Scheduling"
-              description="Create flexible schedules, easily assign shifts, and accurately
-              track attendance with our user-friendly interface."
-            />
-            <FeatureCard
-              icon={<Icon name="users" />}
-              title="Team Management"
-              description="View team profiles, assign roles and permissions, and track performance."
-            />
-            <FeatureCard
-              icon={<Icon name="chart-bar" />}
-              title="Analytics"
-              description="Track key metrics, analyze sales and traffic, and improve your business insights."
-            />
-          </div>
-        </section>
+        <div className="landing__feature-sections">
+          <FeatureSection
+            title={"Scheduling"}
+            description={
+              "Create flexible schedules, easily assign shifts, and accurately track attendance with our user-friendly interface."
+            }
+            image={SchedulingImg}
+          />
+          <FeatureSection
+            title={"Team Management"}
+            description={
+              "View team profiles, assign roles and permissions, and track performance."
+            }
+            image={TeamManagementImg}
+          />
+          <FeatureSection
+            title={"Analytics"}
+            description={
+              "Track key metrics, analyze sales and traffic, and improve your business insights."
+            }
+            image={AnalyticsImg}
+          />
+        </div>
       </main>
 
       <footer className="landing__footer">
-        &copy; {new Date().getFullYear()} Store Name
+        &copy; {new Date().getFullYear()} BizBox
       </footer>
     </div>
   );

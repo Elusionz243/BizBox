@@ -3,7 +3,7 @@
 .dashboard-main-container {
   display: flex;
   flex-direction: column;
-  background-color: $kacky-30-transparent;
+  background-color: $kacky-transparent;
   height: 100vh;
 }
 .dashboard {
@@ -13,9 +13,9 @@
 
   &__app {
     border-radius: 8px;
-    border: 1px solid $blue-60;
+    border: 1px solid $blue;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    background-color: $kacky-30-transparent;
+    background-color: $kacky-transparent;
     padding: 16px;
     margin: 8px;
     width: 200px;

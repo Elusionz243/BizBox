@@ -8,7 +8,7 @@ $grey: rgb(100, 100, 100);
   max-height: 100vh;
 }
 .inv-header {
-  background-color: $blue-60;
+  background-color: $blue;
   display: grid;
   grid-template-columns: 33% 33% 1fr;
   align-items: center;
@@ -36,7 +36,7 @@ $grey: rgb(100, 100, 100);
   overflow-y: scroll;
 }
 .table-header {
-  background-color: $kacky-30;
+  background-color: $kacky;
   position: sticky;
   top: 0;
   z-index: 1;

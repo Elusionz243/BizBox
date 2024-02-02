@@ -10,7 +10,7 @@
   &__title {
     font-weight: bold;
     border-bottom: 1px solid rgba(0, 0, 0, 0.5);
-    background-color: $kacky-30;
+    background-color: $kacky;
     padding-left: 5px;
   }
 
@@ -21,7 +21,7 @@
   }
 
   &__totals-container {
-    background-color: $kacky-30;
+    background-color: $kacky;
     border-top: 1px solid rgba(0, 0, 0, 0.5);
     display: flex;
     justify-content: space-between;
