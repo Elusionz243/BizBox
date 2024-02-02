@@ -43,25 +43,25 @@ export default function LandingPage() {
             </p>
           </div>
         </section>
-        <div className="landing__feature-sections">
+        <div className="landing__feature-list">
           <FeatureSection
             title={"Scheduling"}
             description={
-              "Create flexible schedules, easily assign shifts, and accurately track attendance with our user-friendly interface."
+              "Create flexible employee schedules with customizable shift templates, drag and drop shift assignment, and automated attendance tracking. Easily configure rules for shift swapping, time off requests, and schedule notifications."
             }
             image={SchedulingImg}
           />
           <FeatureSection
             title={"Team Management"}
             description={
-              "View team profiles, assign roles and permissions, and track performance."
+              "View detailed team member profiles with photos, contact information, skills, and more. Easily assign user roles and permissions to control access to sensitive data or actions. Track employee performance metrics over time including sales numbers, customer satisfaction ratings, task completion rates, and more to identify high and low performers."
             }
             image={TeamManagementImg}
           />
           <FeatureSection
             title={"Analytics"}
             description={
-              "Track key metrics, analyze sales and traffic, and improve your business insights."
+              "Track key metrics like sales, revenue, expenses, inventory, and more to gain actionable insights into business performance over time. Analyze trends, set benchmarks, and create visual reports to share with stakeholders. Integrate data from multiple sources to build a single source of truth. Identify opportunities for growth and optimization across all parts of your business. "
             }
             image={AnalyticsImg}
           />

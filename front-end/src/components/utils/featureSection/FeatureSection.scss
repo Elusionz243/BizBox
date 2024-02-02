@@ -1,11 +1,12 @@
 @use "../../../MainRouter.scss" as *;
 
 .feature-section {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  border-top: $blue-border-lg;
-  border-bottom: $blue-border-lg;
+  display: grid;
+  align-content: center;
+  gap: 2rem;
+  grid-template-columns: 50vw 1fr;
+  // border-top: $blue-border-lg;
+  // border-bottom: $blue-border-lg;
   background-color: $kacky-transparent;
 
   &__image-card {
@@ -13,7 +14,7 @@
     margin: 1rem;
     box-shadow: $box-shadow;
     border-radius: $b-radius;
-    max-height: 75%;
+    // max-height: 75%;
   }
 
   &__image {
@@ -32,21 +33,28 @@
   &__content-card {
     background-color: $white;
     padding: 2rem;
-    width: 70%;
-    box-shadow: $box-shadow;
+    // max-width: 0%;
     border: $blue-border-lg;
     border-radius: $b-radius;
     letter-spacing: 0.1rem;
+    box-shadow: $box-shadow;
   }
 
   &:nth-child(even) {
     background-color: $white;
-    flex-direction: row-reverse;
+    // align-content: center;
   }
 
   &:nth-child(even) &__content-card {
     background-color: rgba($blue, 0.75);
     color: $white;
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  &:nth-child(even) &__image-card {
+    grid-column: 2;
+    grid-row: 1;
   }
 
   &__title {

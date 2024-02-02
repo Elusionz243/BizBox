@@ -1,15 +1,11 @@
-import React, { useEffect, useRef } from "react";
+import React from "react";
 
 import "./FeatureSection.scss";
 export default function FeatureSection({ title, description, image }) {
   return (
     <section className="feature-section">
       <div className="feature-section__image-card">
-        <img
-          src={image}
-          alt="scheduling image"
-          className="feature-section__image"
-        />
+        <img src={image} alt="scheduling" className="feature-section__image" />
       </div>
       <div className="feature-section__content-container">
         <div className="feature-section__content-card">
