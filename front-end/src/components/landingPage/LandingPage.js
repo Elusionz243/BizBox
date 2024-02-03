@@ -35,11 +35,10 @@ export default function LandingPage() {
           <div className="landing__intro-content">
             <h2 className="landing__title">BizBox</h2>
             <p className="landing__subtitle">
-              &emsp;&emsp; is the ultimate business management platform.
-              Streamline your operations, manage employees, and grow your
-              customer base with our innovative software solutions. Say goodbye
-              to clunky legacy systems and hello to the future of business
-              management.
+              &emsp; is the ultimate business management platform. Streamline
+              your operations, manage employees, and grow your customer base
+              with our innovative software solutions. Say goodbye to clunky
+              legacy systems and hello to the future of business management.
             </p>
           </div>
         </section>

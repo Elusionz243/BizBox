@@ -5,6 +5,7 @@ import homeIcon from "../../../../images/icons/Home.svg";
 import hamburgerMenu from "../../../../images/icons/hamburger-menu.svg";
 
 import "./NavigationBar.scss";
+import Icon from "../../../utils/icon/Icon";
 
 export default function NavigationBar({ appNavigations = [] }) {
   const handleNavigation = (e) => {};
@@ -12,13 +13,18 @@ export default function NavigationBar({ appNavigations = [] }) {
     <div className="navigation-bar">
       <div className="navigation-bar__links">
         <a className="navigation-bar__link profile-thumbnail" href="#">
-          <img src={profilePlaceholder} alt="Profile picture placeholder" />
+          <Icon name="user" width="75" height="75" currentColor={"#ffffff"} />
         </a>
         <a className="navigation-bar__link" href="/">
-          <img src={homeIcon} alt="Home Icon" />
+          <Icon name="home" width="65" height="65" currentColor={"#ffffff"} />
         </a>
         <a className="navigation-bar__link" href="/apps">
-          <img src={hamburgerMenu} alt="Hamburger menu button" />
+          <Icon
+            name="app-grid"
+            width="65"
+            height="65"
+            currentColor={"#ffffff"}
+          />
         </a>
         {appNavigations.map((navigation, index) => (
           <button onClick={handleNavigation} key={index}>

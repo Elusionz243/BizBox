@@ -1,6 +1,1 @@
-$width-height: 150px;
-
-.icon {
-  width: $width-height;
-  height: $width-height;
-}
+@use "../../../MainRouter.scss" as *;
