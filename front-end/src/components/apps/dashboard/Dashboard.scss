@@ -12,8 +12,8 @@
   justify-items: center;
 
   &__app {
-    border-radius: 8px;
-    border: 1px solid $blue;
+    border-radius: $b-radius;
+    border: $blue-border-lg;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     background-color: $kacky-transparent;
     padding: 16px;

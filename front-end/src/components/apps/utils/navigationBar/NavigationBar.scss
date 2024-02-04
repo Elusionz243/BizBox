@@ -7,6 +7,7 @@
   align-items: center;
   justify-content: space-between;
   flex-direction: column;
+  padding: 1rem 0;
 
   &__links {
     display: flex;
@@ -17,20 +18,15 @@
 
   &__link {
     color: $white;
-    width: 50px;
-    margin-top: 15px;
+    margin-top: 1rem;
     aspect-ratio: 1/1;
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: all 0.2s ease-in-out;
-    &:hover {
-      box-shadow: 2px 2px rgba(0, 0, 0, 0.2);
-      transform: scale(1.05);
-    }
   }
 }
 .profile-stats {
   color: $white;
   font-weight: bold;
+  text-align: right;
 }

@@ -6,26 +6,56 @@ import AnalyticsImg from "../../images/analytics.jpg";
 
 import "./LandingPage.scss";
 import FeatureSection from "../utils/featureSection/FeatureSection";
+import Icon from "../utils/icon/Icon";
 export default function LandingPage() {
+  const iconDim = 35;
   return (
     <div className="landing">
       <header className="landing__header">
         <h1 className="landing__title">BizBox</h1>
         <div className="landing__nav">
           <a href="/apps" className="landing__nav-link">
+            <Icon
+              name="app-grid"
+              width={iconDim}
+              height={iconDim}
+              currentColor="#fff"
+              viewBox="-3 -3 24 24"
+            />
             Apps
           </a>
 
           <a href="/about" className="landing__nav-link">
+            <Icon
+              name="book"
+              width={iconDim}
+              height={iconDim}
+              currentColor="#fff"
+              viewBox="-3 -3 24 24"
+            />
             About
           </a>
 
           <a href="/services" className="landing__nav-link">
-            Services
+            <Icon
+              name="dollar-sign"
+              width={iconDim}
+              height={iconDim}
+              currentColor="#fff"
+              viewBox="-3 -3 24 24"
+            />
+            Plans
           </a>
 
           <a href="/login" className="landing__nav-link">
-            Login/Signup
+            <Icon
+              name="user"
+              width={iconDim}
+              height={iconDim}
+              currentColor="#fff"
+              viewBox="-3 -3 24 24"
+            />
+            Login/Sign up
           </a>
         </div>
       </header>

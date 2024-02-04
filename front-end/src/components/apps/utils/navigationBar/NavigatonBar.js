@@ -8,22 +8,36 @@ import "./NavigationBar.scss";
 import Icon from "../../../utils/icon/Icon";
 
 export default function NavigationBar({ appNavigations = [] }) {
+  const iconDim = 50;
   const handleNavigation = (e) => {};
   return (
     <div className="navigation-bar">
       <div className="navigation-bar__links">
         <a className="navigation-bar__link profile-thumbnail" href="#">
-          <Icon name="user" width="75" height="75" currentColor={"#ffffff"} />
+          <Icon
+            name="user"
+            width={iconDim}
+            height={iconDim}
+            currentColor={"#ffffff"}
+            viewBox="-3 0 24 24"
+          />
         </a>
         <a className="navigation-bar__link" href="/">
-          <Icon name="home" width="65" height="65" currentColor={"#ffffff"} />
+          <Icon
+            name="home"
+            width={iconDim}
+            height={iconDim}
+            currentColor={"#ffffff"}
+            viewBox="-3 0 24 24"
+          />
         </a>
         <a className="navigation-bar__link" href="/apps">
           <Icon
             name="app-grid"
-            width="65"
-            height="65"
+            width={iconDim}
+            height={iconDim}
             currentColor={"#ffffff"}
+            viewBox="-3 0 24 24"
           />
         </a>
         {appNavigations.map((navigation, index) => (
