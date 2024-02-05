@@ -2,7 +2,7 @@ import React, { useState, useRef } from "react";
 import { Alphabetize } from "../utils/sortFunctions";
 
 import ProductCard from "../utils/productCard/ProductCard";
-import NavigationBar from "../utils/navigationBar/NavigatonBar";
+import NavigationBar from "../utils/navigationBar/NavigationBar";
 import Cart from "./cart/Cart";
 
 import Searchbar from "../utils/searchbar/Searchbar";

@@ -5,11 +5,13 @@ import FormGen from "../utils/FormGen";
 import "./Inventory.scss";
 import { Alphabetize } from "../utils/sortFunctions";
 import Searchbar from "../utils/searchbar/Searchbar";
-
+import Icon from "../../utils/icon/Icon";
+import NavigationBar from "../utils/navigationBar/NavigationBar";
 export default function Inventory({
   loading,
   listOfProducts,
   setListOfProducts,
+  quickLinks,
 }) {
   const initialProductForm = {
     product_name: "",
@@ -132,27 +134,36 @@ export default function Inventory({
   };
 
   return (
-    <div className="inv-container">
-      <div className="inv-header">
-        <div className="app-title">INVENTORY</div>
-        <div className="inv-search">
-          <i className="bi bi-search" />
-          <Searchbar handleSearch={handleSearch} searchText={searchText} />
-        </div>
-        <div className="toolbar-buttons">
-          <button onClick={showForm} className="inv-btns">
+    <div className="inventory">
+      <NavigationBar appNavigations={quickLinks} />
+      <div className="inventory__toolbar">
+        <div className="inventory__toolbar-btns">
+          <button onClick={showForm} className="inventory__toolbar-btn">
             Add Product
           </button>
-          <button onClick={handleEditMode} className="inv-btns">
+          <button onClick={handleEditMode} className="inventory__toolbar-btn">
             {!editMode ? "Edit" : "Cancel"}
           </button>
           {editMode ? (
-            <button onClick={handleInventoryUpdate} className="inv-btns">
+            <button
+              onClick={handleInventoryUpdate}
+              className="inventory__toolbar-btn"
+            >
               Save
             </button>
           ) : (
             <></>
           )}
+        </div>
+        <div className="inventory__toolbar-search">
+          <Icon
+            name="magnifying-glass"
+            width="32"
+            height="32"
+            currentColor="#000"
+            viewBox="0 0 24 24"
+          />
+          <Searchbar handleSearch={handleSearch} searchText={searchText} />
         </div>
       </div>
       {!loading ? (

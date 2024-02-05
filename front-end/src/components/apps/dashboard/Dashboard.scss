@@ -1,15 +1,17 @@
 @use "../../../MainRouter.scss" as *;
 
-.dashboard-main-container {
-  display: flex;
-  flex-direction: column;
-  background-color: $kacky-transparent;
-  height: 100vh;
-}
 .dashboard {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  justify-items: center;
+  display: flex;
+  height: 92vh;
+
+  &__apps {
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-rows: repeat(auto-fit, 200px);
+    gap: 1rem;
+    padding: 1rem;
+  }
 
   &__app {
     border-radius: $b-radius;

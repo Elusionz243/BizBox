@@ -1,0 +1,11 @@
+@use "../../../../MainRouter.scss" as *;
+
+.header {
+  background-color: $blue;
+  color: white;
+  padding: 0 1rem;
+
+  &__title {
+    font-size: 2.25rem;
+  }
+}

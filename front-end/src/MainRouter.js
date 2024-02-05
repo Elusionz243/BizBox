@@ -2,13 +2,13 @@ import React, { useState, useEffect } from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import LandingPage from "./components/landingPage/LandingPage";
-import PortalHeader from "./components/apps/header/PortalHeader";
+import Header from "./components/apps/utils/header/Header";
 import Dashboard from "./components/apps/dashboard/Dashboard";
 import Inventory from "./components/apps/inventory/Inventory";
 import Register from "./components/apps/register/Register";
 import OrderHistory from "./components/apps/orders/OrderHistory";
 import PriceChecker from "./components/apps/priceChecker/PriceChecker";
-import NavigationBar from "./components/apps/utils/navigationBar/NavigatonBar";
+import NavigationBar from "./components/apps/utils/navigationBar/NavigationBar";
 
 import "./MainRouter.scss";
 
@@ -18,6 +18,39 @@ export default function MainRouter() {
   const [categoryList, setCategoryList] = useState([]);
   const [shoppingCartTotal, setShoppingCartTotal] = useState(0);
   const [loading, setLoading] = useState(true);
+
+  const appQuickLinks = [
+    {
+      title: "Inventory",
+      icon: "clipboard",
+      link: "/app/inventory",
+    },
+    {
+      title: "Register",
+      icon: "cart",
+      link: "/app/register",
+    },
+    {
+      title: "Order History",
+      icon: "clock",
+      link: "/app/order-history",
+    },
+    {
+      title: "Price Checker",
+      icon: "dollar-sign",
+      link: "/app/price-checker",
+    },
+    {
+      title: "Label Maker",
+      icon: "barcode",
+      link: "/app/label-maker",
+    },
+    {
+      title: "Reports",
+      icon: "file",
+      link: "/app/reports",
+    },
+  ];
 
   useEffect(() => {
     const fetchData = async () => {
@@ -113,18 +146,19 @@ export default function MainRouter() {
     {
       path: "/apps",
       element: (
-        <div>
-          <PortalHeader />
-          <Dashboard />
+        <div className="main">
+          <Header title="Dashboard" />
+          <Dashboard quickLinks={appQuickLinks} />
         </div>
       ),
     },
     {
       path: "/app/inventory",
       element: (
-        <div className="main-container">
-          <NavigationBar />
+        <div className="main">
+          <Header title={"Inventory"} />
           <Inventory
+            quickLinks={appQuickLinks}
             loading={loading}
             listOfProducts={listOfProducts}
             setListOfProducts={setListOfProducts}
@@ -136,8 +170,9 @@ export default function MainRouter() {
       path: "/app/register",
       element: (
         <div className="main-container" onKeyDown={(e) => handleScan(e)}>
-          <NavigationBar />
+          <Header title={"Register"} />
           <Register
+            quickLinks={appQuickLinks}
             shoppingCart={shoppingCart}
             listOfProducts={listOfProducts}
             categoryList={categoryList}
@@ -153,7 +188,7 @@ export default function MainRouter() {
       path: "/app/order-history",
       element: (
         <div className="main-container">
-          <NavigationBar />
+          <Header title={"Order History"} />
           <OrderHistory />
         </div>
       ),
@@ -162,7 +197,7 @@ export default function MainRouter() {
       path: "/app/price-checker",
       element: (
         <div className="main-container">
-          <NavigationBar />
+          <Header title={"Price Checker"} />
           <PriceChecker listOfProducts={listOfProducts} />
         </div>
       ),

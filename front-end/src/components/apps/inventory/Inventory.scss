@@ -1,6 +1,25 @@
 @use "../../../MainRouter.scss" as *;
-$grey: rgb(100, 100, 100);
 
+.inventory {
+  display: grid;
+
+  &__toolbar {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 2rem;
+  }
+
+  &__toolbar-btns {
+    display: flex;
+    gap: 1rem;
+    // grid-template-columns: repeat(auto-fit, 100px);
+  }
+
+  &__search {
+    display: flex;
+  }
+}
 .inv-container {
   display: grid;
   grid-template-rows: 6vh 94vh;
