@@ -1,8 +1,12 @@
 @use "../../../MainRouter.scss" as *;
 
 .inventory {
-  display: grid;
+  display: flex;
+  // grid-template-columns: 75px 1fr;
 
+  &__container {
+    display: flex;
+  }
   &__toolbar {
     display: flex;
     justify-content: flex-end;

@@ -1,48 +1,12 @@
 import React from "react";
 
-import NavigationBar from "../utils/navigationBar/NavigationBar";
-
 import "./Dashboard.scss";
 
 import Icon from "../../utils/icon/Icon";
 
 export default function Dashboard({ quickLinks }) {
-  const appQuickLinks = [
-    {
-      title: "Inventory",
-      icon: "clipboard",
-      link: "/app/inventory",
-    },
-    {
-      title: "Register",
-      icon: "cart",
-      link: "/app/register",
-    },
-    {
-      title: "Order History",
-      icon: "clock",
-      link: "/app/order-history",
-    },
-    {
-      title: "Price Checker",
-      icon: "dollar-sign",
-      link: "/app/price-checker",
-    },
-    {
-      title: "Label Maker",
-      icon: "barcode",
-      link: "/app/label-maker",
-    },
-    {
-      title: "Reports",
-      icon: "file",
-      link: "/app/reports",
-    },
-  ];
-
   return (
     <div className="dashboard">
-      <NavigationBar appNavigations={quickLinks} />
       <div className="dashboard__apps">
         <a className="dashboard__app" href="/app/inventory">
           <Icon

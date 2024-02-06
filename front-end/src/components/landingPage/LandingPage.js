@@ -9,6 +9,7 @@ import FeatureSection from "../utils/featureSection/FeatureSection";
 import Icon from "../utils/icon/Icon";
 export default function LandingPage() {
   const iconDim = 35;
+
   return (
     <div className="landing">
       <header className="landing__header">

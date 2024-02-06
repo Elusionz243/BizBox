@@ -3,30 +3,54 @@
 .navigation-bar {
   width: 75px;
   background-color: $blue;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-direction: column;
-  padding: 1rem 0;
+  display: grid;
+  grid-template-rows: repeat(auto-fit);
+  gap: 1rem;
+  height: 100%;
+  position: relative;
 
   &__links {
     display: flex;
     align-items: center;
     flex-direction: column;
-    width: 100%;
   }
 
   &__link {
     color: $white;
     margin-top: 1rem;
-    aspect-ratio: 1/1;
     display: flex;
     justify-content: center;
     align-items: center;
   }
+
+  &__extras {
+    align-self: flex-end;
+    justify-self: center;
+    text-align: right;
+    font-weight: bold;
+    color: $white;
+  }
+
+  &__toggle-btn {
+    position: absolute;
+    top: 20px;
+    right: -20px;
+    width: 20px;
+    aspect-ratio: 2/3;
+    background-color: $blue;
+    z-index: 20;
+    border: 1px solid red;
+  }
+
+  &__link-label {
+    font-size: 1.2rem;
+    font-weight: bold;
+    opacity: 0;
+    translate: opacity 0.5s ease;
+    background-color: $blue;
+  }
 }
-.profile-stats {
-  color: $white;
-  font-weight: bold;
-  text-align: right;
+
+.expand {
+  opacity: 1;
 }

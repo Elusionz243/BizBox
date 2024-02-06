@@ -147,8 +147,15 @@ export default function MainRouter() {
       path: "/apps",
       element: (
         <div className="main">
-          <Header title="Dashboard" />
-          <Dashboard quickLinks={appQuickLinks} />
+          <div className="main__header">
+            <Header title="Dashboard" />
+          </div>
+          <div className="main__navigation-bar">
+            <NavigationBar appNavigations={appQuickLinks} />
+          </div>
+          <div className="main__content">
+            <Dashboard quickLinks={appQuickLinks} />
+          </div>
         </div>
       ),
     },
@@ -156,13 +163,20 @@ export default function MainRouter() {
       path: "/app/inventory",
       element: (
         <div className="main">
-          <Header title={"Inventory"} />
-          <Inventory
-            quickLinks={appQuickLinks}
-            loading={loading}
-            listOfProducts={listOfProducts}
-            setListOfProducts={setListOfProducts}
-          />
+          <div className="main__header">
+            <Header title={"Inventory"} />
+          </div>
+          <div className="main__navigation-bar">
+            <NavigationBar appNavigations={appQuickLinks} />
+          </div>
+          <div className="main__content">
+            <Inventory
+              quickLinks={appQuickLinks}
+              loading={loading}
+              listOfProducts={listOfProducts}
+              setListOfProducts={setListOfProducts}
+            />
+          </div>
         </div>
       ),
     },
