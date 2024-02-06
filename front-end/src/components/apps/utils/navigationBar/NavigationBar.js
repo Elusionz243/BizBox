@@ -1,19 +1,27 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 
 import "./NavigationBar.scss";
 import Icon from "../../../utils/icon/Icon";
 
 export default function NavigationBar({ appNavigations = [] }) {
+  const [navigationOpen, setNavigationOpen] = useState(false);
+
   const navRef = useRef();
+
   const iconDim = 50;
-  const handleNavigation = (e) => {};
 
   const toggleNavigation = (e) => {
     // TODO: add code to toggle the navigation bar
+    setNavigationOpen(!navigationOpen);
+    if (navRef.current.classList.contains("expand")) {
+      navRef.current.classList.remove("expand");
+      return;
+    }
+    navRef.current.classList.add("expand");
   };
 
   return (
-    <div className="navigation-bar">
+    <div className="navigation-bar" ref={navRef}>
       <div className="navigation-bar__links">
         <a className="navigation-bar__link" href="/">
           <Icon
@@ -23,9 +31,9 @@ export default function NavigationBar({ appNavigations = [] }) {
             currentColor={"#ffffff"}
             viewBox="-3 0 24 24"
           />
-          <div className="navigation-bar__link-label" ref={navRef}>
-            Home
-          </div>
+          {navigationOpen && (
+            <div className="navigation-bar__link-label">Home</div>
+          )}
         </a>
         <a className="navigation-bar__link" href="/apps">
           <Icon
@@ -35,9 +43,9 @@ export default function NavigationBar({ appNavigations = [] }) {
             currentColor={"#ffffff"}
             viewBox="-3 0 24 24"
           />
-          <div className="navigation-bar__link-label" ref={navRef}>
-            Apps
-          </div>
+          {navigationOpen && (
+            <div className="navigation-bar__link-label">Apps</div>
+          )}
         </a>
         {appNavigations.map((navigation, index) => (
           <a
@@ -52,9 +60,11 @@ export default function NavigationBar({ appNavigations = [] }) {
               currentColor={"#ffffff"}
               viewBox="-3 0 24 24"
             />
-            <div className="navigation-bar__link-label" ref={navRef}>
-              {navigation.title}
-            </div>
+            {navigationOpen && (
+              <div className="navigation-bar__link-label">
+                {navigation.title}
+              </div>
+            )}
           </a>
         ))}
       </div>
@@ -62,7 +72,7 @@ export default function NavigationBar({ appNavigations = [] }) {
         <p>0.00</p>
         <p>$0.00</p>
       </div>
-      <div className="navigation-bar__toggle-btn" onClick={toggleNavigation}>
+      <button className="navigation-bar__toggle-btn" onClick={toggleNavigation}>
         <Icon
           name="sm-arrow-right"
           width="24"
@@ -70,7 +80,7 @@ export default function NavigationBar({ appNavigations = [] }) {
           currentColor={"#ffffff"}
           viewBox="2 -1 18 18"
         />
-      </div>
+      </button>
     </div>
   );
 }
