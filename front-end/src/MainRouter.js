@@ -18,6 +18,7 @@ export default function MainRouter() {
   const [categoryList, setCategoryList] = useState([]);
   const [shoppingCartTotal, setShoppingCartTotal] = useState(0);
   const [loading, setLoading] = useState(true);
+  const [navigationOpen, setNavigationOpen] = useState(false);
 
   const appQuickLinks = [
     {
@@ -69,6 +70,11 @@ export default function MainRouter() {
     ];
     setCategoryList(categories);
   }, [listOfProducts]);
+
+  const toggleNavigation = (e) => {
+    // TODO: add code to toggle the navigation bar
+    setNavigationOpen(!navigationOpen);
+  };
 
   const addProductToCart = (barcode) => {
     const existingProductIndex = shoppingCart.findIndex(
@@ -146,12 +152,21 @@ export default function MainRouter() {
     {
       path: "/apps",
       element: (
-        <div className="main">
+        <div
+          className="main"
+          style={{
+            gridTemplateColumns: `${navigationOpen ? "250px 1fr" : "75px 1fr"}`,
+          }}
+        >
           <div className="main__header">
             <Header title="Dashboard" />
           </div>
           <div className="main__navigation-bar">
-            <NavigationBar appNavigations={appQuickLinks} />
+            <NavigationBar
+              navigationOpen={navigationOpen}
+              toggleNavigation={toggleNavigation}
+              appNavigations={appQuickLinks}
+            />
           </div>
           <div className="main__content">
             <Dashboard quickLinks={appQuickLinks} />
@@ -162,12 +177,21 @@ export default function MainRouter() {
     {
       path: "/app/inventory",
       element: (
-        <div className="main">
+        <div
+          className="main"
+          style={{
+            gridTemplateColumns: `${navigationOpen ? "250px 1fr" : "75px 1fr"}`,
+          }}
+        >
           <div className="main__header">
             <Header title={"Inventory"} />
           </div>
           <div className="main__navigation-bar">
-            <NavigationBar appNavigations={appQuickLinks} />
+            <NavigationBar
+              navigationOpen={navigationOpen}
+              toggleNavigation={toggleNavigation}
+              appNavigations={appQuickLinks}
+            />
           </div>
           <div className="main__content">
             <Inventory
@@ -183,18 +207,29 @@ export default function MainRouter() {
     {
       path: "/app/register",
       element: (
-        <div className="main-container" onKeyDown={(e) => handleScan(e)}>
-          <Header title={"Register"} />
-          <Register
-            quickLinks={appQuickLinks}
-            shoppingCart={shoppingCart}
-            listOfProducts={listOfProducts}
-            categoryList={categoryList}
-            addProductToCart={addProductToCart}
-            shoppingCartTotal={shoppingCartTotal}
-            setShoppingCartTotal={setShoppingCartTotal}
-            loading={loading}
-          />
+        <div className="main">
+          <div className="main__header">
+            <Header title={"Register"} />
+          </div>
+          <div className="main__navigation-bar">
+            <NavigationBar
+              navigationOpen={navigationOpen}
+              toggleNavigation={toggleNavigation}
+              appNavigations={appQuickLinks}
+            />
+          </div>
+          <div className="main__content">
+            <Register
+              quickLinks={appQuickLinks}
+              shoppingCart={shoppingCart}
+              listOfProducts={listOfProducts}
+              categoryList={categoryList}
+              addProductToCart={addProductToCart}
+              shoppingCartTotal={shoppingCartTotal}
+              setShoppingCartTotal={setShoppingCartTotal}
+              loading={loading}
+            />
+          </div>
         </div>
       ),
     },

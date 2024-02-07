@@ -22,12 +22,17 @@ $blue-border-lg: 2px solid $blue;
 // Box Shadows
 $box-shadow: -8px 8px 4px 0 $black-transparent;
 
+// Booleans
+$nav-expanded: var(--nav-expanded);
+
+:root {
+  --nav-expanded: false;
+}
 .main {
   display: grid;
-  grid-template-columns: 75px 4fr;
   grid-template-rows: 3rem calc(100vh - 3rem);
   grid-template-areas:
-    "header header"
+    "nav header"
     "nav content";
 
   &__header {

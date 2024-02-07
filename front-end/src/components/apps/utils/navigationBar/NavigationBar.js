@@ -3,25 +3,22 @@ import React, { useRef, useState } from "react";
 import "./NavigationBar.scss";
 import Icon from "../../../utils/icon/Icon";
 
-export default function NavigationBar({ appNavigations = [] }) {
-  const [navigationOpen, setNavigationOpen] = useState(false);
-
+export let navWidth = "75px";
+export default function NavigationBar({
+  navigationOpen,
+  toggleNavigation,
+  appNavigations = [],
+}) {
   const navRef = useRef();
+  document.documentElement.style.setProperty("--nav-expanded", navigationOpen);
 
   const iconDim = 50;
 
-  const toggleNavigation = (e) => {
-    // TODO: add code to toggle the navigation bar
-    setNavigationOpen(!navigationOpen);
-    if (navRef.current.classList.contains("expand")) {
-      navRef.current.classList.remove("expand");
-      return;
-    }
-    navRef.current.classList.add("expand");
-  };
-
   return (
-    <div className="navigation-bar" ref={navRef}>
+    <div
+      className="navigation-bar"
+      style={{ width: `${navigationOpen ? "250px" : "75px"}` }}
+    >
       <div className="navigation-bar__links">
         <a className="navigation-bar__link" href="/">
           <Icon
@@ -75,10 +72,10 @@ export default function NavigationBar({ appNavigations = [] }) {
       <button className="navigation-bar__toggle-btn" onClick={toggleNavigation}>
         <Icon
           name="sm-arrow-right"
-          width="24"
-          height="24"
-          currentColor={"#ffffff"}
-          viewBox="2 -1 18 18"
+          width="25"
+          height="25"
+          currentColor={"#000"}
+          viewBox="5 0 18 18"
         />
       </button>
     </div>

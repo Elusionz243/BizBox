@@ -124,9 +124,6 @@ export default function Register({
   return (
     <div className="register-container">
       <div className="register-toolbar-container">
-        <div className="app-title">
-          <h1>Register</h1>
-        </div>
         <button className="btn cart-btn" onClick={handleMobileOpenCart}>
           <i className="bi bi-cart-fill" />
         </button>

@@ -6,12 +6,10 @@ import "./Inventory.scss";
 import { Alphabetize } from "../utils/sortFunctions";
 import Searchbar from "../utils/searchbar/Searchbar";
 import Icon from "../../utils/icon/Icon";
-import NavigationBar from "../utils/navigationBar/NavigationBar";
 export default function Inventory({
   loading,
   listOfProducts,
   setListOfProducts,
-  quickLinks,
 }) {
   const initialProductForm = {
     product_name: "",
@@ -135,215 +133,213 @@ export default function Inventory({
 
   return (
     <div className="inventory">
-      <div className="inventory__container">
-        <div className="inventory__toolbar">
-          <div className="inventory__toolbar-btns">
-            <button onClick={showForm} className="inventory__toolbar-btn">
-              Add Product
+      <div className="inventory__toolbar">
+        <div className="inventory__toolbar-btns">
+          <button onClick={showForm} className="inventory__toolbar-btn">
+            Add Product
+          </button>
+          <button onClick={handleEditMode} className="inventory__toolbar-btn">
+            {!editMode ? "Edit" : "Cancel"}
+          </button>
+          {editMode ? (
+            <button
+              onClick={handleInventoryUpdate}
+              className="inventory__toolbar-btn"
+            >
+              Save
             </button>
-            <button onClick={handleEditMode} className="inventory__toolbar-btn">
-              {!editMode ? "Edit" : "Cancel"}
-            </button>
-            {editMode ? (
-              <button
-                onClick={handleInventoryUpdate}
-                className="inventory__toolbar-btn"
-              >
-                Save
-              </button>
-            ) : (
-              <></>
-            )}
-          </div>
-          <div className="inventory__toolbar-search">
-            <Icon
-              name="magnifying-glass"
-              width="32"
-              height="32"
-              currentColor="#000"
-              viewBox="0 0 24 24"
-            />
-            <Searchbar handleSearch={handleSearch} searchText={searchText} />
-          </div>
+          ) : (
+            <></>
+          )}
         </div>
-        {!loading ? (
-          <div className="inv-sub-container">
-            <table className="table-container">
-              {!editMode ? (
-                <tr className="table-header">
-                  <th>Product Name</th>
-                  <th>Variant</th>
-                  <th>Barcode</th>
-                  <th>Location</th>
-                  <th>Quantity</th>
-                  <th>Price</th>
-                  <th>Cost</th>
-                </tr>
-              ) : (
-                <tr className="table-header">
-                  <th>Product Name</th>
-                  <th>Variant</th>
-                  <th>Category</th>
-                  <th>Barcode</th>
-                  <th>Location</th>
-                  <th>Quantity</th>
-                  <th>Price</th>
-                  <th>Cost</th>
-                </tr>
-              )}
-              {listOfProducts.length === 0 ? (
-                <>Couldn't find anything to load...</>
-              ) : !editMode ? (
-                (searchResults.length > 0
-                  ? searchResults
-                  : Alphabetize(listOfProducts)
-                ).map(
-                  (
-                    {
-                      brand,
-                      product_name,
-                      vendor,
-                      variant,
-                      barcode,
-                      category,
-                      location,
-                      quantity,
-                      price,
-                      cost,
-                    },
-                    index
-                  ) => (
-                    <tr key={index} className="table-data">
-                      <td className="product-name">
-                        <div>{`${
-                          brand.length ? `${brand} -` : ""
-                        } ${product_name}`}</div>
-                        <div className="product-category">{category}</div>
-                      </td>
-                      <td>{variant}</td>
-                      <td>{barcode}</td>
-                      <td>{location}</td>
-                      <td>{quantity}</td>
-                      <td>${Number(price).toFixed(2)}</td>
-                      <td>
-                        <input type="text" disabled value={`$${cost}`}></input>
-                      </td>
-                    </tr>
-                  )
-                )
-              ) : (
-                editList.map(
-                  (
-                    {
-                      product_name,
-                      variant,
-                      category,
-                      barcode,
-                      location,
-                      quantity,
-                      price,
-                      cost,
-                    },
-                    index
-                  ) => (
-                    <tr key={index} className="table-data">
-                      <td>
-                        <input
-                          type="text"
-                          className="product-name"
-                          value={product_name}
-                          onChange={(e) => handleChange(e, index)}
-                          name="product_name"
-                        />
-                      </td>
-                      <td>
-                        <input
-                          type="text"
-                          className="variant-input"
-                          value={variant}
-                          onChange={(e) => handleChange(e, index)}
-                          name="variant"
-                        />
-                      </td>
-                      <td>
-                        <input
-                          type="text"
-                          className="category-input"
-                          value={category}
-                          onChange={(e) => handleChange(e, index)}
-                          name="category"
-                        />
-                      </td>
-                      <td>
-                        <input
-                          type="text"
-                          value={barcode}
-                          onChange={(e) => handleChange(e, index)}
-                          name="barcode"
-                          className=""
-                        />
-                      </td>
-                      <td>
-                        <input
-                          type="text"
-                          value={location}
-                          onChange={(e) => handleChange(e, index)}
-                          name="location"
-                          className=""
-                        />
-                      </td>
-                      <td>
-                        <input
-                          type="text"
-                          value={quantity}
-                          onChange={(e) => handleChange(e, index)}
-                          name="quantity"
-                          className=""
-                        />
-                      </td>
-                      <td>
-                        <input
-                          type="text"
-                          value={Number(price).toFixed(2)}
-                          onChange={(e) => handleChange(e, index)}
-                          name="price"
-                          className=""
-                        />
-                      </td>
-                      <td>
-                        <input
-                          type="text"
-                          value={Number(cost).toFixed(2)}
-                          onChange={(e) => handleChange(e, index)}
-                          name="cost"
-                          className=""
-                        />
-                      </td>
-                      <td>
-                        <button
-                          onClick={() => removeProduct(index)}
-                          className="btn btn-warning"
-                        >
-                          Delete
-                        </button>
-                      </td>
-                    </tr>
-                  )
-                )
-              )}
-            </table>
-          </div>
-        ) : (
-          <h2>Loading...</h2>
-        )}
-        <FormGen
-          formData={productForm}
-          setFormData={setProductForm}
-          formRef={formRef}
-          handleCancel={handleCancel}
-          handleSubmit={handleSubmit}
-        />
+        <div className="inventory__toolbar-search">
+          <Icon
+            name="magnifying-glass"
+            width="32"
+            height="32"
+            currentColor="#000"
+            viewBox="0 0 24 24"
+          />
+          <Searchbar handleSearch={handleSearch} searchText={searchText} />
+        </div>
       </div>
+      {!loading ? (
+        <div className="inventory__table-container">
+          <table className="table-container">
+            {!editMode ? (
+              <tr className="table-header">
+                <th>Product Name</th>
+                <th>Variant</th>
+                <th>Barcode</th>
+                <th>Location</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th>Cost</th>
+              </tr>
+            ) : (
+              <tr className="table-header">
+                <th>Product Name</th>
+                <th>Variant</th>
+                <th>Category</th>
+                <th>Barcode</th>
+                <th>Location</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th>Cost</th>
+              </tr>
+            )}
+            {listOfProducts.length === 0 ? (
+              <>Couldn't find anything to load...</>
+            ) : !editMode ? (
+              (searchResults.length > 0
+                ? searchResults
+                : Alphabetize(listOfProducts)
+              ).map(
+                (
+                  {
+                    brand,
+                    product_name,
+                    vendor,
+                    variant,
+                    barcode,
+                    category,
+                    location,
+                    quantity,
+                    price,
+                    cost,
+                  },
+                  index
+                ) => (
+                  <tr key={index} className="table-data">
+                    <td className="product-name">
+                      <div>{`${
+                        brand.length ? `${brand} -` : ""
+                      } ${product_name}`}</div>
+                      <div className="product-category">{category}</div>
+                    </td>
+                    <td>{variant}</td>
+                    <td>{barcode}</td>
+                    <td>{location}</td>
+                    <td>{quantity}</td>
+                    <td>${Number(price).toFixed(2)}</td>
+                    <td>
+                      <input type="text" disabled value={`$${cost}`}></input>
+                    </td>
+                  </tr>
+                )
+              )
+            ) : (
+              editList.map(
+                (
+                  {
+                    product_name,
+                    variant,
+                    category,
+                    barcode,
+                    location,
+                    quantity,
+                    price,
+                    cost,
+                  },
+                  index
+                ) => (
+                  <tr key={index} className="table-data">
+                    <td>
+                      <input
+                        type="text"
+                        className="product-name"
+                        value={product_name}
+                        onChange={(e) => handleChange(e, index)}
+                        name="product_name"
+                      />
+                    </td>
+                    <td>
+                      <input
+                        type="text"
+                        className="variant-input"
+                        value={variant}
+                        onChange={(e) => handleChange(e, index)}
+                        name="variant"
+                      />
+                    </td>
+                    <td>
+                      <input
+                        type="text"
+                        className="category-input"
+                        value={category}
+                        onChange={(e) => handleChange(e, index)}
+                        name="category"
+                      />
+                    </td>
+                    <td>
+                      <input
+                        type="text"
+                        value={barcode}
+                        onChange={(e) => handleChange(e, index)}
+                        name="barcode"
+                        className=""
+                      />
+                    </td>
+                    <td>
+                      <input
+                        type="text"
+                        value={location}
+                        onChange={(e) => handleChange(e, index)}
+                        name="location"
+                        className=""
+                      />
+                    </td>
+                    <td>
+                      <input
+                        type="text"
+                        value={quantity}
+                        onChange={(e) => handleChange(e, index)}
+                        name="quantity"
+                        className=""
+                      />
+                    </td>
+                    <td>
+                      <input
+                        type="text"
+                        value={Number(price).toFixed(2)}
+                        onChange={(e) => handleChange(e, index)}
+                        name="price"
+                        className=""
+                      />
+                    </td>
+                    <td>
+                      <input
+                        type="text"
+                        value={Number(cost).toFixed(2)}
+                        onChange={(e) => handleChange(e, index)}
+                        name="cost"
+                        className=""
+                      />
+                    </td>
+                    <td>
+                      <button
+                        onClick={() => removeProduct(index)}
+                        className="btn btn-warning"
+                      >
+                        Delete
+                      </button>
+                    </td>
+                  </tr>
+                )
+              )
+            )}
+          </table>
+        </div>
+      ) : (
+        <h2>Loading...</h2>
+      )}
+      <FormGen
+        formData={productForm}
+        setFormData={setProductForm}
+        formRef={formRef}
+        handleCancel={handleCancel}
+        handleSubmit={handleSubmit}
+      />
     </div>
   );
 }

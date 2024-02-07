@@ -1,9 +1,9 @@
 @use "../../../MainRouter.scss" as *;
 
 .inventory {
-  display: flex;
-  // grid-template-columns: 75px 1fr;
-
+  display: grid;
+  grid-template-rows: 75px 1fr;
+  // max-height: calc(100vh - 3rem);
   &__container {
     display: flex;
   }
@@ -11,7 +11,6 @@
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    padding: 2rem;
   }
 
   &__toolbar-btns {
@@ -22,6 +21,14 @@
 
   &__search {
     display: flex;
+  }
+
+  &__table-container {
+    max-height: calc(100vh - 4rem - 75px);
+    overflow-y: scroll;
+    margin: 0 2rem 2rem 2rem;
+    border: 2px solid $blue;
+    border-radius: $b-radius;
   }
 }
 .inv-container {
@@ -40,7 +47,7 @@
 .inv-search {
   display: flex;
   gap: 5px;
-  color: $white;
+  color: $black;
   align-items: center;
   position: relative;
 }
