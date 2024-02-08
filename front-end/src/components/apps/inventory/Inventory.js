@@ -5,7 +5,6 @@ import FormGen from "../utils/FormGen";
 import "./Inventory.scss";
 import { Alphabetize } from "../utils/sortFunctions";
 import Searchbar from "../utils/searchbar/Searchbar";
-import Icon from "../../utils/icon/Icon";
 export default function Inventory({
   loading,
   listOfProducts,
@@ -99,36 +98,67 @@ export default function Inventory({
     return;
   };
 
+  // function searchInventory(searchText) {
+  //   // Create an empty results array
+  //   const results = [];
+
+  //   // Loop through the inventory list
+  //   for (const product of inventoryList) {
+  //     // Check if searchText matches barcode, name, variant or category
+  //     if (
+  //       product.barcode.includes(searchText) ||
+  //       product.name.includes(searchText) ||
+  //       product.variant.includes(searchText) ||
+  //       product.category.includes(searchText)
+  //     ) {
+  //       // Add matching product to results
+  //       results.push(product);
+  //     }
+  //   }
+
+  //   // Return the results array
+  //   return results;
+  // }
+
+  let timeout = 0;
+  let tempSearchText = "";
   const handleSearch = (e) => {
-    let value = e.target.value;
-    setSearchText((prev) => (prev = value));
-    if (value.length === 0) {
+    tempSearchText = e.target.value;
+    if (timeout) {
+      clearTimeout(timeout);
+    }
+
+    // tempSearchText = value;
+    timeout = setTimeout(() => {
+      // setSearchText((prev) => (prev = value));
+      let split = tempSearchText
+        .replace(/[-\/\\^$*+?.()|[\]{}]/g, "")
+        .split(" ")
+        .map((val) => `(?=.*${val})`);
+
+      let regex = new RegExp(`${split.join("")}`, "gi");
+      let filtered = [];
+      for (let i = 0; i < listOfProducts.length; i++) {
+        const { brand, product_name, category, variant, barcode, vendor } =
+          listOfProducts[i];
+        if (barcode.toString().match(regex)) {
+          filtered.push(listOfProducts[i]);
+          continue;
+        }
+        if (brand.match(regex)) {
+          filtered.push(listOfProducts[i]);
+          continue;
+        }
+        if (`${product_name} ${variant} ${category}`.match(regex)) {
+          filtered.push(listOfProducts[i]);
+        }
+      }
+      setSearchResults([...filtered]);
+      clearTimeout(timeout);
+    }, 5000);
+    if (tempSearchText === "") {
       setSearchResults([]);
     }
-
-    let split = value
-      .replace(/[-\/\\^$*+?.()|[\]{}]/g, "\\$&")
-      .split(" ")
-      .map((val) => `(?=.*${val})`);
-
-    let regex = new RegExp(`${split.join("")}`, "gi");
-    let filtered = [];
-    for (let i = 0; i < listOfProducts.length; i++) {
-      const { brand, product_name, category, variant, barcode, vendor } =
-        listOfProducts[i];
-      if (barcode.toString().match(regex)) {
-        filtered.push(listOfProducts[i]);
-        continue;
-      }
-      if (brand.match(regex)) {
-        filtered.push(listOfProducts[i]);
-        continue;
-      }
-      if (`${product_name} ${variant} ${category}`.match(regex)) {
-        filtered.push(listOfProducts[i]);
-      }
-    }
-    setSearchResults([...filtered]);
   };
 
   return (
@@ -153,14 +183,12 @@ export default function Inventory({
           )}
         </div>
         <div className="inventory__toolbar-search">
-          <Icon
-            name="magnifying-glass"
-            width="32"
-            height="32"
-            currentColor="#000"
-            viewBox="0 0 24 24"
+          <Searchbar
+            listOfProducts={listOfProducts}
+            searchResults={searchResults}
+            setSearchResults={setSearchResults}
+            searchingList={true}
           />
-          <Searchbar handleSearch={handleSearch} searchText={searchText} />
         </div>
       </div>
       {!loading ? (

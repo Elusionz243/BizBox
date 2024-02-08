@@ -92,34 +92,34 @@ export default function Register({
     // setCategoryList([...]);
   };
 
-  const handleSearch = (e) => {
-    const value = e.target.value;
-    setSearchText((prev) => (prev = value));
-    if (value.length === 0) {
-      setSearchResults([]);
-      if (searchRef.current.classList.contains("active"))
-        searchRef.current.classList.remove("active");
-      return;
-    }
+  // const handleSearch = (e) => {
+  //   const value = e.target.value;
+  //   setSearchText((prev) => (prev = value));
+  //   if (value.length === 0) {
+  //     setSearchResults([]);
+  //     if (searchRef.current.classList.contains("active"))
+  //       searchRef.current.classList.remove("active");
+  //     return;
+  //   }
 
-    searchRef.current.classList.add("active");
+  //   searchRef.current.classList.add("active");
 
-    let split = value.replace(/[-\/\\^$*+?.()|[\]{}]/g, "\\$&").split(" ");
-    split = split.map((val) => `(?=.*${val})`);
+  //   let split = value.replace(/[-\/\\^$*+?.()|[\]{}]/g, "\\$&").split(" ");
+  //   split = split.map((val) => `(?=.*${val})`);
 
-    const regex = new RegExp(split.join(""), "gi");
+  //   const regex = new RegExp(split.join(""), "gi");
 
-    let filtered = listOfProducts.filter((product) => {
-      const { product_name, variant, category, barcode } = product;
-      return barcode.toString().match(regex)
-        ? product
-        : `${product_name} ${variant} ${category}`.match(regex)
-        ? product
-        : null;
-    });
+  //   let filtered = listOfProducts.filter((product) => {
+  //     const { product_name, variant, category, barcode } = product;
+  //     return barcode.toString().match(regex)
+  //       ? product
+  //       : `${product_name} ${variant} ${category}`.match(regex)
+  //       ? product
+  //       : null;
+  //   });
 
-    setSearchResults([...filtered]);
-  };
+  //   setSearchResults([...filtered]);
+  // };
 
   return (
     <div className="register-container">
@@ -130,9 +130,9 @@ export default function Register({
         <div className="register-search">
           <i className="bi bi-search" />
           <Searchbar
-            handleSearch={handleSearch}
-            searchText={searchText}
+            listOfProducts={listOfProducts}
             searchResults={searchResults}
+            setSearchResults={setSearchResults}
             searchRef={searchRef}
             addProductToCart={addProductToCart}
           />

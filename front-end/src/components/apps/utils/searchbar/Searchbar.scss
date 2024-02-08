@@ -1,16 +1,18 @@
-$color_1: #fff;
-$color_2: #000;
-$background-color_1: #fff;
+@use "../../../../MainRouter.scss" as *;
 
 .searchbar-container {
   position: relative;
+  display: grid;
+  grid-template-columns: 32px 1fr;
+  // border: 1px solid red;
 }
 .searchbar {
-  background: var(--light-blue);
+  // background: var(--light-blue);
+  // display: flex;
+  // flex-wrap: nowrap;
   border: none;
-  border-bottom: 2px solid #fff;
+  border-bottom: 1px solid $black;
   border-radius: 0;
-  color: $color_1;
   font-size: 1.125rem;
   box-shadow: inset;
   &:focus {
@@ -23,7 +25,7 @@ $background-color_1: #fff;
     outline: none;
   }
   &::placeholder {
-    color: $color_1;
+    color: $white;
     font-size: 1rem;
   }
 }
@@ -31,12 +33,12 @@ $background-color_1: #fff;
   position: absolute;
   display: none;
   grid-template-rows: 1fr;
-  background-color: $background-color_1;
+  background-color: $white;
   top: 2rem;
   z-index: 2;
   overflow-y: scroll;
   max-height: 80vh;
-  color: $color_2;
+  color: $black;
 }
 .active {
   display: grid;
