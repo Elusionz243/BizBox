@@ -128,9 +128,7 @@ export default function Inventory({
       clearTimeout(timeout);
     }
 
-    // tempSearchText = value;
     timeout = setTimeout(() => {
-      // setSearchText((prev) => (prev = value));
       let split = tempSearchText
         .replace(/[-\/\\^$*+?.()|[\]{}]/g, "")
         .split(" ")

@@ -89,7 +89,6 @@ export default function Register({
 
   const handleCloseCategory = (e) => {
     setShowCategories(!showCategories);
-    // setCategoryList([...]);
   };
 
   // const handleSearch = (e) => {
@@ -122,13 +121,12 @@ export default function Register({
   // };
 
   return (
-    <div className="register-container">
-      <div className="register-toolbar-container">
+    <div className="register">
+      <div className="register__toolbar">
         <button className="btn cart-btn" onClick={handleMobileOpenCart}>
           <i className="bi bi-cart-fill" />
         </button>
         <div className="register-search">
-          <i className="bi bi-search" />
           <Searchbar
             listOfProducts={listOfProducts}
             searchResults={searchResults}

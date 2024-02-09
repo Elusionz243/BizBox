@@ -25,7 +25,6 @@ export default function Searchbar({
       return setSearchResults([]);
     }
     timeout = setTimeout(() => {
-      // console.log("30919871".toLowerCase());
       for (let i = 0; i < listOfProducts.length; i++) {
         const { brand, product_name, category, variant, barcode } =
           listOfProducts[i];

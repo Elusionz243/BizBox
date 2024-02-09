@@ -11,11 +11,23 @@
     display: flex;
     justify-content: flex-end;
     align-items: center;
+    gap: 1rem;
   }
 
   &__toolbar-btns {
     display: flex;
     gap: 1rem;
+  }
+
+  &__toolbar-btn {
+    background: none;
+    border: none;
+    font-size: 1.125rem;
+    font-weight: bold;
+    &:hover {
+      border-bottom: 2px solid $blue;
+      font-size: 1.15rem;
+    }
   }
 
   &__search {
@@ -28,6 +40,7 @@
     margin: 0 2rem 2rem 2rem;
     border: 2px solid $blue;
     border-radius: $b-radius;
+    height: calc(100vh - 4rem - 75px);
   }
 }
 .inv-container {
