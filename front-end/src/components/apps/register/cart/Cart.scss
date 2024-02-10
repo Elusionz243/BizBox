@@ -1,23 +1,16 @@
 @use "../../../../MainRouter.scss" as *;
 
 .cart {
-  width: 100%;
   background-color: $white;
-  border-right: 1px solid var(--hazel);
-  display: grid;
-  grid-template-rows: 1.8rem 1fr 5rem;
-
+  border-right: 1px solid $blue;
   &__title {
     font-weight: bold;
     border-bottom: 1px solid rgba(0, 0, 0, 0.5);
     background-color: $kacky;
-    padding-left: 5px;
   }
 
   &__items {
     overflow-y: scroll;
-    padding: 5px;
-    max-height: 81vh;
   }
 
   &__totals-container {
@@ -35,6 +28,10 @@
   &__totals {
     font-weight: bold;
     color: $green;
+  }
+
+  &__empty {
+    height: calc(100vh - $header-height - 7.25rem);
   }
 }
 

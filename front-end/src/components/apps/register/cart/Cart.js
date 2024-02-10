@@ -12,14 +12,14 @@ export default function Cart({
 }) {
   return (
     <div className="cart" ref={cartRef}>
-      <div>
-        <h5 className="cart__title">Current order</h5>
+      <div className="cart__title">
+        <h5>Current order</h5>
       </div>
       <div className="cart__items">
         {shoppingCart.length ? (
           shoppingCart.map((product) => <ProductCard product={product} />)
         ) : (
-          <div>Tap an item to start a new order</div>
+          <div className="cart__empty">Tap an item to start a new order</div>
         )}
       </div>
       <div className="cart__totals-container">

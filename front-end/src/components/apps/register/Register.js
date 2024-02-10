@@ -91,59 +91,32 @@ export default function Register({
     setShowCategories(!showCategories);
   };
 
-  // const handleSearch = (e) => {
-  //   const value = e.target.value;
-  //   setSearchText((prev) => (prev = value));
-  //   if (value.length === 0) {
-  //     setSearchResults([]);
-  //     if (searchRef.current.classList.contains("active"))
-  //       searchRef.current.classList.remove("active");
-  //     return;
-  //   }
-
-  //   searchRef.current.classList.add("active");
-
-  //   let split = value.replace(/[-\/\\^$*+?.()|[\]{}]/g, "\\$&").split(" ");
-  //   split = split.map((val) => `(?=.*${val})`);
-
-  //   const regex = new RegExp(split.join(""), "gi");
-
-  //   let filtered = listOfProducts.filter((product) => {
-  //     const { product_name, variant, category, barcode } = product;
-  //     return barcode.toString().match(regex)
-  //       ? product
-  //       : `${product_name} ${variant} ${category}`.match(regex)
-  //       ? product
-  //       : null;
-  //   });
-
-  //   setSearchResults([...filtered]);
-  // };
-
   return (
     <div className="register">
-      <div className="register__toolbar">
-        <button className="btn cart-btn" onClick={handleMobileOpenCart}>
-          <i className="bi bi-cart-fill" />
-        </button>
-        <div className="register-search">
-          <Searchbar
-            listOfProducts={listOfProducts}
-            searchResults={searchResults}
-            setSearchResults={setSearchResults}
-            searchRef={searchRef}
-            addProductToCart={addProductToCart}
-          />
-        </div>
-      </div>
-      <div className="register-secondary-container">
+      <div className="register__cart">
         <Cart
           shoppingCart={shoppingCart}
           shoppingCartTotal={shoppingCartTotal}
           cartRef={cartRef}
         />
+      </div>
+      <div className="register__content">
+        <div className="register__toolbar">
+          <button className="btn cart-btn" onClick={handleMobileOpenCart}>
+            <i className="bi bi-cart-fill" />
+          </button>
+          <div className="register__search">
+            <Searchbar
+              listOfProducts={listOfProducts}
+              searchResults={searchResults}
+              setSearchResults={setSearchResults}
+              searchRef={searchRef}
+              addProductToCart={addProductToCart}
+            />
+          </div>
+        </div>
         {!loading && showCategories ? (
-          <div className="register-categories">
+          <div className="register__categories">
             {Alphabetize(categoryList, true).map((category, index) => (
               <div
                 key={index}
@@ -152,9 +125,9 @@ export default function Register({
               >
                 <img
                   src={categoryImages[category]}
-                  className="category-image"
+                  className="category__image"
                 />
-                <div className="category-title">
+                <div className="category__title">
                   <h6>{category}</h6>
                 </div>
               </div>

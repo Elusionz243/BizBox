@@ -25,12 +25,15 @@ $box-shadow: -8px 8px 4px 0 $black-transparent;
 // Booleans
 $nav-expanded: var(--nav-expanded);
 
+// Dimensions
+$header-height: 3rem;
+
 :root {
   --nav-expanded: false;
 }
 .main {
   display: grid;
-  grid-template-rows: 3rem calc(100vh - 3rem);
+  grid-template-rows: $header-height calc(100vh - $header-height);
   grid-template-areas:
     "nav header"
     "nav content";

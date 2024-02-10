@@ -1,71 +1,64 @@
 @use "../../../MainRouter.scss" as *;
 
-.register-container {
-  max-height: 100vh;
-  width: 100%;
-  --toolbar-height: 6vh;
-  --secondary-container-height: 94vh;
-}
-.register-toolbar-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: $blue;
-  height: var(--toolbar-height);
-  width: 100%;
-}
-.searchbar-container {
-  width: 25vw;
-  justify-self: flex-end;
-  padding-right: 10px;
-}
-.register-secondary-container {
+$toolbar-height: 3rem;
+
+.register {
+  max-height: calc($header-height - 100vh);
   display: grid;
-  grid-template-columns: 25vw 1fr;
-  height: var(--secondary-container-height);
+  grid-template-areas:
+    "cart toolbar"
+    "cart categories"
+    "cart categories";
+  grid-template-columns: 25vw calc(75vw - 75px);
+  grid-template-rows: $toolbar-height calc($toolbar-height - 100vh);
+  &__cart {
+    grid-area: cart;
+  }
+
+  &__toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: $toolbar-height;
+    grid-area: toolbar;
+  }
+
+  &__categories {
+    grid-area: categories;
+    overflow-y: scroll;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(230px), 1fr));
+    gap: 1rem;
+    padding: 1rem;
+    max-height: calc(100vh - $header-height - $toolbar-height);
+  }
 }
-.register-categories {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(230px), 1fr));
-  gap: 1rem;
-  padding: 1rem;
-  overflow-y: scroll;
-  background-color: $kacky-transparent;
-}
+
 .category {
   background-color: $white;
   border-radius: 5px;
-  border: 2px solid var(--blue-bg);
+  border: 2px solid $blue;
   display: grid;
   grid-template-rows: 1fr 4ch;
   &:hover {
-    border: 1px solid var(--blue-bg);
-    outline: 1px solid var(--blue-bg);
+    border: 1px solid $blue;
+    outline: 1px solid $blue;
     transform: scale(102.5%);
     border-radius: 10px;
   }
   &:active {
     background-color: $kacky;
   }
-}
-.category-image {
-  justify-self: center;
-  width: calc(100% - 2px);
-}
-.category-title {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: $blue;
-  color: $white;
-  padding-top: 5px;
-  letter-spacing: 0.75px;
-  border-radius: 0.25rem;
-  h6 {
-    text-align: center;
-    font-weight: 600;
+
+  &__image {
+    justify-self: center;
+    width: calc(100% - 2px);
+  }
+
+  &__title {
   }
 }
+
 .cart-btn {
   background-color: $kacky-transparent;
   color: $grey;
@@ -83,32 +76,7 @@
     color: $white;
   }
 }
-.categorized-products-container {
-  display: grid;
-  background-color: $kacky-transparent;
-}
-.categorized-products {
-  overflow-y: scroll;
-  padding: 5px;
-  max-height: 88vh;
-}
-.category-toolbar-container {
-  display: flex;
-  align-items: center;
-}
-.category-back-button {
-  background-color: transparent;
-  border-radius: 5px;
-  padding: 5px 10px;
-  border: 1px solid #ddd;
-}
 
-.register-search {
-  display: flex;
-  align-items: baseline;
-  gap: 10px;
-  color: $white;
-}
 @media screen and (max-width: 855px) {
   .register-secondary-container {
     grid-template-columns: 40vw 1fr;
