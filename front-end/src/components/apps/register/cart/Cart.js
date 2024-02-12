@@ -12,9 +12,7 @@ export default function Cart({
 }) {
   return (
     <div className="cart" ref={cartRef}>
-      <div className="cart__title">
-        <h5>Current order</h5>
-      </div>
+      <div className="cart__title">Current order</div>
       <div className="cart__items">
         {shoppingCart.length ? (
           shoppingCart.map((product) => <ProductCard product={product} />)
@@ -22,7 +20,7 @@ export default function Cart({
           <div className="cart__empty">Tap an item to start a new order</div>
         )}
       </div>
-      <div className="cart__totals-container">
+      <footer className="cart__totals-container">
         <div className="cart__totals-titles">
           <div>Subtotal:</div>
           <div>Tax:</div>
@@ -33,7 +31,7 @@ export default function Cart({
           <div>${(shoppingCartTotal * 0.0825).toFixed(2)}</div>
           <div>${(shoppingCartTotal * 1.0825).toFixed(2)}</div>
         </div>
-      </div>
+      </footer>
     </div>
   );
 }

@@ -35,8 +35,8 @@ $header-height: 3rem;
   display: grid;
   grid-template-rows: $header-height calc(100vh - $header-height);
   grid-template-areas:
-    "nav header"
-    "nav content";
+    "nav header header"
+    "nav content content";
 
   &__header {
     grid-area: header;

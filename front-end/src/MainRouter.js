@@ -207,7 +207,12 @@ export default function MainRouter() {
     {
       path: "/app/register",
       element: (
-        <div className="main">
+        <div
+          className="main"
+          style={{
+            gridTemplateColumns: `${navigationOpen ? "250px 1fr" : "75px 1fr"}`,
+          }}
+        >
           <div className="main__header">
             <Header title={"Register"} />
           </div>

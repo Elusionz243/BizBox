@@ -1,9 +1,9 @@
 @use "../../../MainRouter.scss" as *;
 
-$toolbar-height: 3rem;
+$toolbar-height: 50px;
 
 .register {
-  max-height: calc($header-height - 100vh);
+  // max-height: calc($header-height - 100vh);
   display: grid;
   grid-template-areas:
     "cart toolbar"
@@ -30,7 +30,7 @@ $toolbar-height: 3rem;
     grid-template-columns: repeat(auto-fit, minmax(min(230px), 1fr));
     gap: 1rem;
     padding: 1rem;
-    max-height: calc(100vh - $header-height - $toolbar-height);
+    max-height: calc(100vh - $header-height - $toolbar-height - 1px);
   }
 }
 
@@ -74,30 +74,5 @@ $toolbar-height: 3rem;
   &:active {
     background-color: $kacky-transparent;
     color: $white;
-  }
-}
-
-@media screen and (max-width: 855px) {
-  .register-secondary-container {
-    grid-template-columns: 40vw 1fr;
-  }
-  .register-categories {
-    padding: 0.5rem;
-    gap: 0.5rem;
-  }
-  .category-image {
-    display: none;
-  }
-  .category-title {
-    background-color: $white;
-  }
-}
-@media screen and (max-width: 766px) {
-  .register-secondary-container {
-    grid-template-columns: 1fr;
-    position: relative;
-  }
-  .cart-btn {
-    display: initial;
   }
 }
