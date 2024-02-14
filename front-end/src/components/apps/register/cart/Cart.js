@@ -1,15 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 
 import ProductCard from "../../utils/productCard/ProductCard";
 
 import "./Cart.scss";
 
-export default function Cart({
-  shoppingCart,
-  shoppingCartTotal,
-  cartRef,
-  removeProductFromCart,
-}) {
+export default function Cart({ shoppingCart, cartRef, removeProductFromCart }) {
+  const [subTotal, setSubTotal] = useState(0);
+  const [tax, setTax] = useState(0);
+  const [total, setTotal] = useState(0);
+
+  const calculateTotal = () => {
+    console.log("calculateTotal");
+    for (let i = 0; i < shoppingCart.length; i++) {
+      setSubTotal((prev) => prev + shoppingCart[i].price);
+    }
+    // setSubTotal((prev) => prev.toFixed(2));
+    setTax((prev) => (prev * 0.0825).toFixed(2));
+    setTotal((prev) => (prev * 1.0825).toFixed(2));
+  };
   return (
     <div className="cart" ref={cartRef}>
       <div className="cart__title">Current order</div>
@@ -27,9 +35,9 @@ export default function Cart({
           <div>Total:</div>
         </div>
         <div className="cart__totals">
-          <div>${shoppingCartTotal.toFixed(2)}</div>
-          <div>${(shoppingCartTotal * 0.0825).toFixed(2)}</div>
-          <div>${(shoppingCartTotal * 1.0825).toFixed(2)}</div>
+          <div>${subTotal}</div>
+          <div>${tax}</div>
+          <div>${total}</div>
         </div>
       </footer>
     </div>

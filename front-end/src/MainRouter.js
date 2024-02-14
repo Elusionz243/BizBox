@@ -16,7 +16,6 @@ export default function MainRouter() {
   const [listOfProducts, setListOfProducts] = useState([]);
   const [shoppingCart, setShoppingCart] = useState([]);
   const [categoryList, setCategoryList] = useState([]);
-  const [shoppingCartTotal, setShoppingCartTotal] = useState(0);
   const [loading, setLoading] = useState(true);
   const [navigationOpen, setNavigationOpen] = useState(false);
 
@@ -91,16 +90,16 @@ export default function MainRouter() {
     }
 
     // Calculate total after updating the cart
-    calculateTotal();
+    // calculateTotal();
   };
 
-  const calculateTotal = () => {
-    let total = 0;
-    shoppingCart.forEach((item) => {
-      total += item.price * item.cartQuantity;
-    });
-    setShoppingCartTotal(total);
-  };
+  // const calculateTotal = () => {
+  //   let total = 0;
+  //   shoppingCart.forEach((item) => {
+  //     total += item.price * item.cartQuantity;
+  //   });
+  //   setShoppingCartTotal(total);
+  // };
 
   let interval;
   let tempBarcode = "";
@@ -230,8 +229,6 @@ export default function MainRouter() {
               listOfProducts={listOfProducts}
               categoryList={categoryList}
               addProductToCart={addProductToCart}
-              shoppingCartTotal={shoppingCartTotal}
-              setShoppingCartTotal={setShoppingCartTotal}
               loading={loading}
             />
           </div>

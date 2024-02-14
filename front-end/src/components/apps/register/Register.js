@@ -19,8 +19,6 @@ export default function Register({
   listOfProducts = [],
   categoryList,
   addProductToCart,
-  shoppingCartTotal,
-  setShoppingCartTotal,
   loading,
 }) {
   const [categorizedProducts, setCategorizedProducts] = useState([]);
@@ -94,17 +92,21 @@ export default function Register({
   return (
     <div className="register">
       <div className="register__cart">
-        <Cart
-          shoppingCart={shoppingCart}
-          shoppingCartTotal={shoppingCartTotal}
-          cartRef={cartRef}
-        />
+        <Cart shoppingCart={shoppingCart} cartRef={cartRef} />
       </div>
       <div className="register__content">
         <div className="register__toolbar">
           <button className="btn cart-btn" onClick={handleMobileOpenCart}>
             <i className="bi bi-cart-fill" />
           </button>
+          {!showCategories && (
+            <button
+              className="category-back-button"
+              onClick={handleCloseCategory}
+            >
+              {"<< Categories"}
+            </button>
+          )}
           <div className="register__search">
             <Searchbar
               listOfProducts={listOfProducts}
@@ -127,9 +129,7 @@ export default function Register({
                   src={categoryImages[category]}
                   className="category__image"
                 />
-                <div className="category__title">
-                  <h6>{category}</h6>
-                </div>
+                <div className="category__title">{category}</div>
               </div>
             ))}
           </div>
@@ -137,15 +137,7 @@ export default function Register({
           <>Loading...</>
         ) : null}
         {categorizedProducts.length && !showCategories ? (
-          <div className="categorized-products-container">
-            <div className="category-toolbar-container">
-              <button
-                className="category-back-button"
-                onClick={handleCloseCategory}
-              >
-                {"<< Categories"}
-              </button>
-            </div>
+          <div className="register__products-list">
             <div className="categorized-products">
               {Alphabetize(categorizedProducts).map((product, index) => (
                 <ProductCard

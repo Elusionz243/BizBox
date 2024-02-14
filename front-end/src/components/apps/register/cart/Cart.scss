@@ -4,15 +4,19 @@
   background-color: $white;
   border-right: 1px solid $blue;
   height: calc(100vh - $header-height);
-  border: 1px solid red;
+  // border: 1px solid red;
   &__title {
+    height: 1.5rem;
+    font-size: 1rem;
     font-weight: bold;
     border-bottom: 1px solid rgba(0, 0, 0, 0.5);
     background-color: $kacky;
+    padding: 0 0.5rem;
   }
 
   &__items {
     overflow-y: scroll;
+    aspect-ratio: 0.575;
   }
 
   &__totals-container {
@@ -20,7 +24,7 @@
     border-top: 1px solid rgba(0, 0, 0, 0.5);
     display: flex;
     justify-content: space-between;
-    // padding: 5px;
+    padding: 0 0.5rem;
   }
 
   &__totals-titles {
