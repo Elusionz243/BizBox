@@ -14,7 +14,6 @@ import "./MainRouter.scss";
 
 export default function MainRouter() {
   const [listOfProducts, setListOfProducts] = useState([]);
-  const [shoppingCart, setShoppingCart] = useState([]);
   const [categoryList, setCategoryList] = useState([]);
   const [loading, setLoading] = useState(true);
   const [navigationOpen, setNavigationOpen] = useState(false);
@@ -75,30 +74,22 @@ export default function MainRouter() {
     setNavigationOpen(!navigationOpen);
   };
 
-  const addProductToCart = (barcode) => {
-    const existingProductIndex = shoppingCart.findIndex(
-      (item) => item.barcode === barcode
-    );
+  // const addProductToCart = (barcode) => {
+  //   const existingProductIndex = shoppingCart.findIndex(
+  //     (item) => item.barcode === barcode
+  //   );
 
-    if (existingProductIndex !== -1) {
-      const updatedCart = [...shoppingCart];
-      updatedCart[existingProductIndex].cartQuantity += 1;
-      setShoppingCart([...updatedCart]);
-    } else {
-      const product = listOfProducts.find((prod) => prod.barcode === barcode);
-      setShoppingCart([...shoppingCart, { ...product, cartQuantity: 1 }]);
-    }
+  //   if (existingProductIndex !== -1) {
+  //     const updatedCart = [...shoppingCart];
+  //     updatedCart[existingProductIndex].cartQuantity += 1;
+  //     setShoppingCart([...updatedCart]);
+  //   } else {
+  //     const product = listOfProducts.find((prod) => prod.barcode === barcode);
+  //     setShoppingCart([...shoppingCart, { ...product, cartQuantity: 1 }]);
+  //   }
 
-    // Calculate total after updating the cart
-    // calculateTotal();
-  };
-
-  // const calculateTotal = () => {
-  //   let total = 0;
-  //   shoppingCart.forEach((item) => {
-  //     total += item.price * item.cartQuantity;
-  //   });
-  //   setShoppingCartTotal(total);
+  //   // Calculate total after updating the cart
+  //   // calculateTotal();
   // };
 
   let interval;
@@ -112,32 +103,32 @@ export default function MainRouter() {
    * Starts an interval on first keypress to clear the temp barcode after timeout.
    * Clears interval on enter press or when scanning is complete.
    */
-  const handleScan = (e) => {
-    console.log("scanning");
-    if (e.key === "Enter") {
-      // setTimeout(() => {
-      if (tempBarcode) {
-        addProductToCart(tempBarcode);
-        tempBarcode = ""; // Reset the barcode after successful scan
-      }
-      // }, 500);
-      clearInterval(interval);
-      return;
-    }
+  // const handleScan = (e) => {
+  //   console.log("scanning");
+  //   if (e.key === "Enter") {
+  //     // setTimeout(() => {
+  //     if (tempBarcode) {
+  //       addProductToCart(tempBarcode);
+  //       tempBarcode = ""; // Reset the barcode after successful scan
+  //     }
+  //     // }, 500);
+  //     clearInterval(interval);
+  //     return;
+  //   }
 
-    if (e.key !== "Shift") {
-      tempBarcode += e.key;
-    }
+  //   if (e.key !== "Shift") {
+  //     tempBarcode += e.key;
+  //   }
 
-    if (!scanning) {
-      scanning = true;
-      interval = setInterval(() => {
-        tempBarcode = ""; // Reset the barcode if no key is pressed within the interval
-        clearInterval(interval);
-        scanning = false;
-      }, 200);
-    }
-  };
+  //   if (!scanning) {
+  //     scanning = true;
+  //     interval = setInterval(() => {
+  //       tempBarcode = ""; // Reset the barcode if no key is pressed within the interval
+  //       clearInterval(interval);
+  //       scanning = false;
+  //     }, 200);
+  //   }
+  // };
 
   const router = createBrowserRouter([
     {
@@ -225,10 +216,8 @@ export default function MainRouter() {
           <div className="main__content">
             <Register
               quickLinks={appQuickLinks}
-              shoppingCart={shoppingCart}
               listOfProducts={listOfProducts}
               categoryList={categoryList}
-              addProductToCart={addProductToCart}
               loading={loading}
             />
           </div>

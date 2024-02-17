@@ -2,7 +2,7 @@ import React from "react";
 
 import "./ProductCard.scss";
 
-export default function ProductCard({ product, manageCart }) {
+export default function ProductCard({ product, addToCart }) {
   let {
     id,
     brand,
@@ -21,7 +21,7 @@ export default function ProductCard({ product, manageCart }) {
     <div
       key={`${barcode}-${id}`}
       className="product-card"
-      onClick={!cartQuantity ? () => manageCart(barcode) : null}
+      onClick={!cartQuantity ? () => addToCart(barcode) : null}
     >
       <div className="product-card-title">{`${
         brand.length ? `${brand} - ` : ""

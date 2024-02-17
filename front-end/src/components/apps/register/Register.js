@@ -15,16 +15,19 @@ import Butane from "../../../images/Butane.jpg";
 
 import "./Register.scss";
 export default function Register({
-  shoppingCart,
   listOfProducts = [],
   categoryList,
-  addProductToCart,
   loading,
 }) {
+  const startPrice = 0;
   const [categorizedProducts, setCategorizedProducts] = useState([]);
   const [showCategories, setShowCategories] = useState(true);
   const [searchText, setSearchText] = useState("");
   const [searchResults, setSearchResults] = useState([]);
+  const [shoppingCart, setShoppingCart] = useState([]);
+  const [subTotal, setSubTotal] = useState(startPrice.toFixed(2));
+  const [tax, setTax] = useState(startPrice.toFixed(2));
+  const [total, setTotal] = useState(startPrice.toFixed(2));
 
   const [categoryImages, setCategoryImages] = useState({
     "Air Fresheners & Odor Eliminators": elfbar,
@@ -89,10 +92,44 @@ export default function Register({
     setShowCategories(!showCategories);
   };
 
+  const calculateTotal = (price) => {
+    const sTotal = shoppingCart.reduce(
+      (acc, curr) => acc + curr.price * curr.cartQuantity,
+      0
+    );
+    const stax = sTotal * 0.08;
+    const stotal = sTotal + tax;
+    setSubTotal(sTotal.toFixed(2));
+    setTax(stax.toFixed(2));
+    setTotal(stotal.toFixed(2));
+  };
+
+  const addToCart = (barcode) => {
+    const existingProductIndex = shoppingCart.findIndex(
+      (item) => item.barcode === barcode
+    );
+    if (existingProductIndex !== -1) {
+      const updatedCart = [...shoppingCart];
+      updatedCart[existingProductIndex].cartQuantity += 1;
+      setShoppingCart([...updatedCart]);
+      calculateTotal(updatedCart[existingProductIndex].price);
+      return;
+    }
+    const product = listOfProducts.find((prod) => prod.barcode === barcode);
+    setShoppingCart([...shoppingCart, { ...product, cartQuantity: 1 }]);
+    calculateTotal(product.price);
+  };
+
   return (
     <div className="register">
       <div className="register__cart">
-        <Cart shoppingCart={shoppingCart} cartRef={cartRef} />
+        <Cart
+          shoppingCart={shoppingCart}
+          cartRef={cartRef}
+          subTotal={subTotal}
+          tax={tax}
+          total={total}
+        />
       </div>
       <div className="register__content">
         <div className="register__toolbar">
@@ -113,7 +150,7 @@ export default function Register({
               searchResults={searchResults}
               setSearchResults={setSearchResults}
               searchRef={searchRef}
-              addProductToCart={addProductToCart}
+              addToCart={addToCart}
             />
           </div>
         </div>
@@ -143,7 +180,7 @@ export default function Register({
                 <ProductCard
                   product={product}
                   index={index}
-                  manageCart={addProductToCart}
+                  addToCart={addToCart}
                 />
               ))}
             </div>

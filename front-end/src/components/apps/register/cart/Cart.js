@@ -4,20 +4,7 @@ import ProductCard from "../../utils/productCard/ProductCard";
 
 import "./Cart.scss";
 
-export default function Cart({ shoppingCart, cartRef, removeProductFromCart }) {
-  const [subTotal, setSubTotal] = useState(0);
-  const [tax, setTax] = useState(0);
-  const [total, setTotal] = useState(0);
-
-  const calculateTotal = () => {
-    console.log("calculateTotal");
-    for (let i = 0; i < shoppingCart.length; i++) {
-      setSubTotal((prev) => prev + shoppingCart[i].price);
-    }
-    // setSubTotal((prev) => prev.toFixed(2));
-    setTax((prev) => (prev * 0.0825).toFixed(2));
-    setTotal((prev) => (prev * 1.0825).toFixed(2));
-  };
+export default function Cart({ shoppingCart, cartRef, subTotal, tax, total }) {
   return (
     <div className="cart" ref={cartRef}>
       <div className="cart__title">Current order</div>
