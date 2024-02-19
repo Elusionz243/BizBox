@@ -22,9 +22,9 @@ export default function Cart({ shoppingCart, cartRef, subTotal, tax, total }) {
           <div>Total:</div>
         </div>
         <div className="cart__totals">
-          <div>${subTotal}</div>
-          <div>${tax}</div>
-          <div>${total}</div>
+          <div>${subTotal.toFixed(2)}</div>
+          <div>${tax.toFixed(2)}</div>
+          <div>${total.toFixed(2)}</div>
         </div>
       </footer>
     </div>

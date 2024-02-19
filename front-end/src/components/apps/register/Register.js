@@ -25,9 +25,9 @@ export default function Register({
   const [searchText, setSearchText] = useState("");
   const [searchResults, setSearchResults] = useState([]);
   const [shoppingCart, setShoppingCart] = useState([]);
-  const [subTotal, setSubTotal] = useState(startPrice.toFixed(2));
-  const [tax, setTax] = useState(startPrice.toFixed(2));
-  const [total, setTotal] = useState(startPrice.toFixed(2));
+  const [subTotal, setSubTotal] = useState(startPrice);
+  const [tax, setTax] = useState(startPrice);
+  const [total, setTotal] = useState(startPrice);
 
   const [categoryImages, setCategoryImages] = useState({
     "Air Fresheners & Odor Eliminators": elfbar,
@@ -93,15 +93,12 @@ export default function Register({
   };
 
   const calculateTotal = (price) => {
-    const sTotal = shoppingCart.reduce(
-      (acc, curr) => acc + curr.price * curr.cartQuantity,
-      0
-    );
-    const stax = sTotal * 0.08;
-    const stotal = sTotal + tax;
-    setSubTotal(sTotal.toFixed(2));
-    setTax(stax.toFixed(2));
-    setTotal(stotal.toFixed(2));
+    const sbTotal = Number(price);
+    const stax = sbTotal * 0.0825;
+    const sTotal = sbTotal + stax;
+    setSubTotal((prev) => (prev += sbTotal));
+    setTax((prev) => (prev += stax));
+    setTotal((prev) => (prev += sTotal));
   };
 
   const addToCart = (barcode) => {
