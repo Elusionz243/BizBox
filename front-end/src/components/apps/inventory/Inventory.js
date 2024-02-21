@@ -169,15 +169,13 @@ export default function Inventory({
           <button onClick={handleEditMode} className="inventory__toolbar-btn">
             {!editMode ? "Edit" : "Cancel"}
           </button>
-          {editMode ? (
+          {editMode && (
             <button
               onClick={handleInventoryUpdate}
               className="inventory__toolbar-btn"
             >
               Save
             </button>
-          ) : (
-            <></>
           )}
         </div>
         <div className="inventory__toolbar-search">
@@ -191,8 +189,8 @@ export default function Inventory({
       </div>
       <div className="inventory__table-container">
         {!loading ? (
-          <table className="table-container">
-            <tr className="table-header">
+          <table className="inventory__table">
+            <tr className="inventory__table-header">
               <th>Product Name</th>
               <th>Variant</th>
               {editMode && <th>Category</th>}
@@ -223,7 +221,7 @@ export default function Inventory({
                   },
                   index
                 ) => (
-                  <tr key={index} className="table-data">
+                  <tr key={index} className="inventory__table-data">
                     {!editMode ? (
                       <td className="product-name">
                         <div>{`${

@@ -2,8 +2,8 @@
 
 .inventory {
   display: grid;
-  grid-template-rows: 75px 1fr;
-  // max-height: calc(100vh - 3rem);
+  grid-template-rows: 75px 100px 1fr;
+
   &__container {
     display: flex;
   }
@@ -11,7 +11,8 @@
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    gap: 1rem;
+    column-gap: 1rem;
+    padding: 0 1rem;
   }
 
   &__toolbar-btns {
@@ -42,69 +43,32 @@
     border-radius: $b-radius;
     height: calc(100vh - 4rem - 75px);
   }
-}
-.inv-container {
-  display: grid;
-  grid-template-rows: 6vh 94vh;
-  position: relative;
-  max-height: 100vh;
-}
-.inv-header {
-  background-color: $blue;
-  display: grid;
-  grid-template-columns: 33% 33% 1fr;
-  align-items: center;
-  padding: 5px;
-}
-.inv-search {
-  display: flex;
-  gap: 5px;
-  color: $black;
-  align-items: center;
-  position: relative;
-}
-.toolbar-buttons {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-}
-.inv-sub-container {
-  overflow-y: scroll;
-}
-.table-container {
-  width: 100%;
-  position: relative;
-  table-layout: auto;
-  overflow-y: scroll;
-}
-.table-header {
-  background-color: $kacky;
-  position: sticky;
-  top: 0;
-  z-index: 1;
-  box-shadow: 2px 2px rgba(155, 155, 155, 0.1);
-}
-th {
-  font-weight: bold;
-  resize: horizontal;
-  overflow-x: auto;
-  padding: 5px 5px;
-}
-td {
-  font-size: 1.0125rem;
-  border-bottom: 1px solid rgba(155, 155, 155, 0.2);
-  padding: 5px 5px;
-}
-.product-category {
-  font-size: 0.9rem;
-  color: $grey;
-}
-.inv-btns {
-  background: none;
-  border: none;
-  color: $white;
-  font-size: 1.0125rem;
-  &:hover {
-    border-bottom: 2px solid #fff;
+
+  &__table {
+    position: relative;
+    table-layout: auto;
+  }
+
+  &__table-header {
+    background-color: $kacky;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    box-shadow: 2px 2px rgba(155, 155, 155, 0.1);
+    th {
+      font-weight: bold;
+      resize: horizontal;
+      overflow-x: auto;
+      padding: 5px;
+    }
+  }
+
+  &__table-data {
+    td {
+      font-size: 1.0125rem;
+      border-bottom: 1px solid rgba(155, 155, 155, 0.2);
+      padding: 5px;
+      // text-wrap: nowrap;
+    }
   }
 }
