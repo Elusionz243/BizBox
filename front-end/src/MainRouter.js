@@ -9,6 +9,7 @@ import Register from "./components/apps/register/Register";
 import OrderHistory from "./components/apps/orders/OrderHistory";
 import PriceChecker from "./components/apps/priceChecker/PriceChecker";
 import NavigationBar from "./components/apps/utils/navigationBar/NavigationBar";
+import Reports from "./components/apps/reports/Reports";
 
 import "./MainRouter.scss";
 
@@ -239,6 +240,31 @@ export default function MainRouter() {
         <div className="main-container">
           <Header title={"Price Checker"} />
           <PriceChecker listOfProducts={listOfProducts} />
+        </div>
+      ),
+    },
+    {
+      path: "/app/reports",
+      element: (
+        <div
+          className="main"
+          style={{
+            gridTemplateColumns: `${navigationOpen ? "250px 1fr" : "75px 1fr"}`,
+          }}
+        >
+          <div className="main__header">
+            <Header title={"Reports"} />
+          </div>
+          <div className="main__navigation-bar">
+            <NavigationBar
+              navigationOpen={navigationOpen}
+              toggleNavigation={toggleNavigation}
+              appNavigations={appQuickLinks}
+            />
+          </div>
+          <div className="main__content">
+            <Reports />
+          </div>
         </div>
       ),
     },
