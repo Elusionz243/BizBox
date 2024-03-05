@@ -1,18 +1,20 @@
 @use "../../../MainRouter.scss" as *;
 
 .reports {
-  display: flex;
+  display: grid;
+  grid-template-rows: 1fr;
   justify-content: center;
-  align-items: center;
-  flex-direction: column;
   gap: 15px;
-  padding: 15px;
+  padding: 15px 0;
+  max-height: calc(100vh - $header-height);
+  border: 1px solid red;
+  overflow-y: scroll;
   &__button {
     background: $teal-transparent;
     border: 1px solid $blue;
     padding: 10px 0;
-    max-width: 620px;
-    width: 100%;
+    width: 620px;
+    // width: 100%;
     border-radius: 50px;
     text-align: center;
     font-size: 1.1rem;
@@ -23,10 +25,13 @@
   }
 
   &__group-list {
-    max-width: 420px;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-rows: 1fr;
+    justify-content: center;
     gap: 10px;
+  }
+
+  &__group-list &__button {
+    max-width: 420px;
   }
 }
