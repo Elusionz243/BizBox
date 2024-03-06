@@ -349,13 +349,6 @@ export default function Inventory({
           <h2>Loading...</h2>
         )}
       </div>
-      <FormGen
-        formData={productForm}
-        setFormData={setProductForm}
-        formRef={formRef}
-        handleCancel={handleCancel}
-        handleSubmit={handleSubmit}
-      />
     </div>
   );
 }

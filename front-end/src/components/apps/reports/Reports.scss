@@ -2,20 +2,20 @@
 
 .reports {
   display: grid;
-  grid-template-rows: 1fr;
+  grid-template-columns: 320px 1fr;
   justify-content: center;
-  gap: 15px;
-  padding: 15px 0;
-  max-height: calc(100vh - $header-height);
-  border: 1px solid red;
-  overflow-y: scroll;
+
+  &__nav {
+    display: grid;
+    grid-template-rows: 1fr;
+    max-height: calc(100vh - $header-height);
+    overflow-y: auto;
+  }
   &__button {
-    background: $teal-transparent;
+    background-color: $teal-transparent;
     border: 1px solid $blue;
     padding: 10px 0;
-    width: 620px;
-    // width: 100%;
-    border-radius: 50px;
+    width: 100%;
     text-align: center;
     font-size: 1.1rem;
 
@@ -24,14 +24,7 @@
     }
   }
 
-  &__group-list {
-    display: grid;
-    grid-template-rows: 1fr;
-    justify-content: center;
-    gap: 10px;
-  }
-
   &__group-list &__button {
-    max-width: 420px;
+    background-color: $teal;
   }
 }
