@@ -5,10 +5,16 @@ import FormGen from "../utils/FormGen";
 import "./Reports.scss";
 export default function Reports({}) {
   const [reports, setReports] = useState([]);
+  const [reportData, setReportData] = useState([]);
   const [expenseForm, setExpenseForm] = useState({
-    date: "",
-    description: "",
-    amount: "",
+    "Purchaser's Name": "",
+    "Store": "",
+    "Vendor": "",
+    "Date of Purchase": "",
+    "Invoice / Receipt Upload": "",
+    "Type of Purchase": "",
+    "Receipt Total": "",
+    "Leave a note": "",
   });
   const [openGroup, setOpenGroup] = useState({
     Finances: false,
@@ -96,7 +102,7 @@ export default function Reports({}) {
         )}
       </div>
       <div className="reports__content">
-        <FormGen formData={} />
+        <FormGen />
       </div>
     </div>
   );
