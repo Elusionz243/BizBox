@@ -20,10 +20,10 @@ export default function Reports({}) {
         title: "Store",
         description: "Select the store the purchase was for.",
         options: [
-          "#1 Fredericksburg", 
-          "#2 San Pedro", 
-          "#3 HWY 151", 
-          "#4 Wurzbach", 
+          "#1 Fredericksburg",
+          "#2 San Pedro",
+          "#3 HWY 151",
+          "#4 Wurzbach",
           "#5 Shaenfield",
           "#6 Huebner",
           "#8 Potranco",
@@ -31,7 +31,7 @@ export default function Reports({}) {
           "#10 Blanco",
           "#11 TPC",
           "#12 Stone Oak",
-            ],
+        ],
         value: "",
       },
       {
@@ -69,7 +69,8 @@ export default function Reports({}) {
       {
         type: "date",
         title: "Date of Purchase",
-        description: "When was the purchase made? (Weekend skyco orders must be submitted on the following Monday)",
+        description:
+          "When was the purchase made? (Weekend skyco orders must be submitted on the following Monday)",
         options: [],
         value: "",
       },
@@ -90,7 +91,8 @@ export default function Reports({}) {
       {
         type: "text",
         title: "Receipt Total",
-        description: "List the payment total on the receipt, including taxes, shipping, etc.",
+        description:
+          "List the payment total on the receipt, including taxes, shipping, etc.",
         options: [],
         value: "",
       },
@@ -104,10 +106,11 @@ export default function Reports({}) {
       {
         type: "file",
         title: "Receipt / Invoice Upload",
-        description: "Upload a copy of the receipt or invoice for this purchase.",
+        description:
+          "Upload a copy of the receipt or invoice for this purchase.",
         options: [],
         value: "",
-      }
+      },
     ],
   });
   const [openGroup, setOpenGroup] = useState({
@@ -196,7 +199,7 @@ export default function Reports({}) {
         )}
       </div>
       <div className="reports__content">
-        <FormGen formData={} />
+        <FormGen />
       </div>
     </div>
   );
