@@ -29,18 +29,17 @@ export default function FormGen({
       <div className="card-header form-header">Add Product</div>
       <form className="form-control card-body form-body">
         <label>
-          Product Name:
+          {formData.title}
           <input
             type="text"
             name="productName"
-            value={formData.productName}
+            value={formData.value}
             onKeyDown={cancelEnterButton}
             onChange={handleChange}
-            placeholder="RAZ - CA6000"
             className="form-control"
           />
         </label>
-        <label>
+        {/* <label>
           Variant:
           <input
             type="text"
@@ -48,7 +47,6 @@ export default function FormGen({
             value={formData.variant}
             onKeyDown={cancelEnterButton}
             onChange={handleChange}
-            placeholder="Cactus Jack"
             className="form-control"
           />
         </label>
@@ -123,7 +121,7 @@ export default function FormGen({
             placeholder="0.00"
             className="form-control"
           />
-        </label>
+        </label> */}
         <button onClick={handleCancel} className="btn btn-secondary">
           Cancel
         </button>
