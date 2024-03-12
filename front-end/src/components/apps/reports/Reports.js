@@ -4,16 +4,14 @@ import FormGen from "../utils/FormGen";
 
 import "./Reports.scss";
 export default function Reports({}) {
-  const [reports, setReports] = useState([]);
-  const [formStructure, setFormStructure] = useState({
-    title: "",
-    questions: [
+  const expenseReport = {
+    title: "Expense Upload Form",
+    structure: [
       {
         type: "text",
         title: "Purchaser's Name",
         description: "Who placed the order?",
         options: [],
-        value: "",
       },
       {
         type: "select",
@@ -32,7 +30,6 @@ export default function Reports({}) {
           "#11 TPC",
           "#12 Stone Oak",
         ],
-        value: "",
       },
       {
         type: "select",
@@ -49,7 +46,6 @@ export default function Reports({}) {
           "Unknown",
           "Other",
         ],
-        value: "",
       },
       {
         type: "select",
@@ -64,7 +60,6 @@ export default function Reports({}) {
           "Rent & Bills",
           "Other",
         ],
-        value: "",
       },
       {
         type: "date",
@@ -72,7 +67,6 @@ export default function Reports({}) {
         description:
           "When was the purchase made? (Weekend skyco orders must be submitted on the following Monday)",
         options: [],
-        value: "",
       },
       {
         type: "select",
@@ -86,7 +80,6 @@ export default function Reports({}) {
           "Plum Amex",
           "Other",
         ],
-        value: "",
       },
       {
         type: "text",
@@ -94,14 +87,12 @@ export default function Reports({}) {
         description:
           "List the payment total on the receipt, including taxes, shipping, etc.",
         options: [],
-        value: "",
       },
       {
         type: "text",
         title: "Sales Tax Total",
         description: "How much did we pay in sales tax on this order?",
         options: [],
-        value: "",
       },
       {
         type: "file",
@@ -109,97 +100,99 @@ export default function Reports({}) {
         description:
           "Upload a copy of the receipt or invoice for this purchase.",
         options: [],
-        value: "",
       },
     ],
-  });
-  const [openGroup, setOpenGroup] = useState({
-    Finances: false,
-    Inventory: false,
-    "Human Resources": false,
-    "Property Management": false,
-    "Tip Calculator": false,
-    "Extra Files": false,
-  });
+  };
 
-  const openCategory = (group) => {
-    setOpenGroup({
-      ...openGroup,
-      [group]: !openGroup[group],
-    });
+  const initialGroupList = [
+    {
+      title: "Finances",
+      reports: ["Expense Upload Form", "View Submitted Expenses"],
+    },
+    {
+      title: "Inventory",
+      reports: [
+        "Thrive Product Category Guide",
+        "Product Loss Upload Form",
+        "This Month's Submitted Losses",
+        "Last Month's Submitted Losses",
+      ],
+    },
+    {
+      title: "Human Resources",
+      reports: [
+        "Training Manuals",
+        "Anonymous Complaint Form",
+        "Employee Write Up Form",
+        "Manager Review Form",
+        "Employee Review Form",
+        "Employee Review Entries",
+      ],
+    },
+    {
+      title: "Property Management",
+      reports: ["Maintenance Request Form", "Maintenance Queue"],
+    },
+    {
+      title: "Extra Files",
+      reports: ["Simple Tip Calculator", "Hazel Sky Logo Files"],
+    },
+  ];
+
+  const groupListStructure = {
+    title: "Create Group",
+    structure: [
+      {
+        type: "text",
+        title: "Group Name",
+        description: "Enter the name of the group you want to create.",
+        options: [],
+      },
+    ],
+  };
+
+  const [groupList, setGroupList] = useState([...initialGroupList]);
+  const [reportList, setReportList] = useState([]);
+  const [uploadedReports, setUploadedReports] = useState([]);
+  const [formStructure, setFormStructure] = useState({ ...groupListStructure });
+  const [openGroup, setOpenGroup] = useState();
+  const [formData, setFormData] = useState({});
+
+  const openCategory = (index) => {
+    setReportList(groupList[index].reports);
+  };
+
+  const addGroup = (e) => {
+    e.preventDefault();
+    console.log(title);
+    setGroupList([
+      ...groupList,
+      { title: formData["Group List"].title, reports: [] },
+    ]);
+    console.log(groupList);
   };
   return (
     <div className="reports">
       <div className="reports__nav">
-        <div
-          className="reports__button"
-          onClick={() => openCategory("Finances")}
-        >
-          Finances
-        </div>
-        {openGroup["Finances"] && (
-          <div className="reports__group-list">
-            <div className="reports__button">Upload Expense Report</div>
-            <div className="reports__button">Submitted Expense Reports</div>
-          </div>
-        )}
-        <div
-          className="reports__button"
-          onClick={() => openCategory("Inventory")}
-        >
-          Inventory
-        </div>
-        {openGroup["Inventory"] && (
-          <div className="reports__group-list">
-            <div className="reports__button">Thrive Product Category Guide</div>
-            <div className="reports__button">Product Loss Upload Form</div>
-            <div className="reports__button">This Month's Submitted Losses</div>
-            <div className="reports__button">Last Month's Submitted Losses</div>
-          </div>
-        )}
-        <div
-          className="reports__button"
-          onClick={() => openCategory("Human Resources")}
-        >
-          Human Resources
-        </div>
-        {openGroup["Human Resources"] && (
-          <div className="reports__group-list">
-            <div className="reports__button">Training Manuals</div>
-            <div className="reports__button">Anonymous Complaint Form</div>
-            <div className="reports__button">Employee Write Up Form</div>
-            <div className="reports__button">Manager Review Form</div>
-            <div className="reports__button">Employee Review Form</div>
-            <div className="reports__button">Employee Review Entries</div>
-          </div>
-        )}
-        <div
-          className="reports__button"
-          onClick={() => openCategory("Property Management")}
-        >
-          Property Management
-        </div>
-        {openGroup["Property Management"] && (
-          <div className="reports__group-list">
-            <div className="reports__button">Maintenance Request Form</div>
-            <div className="reports__button">Maintenance Queue</div>
-          </div>
-        )}
-        <div
-          className="reports__button"
-          onClick={() => openCategory("Extra Files")}
-        >
-          Extra Files
-        </div>
-        {openGroup["Extra Files"] && (
-          <div className="reports__group-list">
-            <div className="reports__button">Simple Tip Calculator</div>
-            <div className="reports__button">Hazel Sky Logo Files</div>
-          </div>
-        )}
+        {groupList.length > 0 &&
+          groupList.map(({ title }, index) => (
+            <div
+              className="reports__button"
+              onClick={() => openCategory(index)}
+            >
+              {title}
+            </div>
+          ))}
       </div>
       <div className="reports__content">
-        <FormGen />
+        {formStructure.structure.length ? (
+          <FormGen
+            formStructure={formStructure}
+            onSubmit={addGroup}
+            formData={formData}
+            setFormData={setFormData}
+          />
+        ) : null}
       </div>
     </div>
   );

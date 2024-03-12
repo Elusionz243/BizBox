@@ -1,22 +1,37 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 import "./FormGen.scss";
 
 export default function FormGen({
+  formStructure,
+  onSubmit,
   formData,
   setFormData,
-  formRef,
-  handleCancel,
-  handleSubmit,
 }) {
+  useEffect(() => {
+    generateFormData();
+  }, []);
+
+  const generateFormData = () => {
+    let form = {};
+    formStructure.structure.forEach((question) => {
+      const { title, options } = question;
+      if (options.length > 0) {
+        form[title] = options[0];
+        return;
+      }
+      form[title] = "";
+    });
+    setFormData({ ...form });
+  };
+
   const handleChange = (e) => {
     let key = e.key;
+    if (key === "Enter") e.preventDefault();
 
-    if (key === "Enter") {
-      e.preventDefault();
-      return;
-    }
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    const { name, value } = e.target;
+
+    setFormData({ ...formData, [name]: value });
   };
 
   const cancelEnterButton = (e) => {
@@ -25,107 +40,42 @@ export default function FormGen({
   };
 
   return (
-    <div className="card form-container" ref={formRef}>
-      <div className="card-header form-header">Add Product</div>
-      <form className="form-control card-body form-body">
-        <label>
-          {formData.title}
-          <input
-            type="text"
-            name="productName"
-            value={formData.value}
-            onKeyDown={cancelEnterButton}
-            onChange={handleChange}
-            className="form-control"
-          />
-        </label>
-        {/* <label>
-          Variant:
-          <input
-            type="text"
-            name="variant"
-            value={formData.variant}
-            onKeyDown={cancelEnterButton}
-            onChange={handleChange}
-            className="form-control"
-          />
-        </label>
-        <label>
-          Category:
-          <input
-            type="text"
-            name="category"
-            value={formData.category}
-            onKeyDown={cancelEnterButton}
-            onChange={handleChange}
-            placeholder="Vape Disposable"
-            className="form-control"
-          />
-        </label>
-        <label>
-          Barcode/SKU:
-          <input
-            type="text"
-            name="barcode"
-            value={formData.barcode}
-            onKeyDown={cancelEnterButton}
-            onChange={handleChange}
-            placeholder="00000000"
-            className="form-control"
-          />
-        </label>
-        <label>
-          Location:
-          <input
-            type="text"
-            name="location"
-            value={formData.location}
-            onKeyDown={cancelEnterButton}
-            onChange={handleChange}
-            placeholder="Hazel Sky Smoke Shop"
-            className="form-control"
-          />
-        </label>
-        <label>
-          Quantity:
-          <input
-            type="text"
-            name="quantity"
-            value={formData.quantity}
-            onKeyDown={cancelEnterButton}
-            onChange={handleChange}
-            placeholder="0"
-            className="form-control"
-          />
-        </label>
-        <label>
-          Price:
-          <input
-            type="text"
-            name="price"
-            value={formData.price}
-            onKeyDown={cancelEnterButton}
-            onChange={handleChange}
-            placeholder="0.00"
-            className="form-control"
-          />
-        </label>
-        <label>
-          Cost:
-          <input
-            type="text"
-            name="cost"
-            value={formData.cost}
-            onKeyDown={cancelEnterButton}
-            onChange={handleChange}
-            placeholder="0.00"
-            className="form-control"
-          />
-        </label> */}
-        <button onClick={handleCancel} className="btn btn-secondary">
-          Cancel
-        </button>
-        <button onSubmit={handleSubmit} className="btn btn-primary">
+    <div className="form">
+      <div className="form__title">{formStructure.title}</div>
+      <form className="form__content">
+        {formStructure.structure.map(
+          ({ type, title, description, options }, index) => {
+            return (
+              <label key={title} className="form__question">
+                <h4>{title}</h4>
+                {description ? <p>{description}</p> : null}
+                {type === "select" ? (
+                  <select
+                    name={title}
+                    value={formData.value}
+                    onChange={handleChange}
+                    className="form-select"
+                  >
+                    {options.map((option, index) => {
+                      return <option key={option}>{option}</option>;
+                    })}
+                  </select>
+                ) : (
+                  <input
+                    name={title}
+                    type={type}
+                    value={formData.value}
+                    onChange={handleChange}
+                    className="form-control"
+                  />
+                )}
+              </label>
+            );
+          }
+        )}
+
+        <button className="btn btn-secondary">Cancel</button>
+        <button className="btn btn-primary" onClick={(e) => onSubmit(e)}>
           Submit
         </button>
       </form>

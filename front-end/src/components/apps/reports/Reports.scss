@@ -6,13 +6,11 @@
   justify-content: center;
 
   &__nav {
-    display: grid;
-    grid-template-rows: 1fr;
-    max-height: calc(100vh - $header-height);
+    border: 1px solid $black;
+    height: calc(100vh - $header-height);
     overflow-y: auto;
   }
   &__button {
-    background-color: $teal-transparent;
     border: 1px solid $blue;
     padding: 10px 0;
     width: 100%;
@@ -24,7 +22,13 @@
     }
   }
 
-  &__group-list &__button {
-    background-color: $teal;
+  &__group-list {
+    border: 1px solid $blue;
+  }
+
+  &__content {
+    padding: 0 2rem;
+    max-height: calc(100vh - $header-height);
+    overflow-y: auto;
   }
 }
