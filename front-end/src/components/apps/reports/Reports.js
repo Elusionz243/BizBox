@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import FormGen from "../utils/FormGen";
 
 import "./Reports.scss";
+import Icon from "../../utils/icon/Icon";
 export default function Reports({}) {
   const expenseReport = {
     title: "Expense Upload Form",
@@ -154,7 +155,7 @@ export default function Reports({}) {
   const [groupList, setGroupList] = useState([...initialGroupList]);
   const [reportList, setReportList] = useState([]);
   const [uploadedReports, setUploadedReports] = useState([]);
-  const [formStructure, setFormStructure] = useState({ ...groupListStructure });
+  const [formStructure, setFormStructure] = useState({});
   const [openGroup, setOpenGroup] = useState();
   const [formData, setFormData] = useState({});
 
@@ -164,16 +165,32 @@ export default function Reports({}) {
 
   const addGroup = (e) => {
     e.preventDefault();
-    console.log(title);
     setGroupList([
       ...groupList,
-      { title: formData["Group List"].title, reports: [] },
+      { title: formData["Group Name"], reports: [] },
     ]);
-    console.log(groupList);
+    setFormData({});
   };
   return (
     <div className="reports">
       <div className="reports__nav">
+        <div className="reports__nav-buttons">
+          <div
+            className="reports__add-group"
+            onClick={() => setFormStructure({ ...groupListStructure })}
+          >
+            <div>
+              <Icon
+                name="plus-circle"
+                width={28}
+                height={28}
+                currentColor={"#fff"}
+                viewBox={"0 0 16 16"}
+              />
+            </div>
+            <div className="reports__add-group-text">Add Group</div>
+          </div>
+        </div>
         {groupList.length > 0 &&
           groupList.map(({ title }, index) => (
             <div
@@ -185,7 +202,7 @@ export default function Reports({}) {
           ))}
       </div>
       <div className="reports__content">
-        {formStructure.structure.length ? (
+        {formStructure.structure && formStructure.structure.length > 0 ? (
           <FormGen
             formStructure={formStructure}
             onSubmit={addGroup}

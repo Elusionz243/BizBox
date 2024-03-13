@@ -10,6 +10,30 @@
     height: calc(100vh - $header-height);
     overflow-y: auto;
   }
+
+  &__nav-buttons {
+    padding: 0.25rem;
+  }
+  &__add-group {
+    border: 1px solid $blue;
+    border-radius: $b-radius;
+    padding: 0.5rem;
+    background-color: $green;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  &__add-group-text {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: $white;
+  }
   &__button {
     border: 1px solid $blue;
     padding: 10px 0;
