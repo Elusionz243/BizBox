@@ -5,54 +5,73 @@
   grid-template-columns: 320px 1fr;
   justify-content: center;
 
-  &__nav {
-    border: 1px solid $black;
-    height: calc(100vh - $header-height);
-    overflow-y: auto;
-  }
-
-  &__nav-buttons {
-    padding: 0.25rem;
-  }
-  &__add-group {
-    border: 1px solid $blue;
-    border-radius: $b-radius;
-    padding: 0.5rem;
-    background-color: $green;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 0.5rem;
-
-    &:hover {
-      cursor: pointer;
-    }
-  }
-
-  &__add-group-text {
-    font-size: 1.1rem;
-    font-weight: bold;
-    color: $white;
-  }
-  &__button {
-    border: 1px solid $blue;
-    padding: 10px 0;
-    width: 100%;
-    text-align: center;
-    font-size: 1.1rem;
-
-    &:hover {
-      cursor: pointer;
-    }
-  }
-
   &__group-list {
     border: 1px solid $blue;
   }
+  .reports-nav {
+    border-right: 1px solid $blue;
+    height: calc(100vh - $header-height);
+    overflow-y: auto;
+    padding: 0.5rem;
+    background-color: $grey-transparent;
 
-  &__content {
-    padding: 0 2rem;
+    &__button {
+      border: 1px solid $blue;
+      padding: 10px 0;
+      width: 100%;
+      text-align: center;
+      font-size: 1.1rem;
+      margin: 0.5rem 0;
+      border-radius: $b-radius;
+      font-weight: bold;
+      background-color: $white;
+
+      &:hover {
+        cursor: pointer;
+        background-color: $teal-transparent;
+        color: $white;
+      }
+    }
+    &__add-group-text {
+      font-size: 1.1rem;
+      font-weight: bold;
+      color: $white;
+    }
+
+    &__add-group {
+      border: 1px solid $blue;
+      border-radius: $b-radius;
+      padding: 0.5rem;
+      background-color: $green;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem;
+
+      &:hover {
+        cursor: pointer;
+        background-color: $green-transparent;
+        // color: $black;
+
+        &__add-group-text {
+          color: $black;
+        }
+      }
+    }
+  }
+
+  .reports-content {
+    padding: 2rem;
     max-height: calc(100vh - $header-height);
     overflow-y: auto;
+
+    &__dashboard {
+    }
+
+    &__dashboard-title {
+      font-size: 2rem;
+      font-weight: bold;
+      text-align: center;
+    }
   }
 }
